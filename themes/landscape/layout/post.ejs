@@ -1,0 +1,41 @@
+<%
+	var tagList = page.tags ? page.tags.toArray() : [];
+%>
+
+<article class="doc-page-layout" data-doc-toc-root>
+	<section class="doc-page-main">
+		<header class="doc-page-header">
+			<div class="doc-page-meta">
+				<span><%= page.date.format('YYYY-MM-DD') %></span>
+				<% if (page.updated) { %>
+					<span>更新于 <%= page.updated.format('YYYY-MM-DD') %></span>
+				<% } %>
+			</div>
+			<h1><%= page.title %></h1>
+			<% if (page.desc) { %>
+				<p class="doc-card-summary"><%= page.desc %></p>
+			<% } %>
+			<% if (tagList.length) { %>
+				<div class="doc-page-tags">
+					<% tagList.forEach(function(tag){ %>
+						<a href="<%- url_for('/?tag=' + encodeURIComponent(tag.name)) %>"><%= tag.name %></a>
+					<% }) %>
+				</div>
+			<% } %>
+		</header>
+
+		<div class="doc-content" data-doc-content>
+			<%- page.content %>
+		</div>
+	</section>
+
+	<aside class="doc-page-toc" aria-label="文章目录">
+		<div class="doc-page-toc-inner">
+			<p class="section-kicker">On This Page</p>
+			<h2>右侧目录</h2>
+			<div class="doc-toc-list" data-toc-list>
+				<p class="doc-toc-empty">当前文章没有可用目录。</p>
+			</div>
+		</div>
+	</aside>
+</article>

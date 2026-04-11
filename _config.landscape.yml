@@ -1,0 +1,12 @@
+menu:
+	首页: /
+
+subtitle: 记录学习、设计与项目实践
+
+sidebar: false
+
+widgets: []
+
+excerpt_link: 阅读全文
+
+favicon: /favicon.ico

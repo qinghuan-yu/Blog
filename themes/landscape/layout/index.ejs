@@ -1,0 +1,80 @@
+<%
+  var posts = page.posts ? page.posts.toArray() : [];
+  var tags = site.tags ? site.tags.toArray().sort(function(a, b){ return a.name.localeCompare(b.name); }) : [];
+%>
+
+<section class="doc-home">
+  <section class="hero-banner">
+    <div class="hero-copy">
+      <p class="hero-kicker">Knowledge Base</p>
+      <h1><%= config.title %></h1>
+      <p class="hero-text"><%= config.description || config.subtitle || '按主题沉淀文章，像文档一样浏览与定位。' %></p>
+      <div class="hero-meta">
+        <span><%= posts.length %> 篇文章</span>
+        <span><%= tags.length %> 个标签</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="filter-strip" data-filter-root>
+    <div class="filter-strip-head">
+      <div>
+        <p class="section-kicker">Tag Filter</p>
+        <h2>按标签筛选</h2>
+      </div>
+      <p class="filter-state" data-filter-label>当前：全部</p>
+    </div>
+    <div class="filter-chip-list">
+      <button class="filter-chip is-active" type="button" data-filter-control="all">全部</button>
+      <% tags.forEach(function(tag){ %>
+        <button class="filter-chip" type="button" data-filter-control="<%= tag.name %>"><%= tag.name %> <span><%= tag.length %></span></button>
+      <% }) %>
+    </div>
+  </section>
+
+  <div class="doc-home-grid" data-home-root>
+    <section class="doc-feed">
+      <% posts.forEach(function(post, index){
+        var tagList = post.tags ? post.tags.toArray() : [];
+        var summary = post.desc || post.excerpt || '';
+        var anchorId = 'doc-' + (post.slug || ('post-' + index));
+      %>
+        <article class="doc-card" id="<%= anchorId %>" data-doc-card data-card-tags="<%= tagList.map(function(tag){ return tag.name; }).join('|') %>">
+          <div class="doc-card-meta">
+            <span><%= post.date.format('YYYY-MM-DD') %></span>
+            <% if (tagList.length) { %>
+              <span><%= tagList.length %> 个标签</span>
+            <% } %>
+          </div>
+          <h3><a href="<%- url_for(post.path) %>"><%= post.title %></a></h3>
+          <% if (summary) { %>
+            <div class="doc-card-summary"><%- summary %></div>
+          <% } %>
+          <% if (tagList.length) { %>
+            <div class="doc-card-tags">
+              <% tagList.forEach(function(tag){ %>
+                <button class="doc-tag" type="button" data-filter-tag="<%= tag.name %>"><%= tag.name %></button>
+              <% }) %>
+            </div>
+          <% } %>
+        </article>
+      <% }) %>
+      <div class="doc-empty-state" data-empty-state hidden>当前筛选下没有文章。</div>
+    </section>
+
+    <aside class="doc-directory" aria-label="文章目录">
+      <div class="doc-directory-inner">
+        <p class="section-kicker">Directory</p>
+        <h2>右侧目录</h2>
+        <nav class="doc-directory-list" data-directory-list>
+          <% posts.forEach(function(post, index){
+            var tagList = post.tags ? post.tags.toArray() : [];
+            var anchorId = 'doc-' + (post.slug || ('post-' + index));
+          %>
+            <a href="#<%= anchorId %>" data-directory-item data-card-tags="<%= tagList.map(function(tag){ return tag.name; }).join('|') %>"><%= post.title %></a>
+          <% }) %>
+        </nav>
+      </div>
+    </aside>
+  </div>
+</section>

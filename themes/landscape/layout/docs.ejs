@@ -1,0 +1,22 @@
+﻿<article class="doc-page-layout" data-doc-toc-root>
+  <section class="doc-page-main">
+    <header class="doc-page-header">
+      <p class="section-kicker">Page</p>
+      <h1><%= page.title %></h1>
+    </header>
+    <div class="doc-content" data-doc-content>
+      <%- page.content %>
+    </div>
+  </section>
+
+  <aside class="doc-page-toc" aria-label="本页目录">
+    <div class="doc-page-toc-inner">
+      <p class="section-kicker">On This Page</p>
+      <h2>右侧目录</h2>
+      <div class="doc-toc-list" data-toc-list>
+        <p class="doc-toc-empty">当前页面没有可用目录。</p>
+      </div>
+    </div>
+  </aside>
+</article>
+

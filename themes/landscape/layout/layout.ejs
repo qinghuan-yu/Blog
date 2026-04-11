@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="<%= config.language || 'zh-CN' %>">
+<%- partial('_partial/head') %>
+<body class="page-shell<% if (is_home()) { %> page-home<% } %><% if (is_post()) { %> page-article<% } %><% if (is_page()) { %> page-static<% } %><% if (page.layout) { %> layout-<%= page.layout %><% } %>">
+  <div class="site-frame">
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-brand" href="<%- url_for('/') %>">
+          <span class="site-brand-title"><%= config.title %></span>
+          <% if (config.subtitle) { %>
+            <span class="site-brand-subtitle"><%= config.subtitle %></span>
+          <% } %>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="site-nav-link" href="<%- url_for('/') %>">首页</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <%- body %>
+    </main>
+
+    <footer class="site-footer">
+      <p><%= config.author || config.title %> · Powered by Hexo</p>
+    </footer>
+  </div>
+
+  <%- js('js/docs-interactive') %>
+</body>
+</html>
