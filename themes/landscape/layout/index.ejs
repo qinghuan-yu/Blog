@@ -8,10 +8,27 @@
     <div class="hero-copy">
       <p class="hero-kicker">Knowledge Base</p>
       <h1><%= config.title %></h1>
-      <p class="hero-text"><%= config.description || config.subtitle || '按主题沉淀文章，像文档一样浏览与定位。' %></p>
-      <div class="hero-meta">
-        <span><%= posts.length %> 篇文章</span>
-        <span><%= tags.length %> 个标签</span>
+      <div class="hero-subline">
+        <p class="hero-text"><%= config.description || config.subtitle || '按主题沉淀文章，像文档一样浏览与定位。' %></p>
+      </div>
+      <div class="hero-bottom">
+        <div class="hero-meta">
+          <span><%= posts.length %> 篇文章</span>
+          <span><%= tags.length %> 个标签</span>
+        </div>
+        <div class="hero-links" aria-label="联系链接">
+          <a href="https://github.com/qinghuan-yu" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg class="hero-link-icon hero-link-icon--github" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 0.5C5.648 0.5 0.5 5.648 0.5 12C0.5 17.084 3.792 21.387 8.362 22.91C8.937 23.017 9.147 22.67 9.147 22.372C9.147 22.104 9.137 21.218 9.132 20.276C5.938 20.971 5.264 18.736 5.264 18.736C4.741 17.406 3.988 17.051 3.988 17.051C2.946 16.339 4.066 16.354 4.066 16.354C5.219 16.435 5.826 17.539 5.826 17.539C6.85 19.294 8.512 18.787 9.168 18.492C9.271 17.751 9.569 17.245 9.897 16.959C7.347 16.668 4.665 15.683 4.665 11.291C4.665 10.039 5.113 9.017 5.847 8.216C5.728 7.925 5.333 6.754 5.959 5.168C5.959 5.168 6.926 4.859 9.126 6.345C10.047 6.089 11.034 5.961 12.021 5.956C13.008 5.961 13.995 6.089 14.916 6.345C17.116 4.859 18.083 5.168 18.083 5.168C18.709 6.754 18.314 7.925 18.195 8.216C18.929 9.017 19.377 10.039 19.377 11.291C19.377 15.694 16.69 16.664 14.132 16.95C14.543 17.305 14.909 18.001 14.909 19.066C14.909 20.592 14.895 21.824 14.895 22.372C14.895 22.673 15.103 23.022 15.686 22.909C20.255 21.385 23.545 17.083 23.545 12C23.545 5.648 18.397 0.5 12 0.5Z"/>
+            </svg>
+          </a>
+          <a href="mailto:reliarc.me@outlook.com" aria-label="Email">
+            <svg class="hero-link-icon hero-link-icon--mail" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 6.75H21V17.25H3V6.75Z"/>
+              <path d="M3 7.5L12 13.5L21 7.5"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
