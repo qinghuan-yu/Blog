@@ -17,15 +17,6 @@
     window.history.replaceState(null, "", nextUrl);
   }
 
-  function escapeHtml(value) {
-    return value
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/\"/g, "&quot;")
-      .replace(/'/g, "&#39;");
-  }
-
   function slugify(text) {
     return text
       .toLowerCase()
@@ -238,9 +229,14 @@
       }
     }
 
+    var usedIds = Object.create(null);
+
     var links = headings.map(function (heading, index) {
       if (!heading.id) {
-        heading.id = slugify(heading.textContent) || "section-" + (index + 1);
+        var baseId = slugify(heading.textContent) || "section-" + (index + 1);
+        var count = (usedIds[baseId] || 0) + 1;
+        usedIds[baseId] = count;
+        heading.id = count === 1 ? baseId : baseId + "-" + count;
       }
 
       var link = document.createElement("a");
@@ -300,11 +296,69 @@
     syncHeaderState();
   }
 
+  function initSidebarPinning() {
+    var panels = Array.prototype.slice.call(document.querySelectorAll(".doc-directory, .doc-page-toc"));
+    if (!panels.length) {
+      return;
+    }
+
+    var desktopQuery = window.matchMedia("(min-width: 1081px)");
+    var topOffset = 102;
+
+    function clearPinnedState() {
+      panels.forEach(function (panel) {
+        panel.classList.remove("is-pinned");
+      });
+    }
+
+    function measureStartPositions() {
+      clearPinnedState();
+      panels.forEach(function (panel) {
+        var rect = panel.getBoundingClientRect();
+        var startY = window.scrollY + rect.top - topOffset;
+        panel.setAttribute("data-pin-start", String(Math.max(0, Math.round(startY))));
+        panel.style.setProperty("--pin-left", Math.round(rect.left) + "px");
+        panel.style.setProperty("--pin-width", Math.round(rect.width) + "px");
+      });
+    }
+
+    function syncPinnedState() {
+      if (!desktopQuery.matches) {
+        clearPinnedState();
+        return;
+      }
+
+      var currentY = window.scrollY;
+      panels.forEach(function (panel) {
+        var startY = Number(panel.getAttribute("data-pin-start") || "0");
+        panel.classList.toggle("is-pinned", currentY >= startY);
+      });
+    }
+
+    function refresh() {
+      if (!desktopQuery.matches) {
+        clearPinnedState();
+        return;
+      }
+      measureStartPositions();
+      syncPinnedState();
+    }
+
+    window.addEventListener("scroll", syncPinnedState, { passive: true });
+    window.addEventListener("resize", refresh, { passive: true });
+    if (desktopQuery.addEventListener) {
+      desktopQuery.addEventListener("change", refresh);
+    }
+
+    refresh();
+  }
+
   function init() {
     initPanelScrollGuards();
     initHomeFilters();
     initToc();
     initHomeHeaderMotion();
+    initSidebarPinning();
   }
 
   if (document.readyState === "loading") {
