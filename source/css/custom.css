@@ -10,6 +10,9 @@
   --accent: #0f5f66;
   --accent-soft: #d7ece9;
   --signal: #9f5c34;
+  --scroll-track: rgba(25, 41, 53, 0.08);
+  --scroll-thumb: rgba(15, 95, 102, 0.46);
+  --scroll-thumb-hover: rgba(15, 95, 102, 0.68);
   --shadow: 0 20px 60px rgba(21, 32, 43, 0.08);
   --radius-xl: 28px;
   --radius-lg: 20px;
@@ -437,7 +440,13 @@ button {
   position: sticky;
   top: 102px;
   align-self: start;
+  height: calc(100vh - 118px);
   max-height: calc(100vh - 118px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
 }
 
 .doc-directory-inner,
@@ -445,8 +454,13 @@ button {
   display: flex;
   flex-direction: column;
   min-height: 0;
+  flex: 1;
   height: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
   padding: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
 }
 
 .doc-directory-inner h2,
@@ -457,10 +471,38 @@ button {
 .doc-directory-list,
 .doc-toc-list {
   display: grid;
+  flex: 1;
   gap: 8px;
   min-height: 0;
   overflow: auto;
+  overscroll-behavior: contain;
   padding-right: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
+
+.doc-directory-list::-webkit-scrollbar,
+.doc-toc-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.doc-directory-list::-webkit-scrollbar-track,
+.doc-toc-list::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+  border-radius: 999px;
+}
+
+.doc-directory-list::-webkit-scrollbar-thumb,
+.doc-toc-list::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.doc-directory-list:hover::-webkit-scrollbar-thumb,
+.doc-toc-list:hover::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb-hover);
 }
 
 .doc-directory-list a,
@@ -527,7 +569,37 @@ button {
   position: sticky;
   top: 102px;
   align-self: start;
+  height: calc(100vh - 118px);
   max-height: calc(100vh - 118px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
+
+.doc-directory::-webkit-scrollbar,
+.doc-page-toc::-webkit-scrollbar {
+  width: 10px;
+}
+
+.doc-directory::-webkit-scrollbar-track,
+.doc-page-toc::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+  border-radius: 999px;
+}
+
+.doc-directory::-webkit-scrollbar-thumb,
+.doc-page-toc::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.doc-directory:hover::-webkit-scrollbar-thumb,
+.doc-page-toc:hover::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb-hover);
 }
 
 .doc-toc-list .lv3 {
@@ -625,6 +697,9 @@ button {
   .doc-directory,
   .doc-page-toc {
     position: static;
+    height: auto;
+    max-height: none;
+    overflow: visible;
   }
 
   .hero-banner {
@@ -1461,14 +1536,23 @@ body {
   text-decoration: none;
 }
 
+.doc-directory-inner::-webkit-scrollbar,
+.doc-page-toc-inner::-webkit-scrollbar,
+
 .home-topic-item {
   width: 100%;
   display: flex;
+
+.doc-directory-inner::-webkit-scrollbar-track,
+.doc-page-toc-inner::-webkit-scrollbar-track,
   justify-content: space-between;
   align-items: center;
   padding: 12px 14px;
   border-radius: 14px;
   background: #f4f7f9;
+
+.doc-directory-inner::-webkit-scrollbar-thumb,
+.doc-page-toc-inner::-webkit-scrollbar-thumb,
   color: #213141;
 }
 
@@ -1476,6 +1560,9 @@ body {
   padding: 8px 12px;
   border-radius: 999px;
   background: #f0f4f7;
+
+.doc-directory-inner:hover::-webkit-scrollbar-thumb,
+.doc-page-toc-inner:hover::-webkit-scrollbar-thumb,
   color: #304459;
 }
 

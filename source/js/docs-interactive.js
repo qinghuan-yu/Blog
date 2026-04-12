@@ -34,6 +34,108 @@
       .replace(/\s+/g, "-");
   }
 
+  function bindPanelWheelScroll(panel, scrollList) {
+    if (!panel || !scrollList) {
+      return;
+    }
+
+    panel.addEventListener(
+      "wheel",
+      function (event) {
+        if (!panel.contains(event.target)) {
+          return;
+        }
+
+        var canScroll = scrollList.scrollHeight > scrollList.clientHeight;
+        if (!canScroll) {
+          return;
+        }
+
+        event.preventDefault();
+        var nextTop = scrollList.scrollTop + event.deltaY;
+        var maxTop = scrollList.scrollHeight - scrollList.clientHeight;
+        scrollList.scrollTop = Math.max(0, Math.min(nextTop, maxTop));
+      },
+      { passive: false }
+    );
+  }
+
+  function getScrollableTarget(panel, preferredList) {
+    if (preferredList && preferredList.scrollHeight > preferredList.clientHeight) {
+      return preferredList;
+    }
+
+    if (panel && panel.scrollHeight > panel.clientHeight) {
+      return panel;
+    }
+
+    return null;
+  }
+
+  function initPanelScrollGuards() {
+    var guardedPanels = [];
+
+    Array.prototype.slice.call(document.querySelectorAll(".doc-page-toc")).forEach(function (panel) {
+      var list = panel.querySelector("[data-toc-list]");
+      if (list) {
+        bindPanelWheelScroll(panel, list);
+        guardedPanels.push({ panel: panel, list: list });
+      }
+    });
+
+    Array.prototype.slice.call(document.querySelectorAll(".doc-directory")).forEach(function (panel) {
+      var list = panel.querySelector("[data-directory-list]");
+      if (list) {
+        bindPanelWheelScroll(panel, list);
+        guardedPanels.push({ panel: panel, list: list });
+      }
+    });
+
+    if (!guardedPanels.length) {
+      return;
+    }
+
+    var activePanelIndex = -1;
+
+    guardedPanels.forEach(function (item, index) {
+      item.panel.addEventListener("mouseenter", function () {
+        activePanelIndex = index;
+      });
+
+      item.panel.addEventListener("mouseleave", function () {
+        if (activePanelIndex === index) {
+          activePanelIndex = -1;
+        }
+      });
+    });
+
+    document.addEventListener(
+      "wheel",
+      function (event) {
+        if (activePanelIndex < 0) {
+          return;
+        }
+
+        var current = guardedPanels[activePanelIndex];
+        if (!current || !current.panel.matches(":hover")) {
+          activePanelIndex = -1;
+          return;
+        }
+
+        var target = getScrollableTarget(current.panel, current.list);
+        if (!target) {
+          return;
+        }
+
+        event.preventDefault();
+        var nextTop = target.scrollTop + event.deltaY;
+        var maxTop = target.scrollHeight - target.clientHeight;
+        target.scrollTop = Math.max(0, Math.min(nextTop, maxTop));
+      },
+      { passive: false, capture: true }
+    );
+  }
+
   function initHomeFilters() {
     var filterRoot = document.querySelector("[data-filter-root]");
     var homeRoot = document.querySelector("[data-home-root]");
@@ -199,6 +301,7 @@
   }
 
   function init() {
+    initPanelScrollGuards();
     initHomeFilters();
     initToc();
     initHomeHeaderMotion();
