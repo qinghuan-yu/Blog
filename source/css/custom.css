@@ -18,6 +18,8 @@
   --radius-lg: 20px;
   --radius-md: 14px;
   --content-width: 1240px;
+  --side-card-width: 290px;
+  --side-card-gap: 24px;
 }
 
 * {
@@ -370,9 +372,10 @@ button {
 .doc-home-grid,
 .doc-page-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 290px;
-  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) var(--side-card-width);
+  gap: 16px;
   align-items: start;
+  padding-right: 0;
 }
 
 .doc-feed {
@@ -439,7 +442,7 @@ button {
 .doc-directory {
   position: sticky;
   top: 102px;
-  align-self: start;
+  width: var(--side-card-width);
   height: calc(100vh - 118px);
   max-height: calc(100vh - 118px);
   overflow-x: hidden;
@@ -447,6 +450,11 @@ button {
   overscroll-behavior: contain;
   scrollbar-width: thin;
   scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-xl);
+  background: var(--panel-strong);
+  box-shadow: var(--shadow);
+  z-index: 12;
 }
 
 .doc-directory-inner,
@@ -568,7 +576,7 @@ button {
 .doc-page-toc {
   position: sticky;
   top: 102px;
-  align-self: start;
+  width: var(--side-card-width);
   height: calc(100vh - 118px);
   max-height: calc(100vh - 118px);
   overflow-x: hidden;
@@ -576,6 +584,11 @@ button {
   overscroll-behavior: contain;
   scrollbar-width: thin;
   scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-xl);
+  background: var(--panel-strong);
+  box-shadow: var(--shadow);
+  z-index: 12;
 }
 
 .doc-directory::-webkit-scrollbar,
@@ -692,14 +705,20 @@ button {
   .doc-home-grid,
   .doc-page-layout {
     grid-template-columns: 1fr;
+    padding-right: 0;
   }
 
   .doc-directory,
   .doc-page-toc {
     position: static;
+    width: auto;
     height: auto;
     max-height: none;
     overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
   }
 
   .hero-banner {
