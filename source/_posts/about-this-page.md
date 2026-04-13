@@ -1,9 +1,8 @@
 ---
-title: "关于这个网页的诞生"
+title: "关于主网页的诞生"
 date: "2026-02-01"
-desc: "关于本网站的诞生经历以及个人想法的汇结。"
-cover: /images/covers/about.svg
-tags: ["Design", "Study life", ]
+desc: "关于主网页的诞生经历以及个人想法的汇结。"
+tags: ["设计"]
 ---
 
 # 关于这个网页的诞生

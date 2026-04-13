@@ -2,8 +2,7 @@
 title: "Vue 3 渲染机制解析"
 date: "2026-02-02"
 desc: "探讨 Vue 3 核心渲染 loop 机制与性能优化关键路径。"
-cover: /images/covers/vue-rendering.svg
-tags: ["Vue", "Frontend", "Performance"]
+tags: [ "前端"]
 ---
 
 # Vue 3 渲染机制解析

@@ -308,17 +308,30 @@
     function clearPinnedState() {
       panels.forEach(function (panel) {
         panel.classList.remove("is-pinned");
+        panel.style.setProperty("--pin-top", topOffset + "px");
       });
     }
 
     function measureStartPositions() {
       clearPinnedState();
       panels.forEach(function (panel) {
+        var container = panel.closest(".doc-home-grid, .doc-page-layout");
         var rect = panel.getBoundingClientRect();
         var startY = window.scrollY + rect.top - topOffset;
-        panel.setAttribute("data-pin-start", String(Math.max(0, Math.round(startY))));
+        var startRounded = Math.max(0, Math.round(startY));
+        var containerBottom = container
+          ? window.scrollY + container.getBoundingClientRect().bottom
+          : window.scrollY + rect.bottom;
+        var panelHeight = rect.height;
+        var endY = Math.round(containerBottom - topOffset - panelHeight);
+        var pinRange = endY - startRounded;
+
+        panel.setAttribute("data-pin-start", String(startRounded));
+        panel.setAttribute("data-pin-end", String(Math.max(startRounded, endY)));
+        panel.setAttribute("data-pin-disabled", pinRange <= 0 ? "1" : "0");
         panel.style.setProperty("--pin-left", Math.round(rect.left) + "px");
         panel.style.setProperty("--pin-width", Math.round(rect.width) + "px");
+        panel.style.setProperty("--pin-top", topOffset + "px");
       });
     }
 
@@ -330,8 +343,28 @@
 
       var currentY = window.scrollY;
       panels.forEach(function (panel) {
+        if (panel.getAttribute("data-pin-disabled") === "1") {
+          panel.classList.remove("is-pinned");
+          panel.style.setProperty("--pin-top", topOffset + "px");
+          return;
+        }
+
         var startY = Number(panel.getAttribute("data-pin-start") || "0");
-        panel.classList.toggle("is-pinned", currentY >= startY);
+        var endY = Number(panel.getAttribute("data-pin-end") || String(startY));
+
+        if (currentY < startY) {
+          panel.classList.remove("is-pinned");
+          panel.style.setProperty("--pin-top", topOffset + "px");
+          return;
+        }
+
+        panel.classList.add("is-pinned");
+
+        if (currentY <= endY) {
+          panel.style.setProperty("--pin-top", topOffset + "px");
+        } else {
+          panel.style.setProperty("--pin-top", topOffset - (currentY - endY) + "px");
+        }
       });
     }
 

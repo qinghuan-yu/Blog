@@ -513,8 +513,9 @@ button {
   top: 102px;
   align-self: start;
   width: var(--side-card-width);
-  height: calc(100vh - 118px);
   max-height: calc(100vh - 118px);
+  display: flex;
+  flex-direction: column;
   overflow: visible;
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
@@ -529,7 +530,6 @@ button {
   flex-direction: column;
   min-height: 0;
   flex: 1;
-  height: 100%;
   overflow: auto;
   overscroll-behavior: contain;
   padding: 20px;
@@ -644,8 +644,9 @@ button {
   top: 102px;
   align-self: start;
   width: var(--side-card-width);
-  height: calc(100vh - 118px);
   max-height: calc(100vh - 118px);
+  display: flex;
+  flex-direction: column;
   overflow: visible;
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
@@ -657,7 +658,7 @@ button {
 .doc-directory.is-pinned,
 .doc-page-toc.is-pinned {
   position: fixed;
-  top: 102px;
+  top: var(--pin-top, 102px);
   left: var(--pin-left, auto);
   width: var(--pin-width, var(--side-card-width));
   right: auto;

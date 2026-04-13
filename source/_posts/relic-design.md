@@ -1,9 +1,8 @@
 ---
 title: "Relic Data Hub 架构设计"
 date: "2026-02-01"
-desc: "关于本网站的 PixiJS 全局单例架构与 Vue 路由系统的深度整合记录。"
-cover: /images/covers/relic.svg
-tags: ["Design", "PixiJS", "Architecture"]
+desc: "关于主网站的 PixiJS 全局单例架构与 Vue 路由系统的深度整合记录。"
+tags: ["网页设计","PixiJS"]
 ---
 
 # Relic Data Hub 架构
