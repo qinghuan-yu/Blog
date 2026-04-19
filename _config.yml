@@ -50,6 +50,8 @@ highlight:
   tab_replace: ''
   wrap: true
   hljs: false
+marked:
+  math: true
 prismjs:
   preprocess: true
   line_number: true
