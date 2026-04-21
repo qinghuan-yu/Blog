@@ -51,6 +51,8 @@ highlight:
   wrap: true
   hljs: false
 marked:
+  breaks: false
+  smartypants: false
   math: true
 prismjs:
   preprocess: true
