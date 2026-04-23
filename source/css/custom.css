@@ -671,6 +671,11 @@ button {
 
 .doc-content {
   font-size: 1rem;
+  min-width: 0;
+}
+
+.doc-page-main {
+  min-width: 0;
 }
 
 .doc-content h2,
@@ -719,12 +724,60 @@ button {
 
 .doc-content pre,
 .doc-content .highlight {
+  max-width: 100%;
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   padding: 16px 18px;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   background: #13202a;
   color: #edf5f6;
+}
+
+.doc-content .highlight pre {
+  margin: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.doc-content .highlight table {
+  width: auto;
+  margin: 0;
+  border-collapse: separate;
+}
+
+.doc-content .highlight td,
+.doc-content .highlight th {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.doc-content .highlight .gutter {
+  user-select: none;
+}
+
+.doc-content .highlight .gutter pre {
+  padding-right: 14px;
+  color: rgba(237, 245, 246, 0.45);
+  text-align: right;
+}
+
+.doc-content mjx-container[jax="CHTML"] {
+  max-width: 100%;
+}
+
+.doc-content mjx-container[jax="CHTML"][display="true"],
+.doc-content .MathJax_Display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: 0.9em 0;
+  padding-bottom: 2px;
 }
 
 .doc-content pre code,
@@ -854,5 +907,22 @@ button {
   .doc-page-main {
     padding-top: 24px;
     padding-bottom: 24px;
+  }
+
+  .doc-content pre,
+  .doc-content .highlight {
+    padding: 12px 12px;
+    font-size: clamp(12px, 3.2vw, 14px);
+    line-height: 1.55;
+    border-radius: 12px;
+  }
+
+  .doc-content mjx-container[jax="CHTML"][display="true"],
+  .doc-content .MathJax_Display {
+    margin: 0.75em 0;
+  }
+
+  .doc-content .highlight .gutter pre {
+    padding-right: 10px;
   }
 }
