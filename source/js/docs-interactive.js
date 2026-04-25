@@ -201,13 +201,27 @@
 
     var content = tocRoot.querySelector("[data-doc-content]");
     var tocList = tocRoot.querySelector("[data-toc-list]");
+    var mobileTrigger = tocRoot.querySelector("[data-mobile-toc-trigger]");
     if (!content || !tocList) {
       return;
     }
 
     var headings = Array.prototype.slice.call(content.querySelectorAll("h2, h3"));
     if (!headings.length) {
+      if (mobileTrigger) {
+        mobileTrigger.hidden = true;
+        mobileTrigger.setAttribute("aria-expanded", "false");
+      }
+      var mobilePanel = tocRoot.querySelector(".doc-page-toc");
+      if (mobilePanel) {
+        mobilePanel.setAttribute("aria-hidden", "true");
+      }
+      tocRoot.classList.remove("is-mobile-toc-open");
       return;
+    }
+
+    if (mobileTrigger) {
+      mobileTrigger.hidden = false;
     }
 
     function keepActiveLinkVisible(activeLink) {
@@ -280,6 +294,83 @@
 
     headings.forEach(function (heading) {
       observer.observe(heading);
+    });
+  }
+
+  function initMobileTocDrawer() {
+    var tocRoots = Array.prototype.slice.call(document.querySelectorAll("[data-doc-toc-root]"));
+    if (!tocRoots.length) {
+      return;
+    }
+
+    var mobileQuery = window.matchMedia("(max-width: 1080px)");
+
+    tocRoots.forEach(function (root) {
+      var trigger = root.querySelector("[data-mobile-toc-trigger]");
+      var mask = root.querySelector("[data-mobile-toc-mask]");
+      var closeBtn = root.querySelector("[data-mobile-toc-close]");
+      var tocPanel = root.querySelector(".doc-page-toc");
+      var tocList = root.querySelector("[data-toc-list]");
+
+      if (!trigger || !mask || !tocPanel) {
+        return;
+      }
+
+      function syncBodyLock() {
+        var hasOpen = document.querySelector("[data-doc-toc-root].is-mobile-toc-open") !== null;
+        document.body.classList.toggle("is-mobile-toc-open", hasOpen);
+      }
+
+      function setOpen(open) {
+        var canOpen = mobileQuery.matches && !trigger.hidden;
+        var shouldOpen = Boolean(open && canOpen);
+        root.classList.toggle("is-mobile-toc-open", shouldOpen);
+        syncBodyLock();
+        trigger.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+        tocPanel.setAttribute("aria-hidden", shouldOpen ? "false" : "true");
+        mask.hidden = !shouldOpen;
+      }
+
+      trigger.addEventListener("click", function () {
+        setOpen(true);
+      });
+
+      mask.addEventListener("click", function () {
+        setOpen(false);
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener("click", function () {
+          setOpen(false);
+        });
+      }
+
+      if (tocList) {
+        tocList.addEventListener("click", function (event) {
+          if (event.target.closest("a")) {
+            setOpen(false);
+          }
+        });
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          setOpen(false);
+        }
+      });
+
+      function syncByViewport() {
+        if (!mobileQuery.matches) {
+          setOpen(false);
+        }
+      }
+
+      window.addEventListener("resize", syncByViewport, { passive: true });
+      if (mobileQuery.addEventListener) {
+        mobileQuery.addEventListener("change", syncByViewport);
+      }
+
+      setOpen(false);
     });
   }
 
@@ -390,6 +481,7 @@
     initPanelScrollGuards();
     initHomeFilters();
     initToc();
+    initMobileTocDrawer();
     initHomeHeaderMotion();
     initSidebarPinning();
   }

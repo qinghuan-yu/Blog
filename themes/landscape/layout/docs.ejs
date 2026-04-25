@@ -9,14 +9,20 @@
     </div>
   </section>
 
-  <aside class="doc-page-toc" aria-label="本页目录">
+  <aside class="doc-page-toc" aria-label="本页目录" id="mobile-toc-panel" aria-hidden="false">
     <div class="doc-page-toc-inner">
-      <p class="section-kicker">On This Page</p>
+      <div class="doc-page-toc-head">
+        <p class="section-kicker">On This Page</p>
+        <button class="doc-mobile-toc-close" type="button" data-mobile-toc-close aria-label="关闭目录">关闭</button>
+      </div>
       <h2>目录</h2>
       <div class="doc-toc-list" data-toc-list>
         <p class="doc-toc-empty">当前页面没有可用目录。</p>
       </div>
     </div>
   </aside>
+
+  <button class="doc-mobile-toc-trigger" type="button" data-mobile-toc-trigger aria-controls="mobile-toc-panel" aria-expanded="false">目录</button>
+  <div class="doc-mobile-toc-mask" data-mobile-toc-mask hidden></div>
 </article>
 
