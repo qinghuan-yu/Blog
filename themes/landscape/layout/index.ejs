@@ -49,7 +49,7 @@
     </div>
   </section>
 
-  <div class="doc-home-grid" data-home-root>
+  <div class="doc-home-grid" data-home-root data-home-directory-root>
     <section class="doc-feed">
       <% posts.forEach(function(post, index){
         var tagList = post.tags ? post.tags.toArray() : [];
@@ -79,9 +79,12 @@
       <div class="doc-empty-state" data-empty-state hidden>当前筛选下没有文章。</div>
     </section>
 
-    <aside class="doc-directory" aria-label="文章目录">
+    <aside class="doc-directory" aria-label="文章目录" aria-hidden="true">
       <div class="doc-directory-inner">
-        <p class="section-kicker">Directory</p>
+        <div class="doc-page-toc-head">
+          <p class="section-kicker">Directory</p>
+          <button class="doc-mobile-toc-close" type="button" data-mobile-directory-close aria-label="关闭目录">关闭</button>
+        </div>
         <h2>目录</h2>
         <nav class="doc-directory-list" data-directory-list>
           <% posts.forEach(function(post, index){
@@ -93,5 +96,8 @@
         </nav>
       </div>
     </aside>
+
+    <button class="doc-mobile-toc-trigger" type="button" data-mobile-directory-trigger aria-expanded="false">目录</button>
+    <div class="doc-mobile-toc-mask" data-mobile-directory-mask hidden></div>
   </div>
 </section>

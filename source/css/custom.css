@@ -886,20 +886,18 @@ button {
   }
 
   .doc-mobile-toc-mask {
-    display: none;
     position: fixed;
     inset: 0;
     z-index: 60;
     background: rgba(10, 18, 26, 0.35);
-    opacity: 1;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
   }
 
-  .doc-page-toc {
-    display: none;
-  }
-
-  .doc-page-layout.is-mobile-toc-open .doc-page-toc,
-  [data-doc-toc-root].is-mobile-toc-open .doc-page-toc {
+  .doc-page-toc,
+  .doc-directory {
     position: fixed;
     left: 50%;
     right: auto;
@@ -909,17 +907,44 @@ button {
     flex-direction: column;
     width: min(92vw, 560px);
     max-height: min(66vh, 560px);
-    transform: translateX(-50%);
+    transform: translate(-50%, 28px) scale(0.985);
     border: 1px solid var(--line);
-    border-radius: 18px;
-    background: var(--panel-strong);
+    border-radius: 22px;
+    background: #fbfaf7;
     box-shadow: 0 -12px 36px rgba(21, 32, 43, 0.18);
     overflow: hidden;
-    animation: toc-sheet-up 0.18s ease-out;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.45s ease,
+      visibility 0s linear 1s;
+  }
+
+  .doc-page-layout.is-mobile-toc-open .doc-page-toc,
+  [data-doc-toc-root].is-mobile-toc-open .doc-page-toc,
+  .doc-home-grid.is-mobile-toc-open .doc-directory,
+  [data-home-directory-root].is-mobile-toc-open .doc-directory {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+      transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.45s ease,
+      visibility 0s linear 0s;
   }
 
   .doc-page-layout.is-mobile-toc-open .doc-page-toc-inner,
-  [data-doc-toc-root].is-mobile-toc-open .doc-page-toc-inner {
+  [data-doc-toc-root].is-mobile-toc-open .doc-page-toc-inner,
+  .doc-home-grid.is-mobile-toc-open .doc-directory-inner,
+  [data-home-directory-root].is-mobile-toc-open .doc-directory-inner {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
     padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
     max-height: min(72vh, 620px);
     overflow: auto;
@@ -931,26 +956,22 @@ button {
   }
 
   .doc-page-layout.is-mobile-toc-open .doc-mobile-toc-trigger,
-  [data-doc-toc-root].is-mobile-toc-open .doc-mobile-toc-trigger {
+  [data-doc-toc-root].is-mobile-toc-open .doc-mobile-toc-trigger,
+  .doc-home-grid.is-mobile-toc-open .doc-mobile-toc-trigger,
+  [data-home-directory-root].is-mobile-toc-open .doc-mobile-toc-trigger {
     opacity: 0;
     pointer-events: none;
     transform: translateY(10px);
   }
 
   .doc-page-layout.is-mobile-toc-open .doc-mobile-toc-mask,
-  [data-doc-toc-root].is-mobile-toc-open .doc-mobile-toc-mask {
-    display: block;
-  }
-
-  @keyframes toc-sheet-up {
-    from {
-      transform: translate(-50%, 20px);
-      opacity: 0.85;
-    }
-    to {
-      transform: translate(-50%, 0);
-      opacity: 1;
-    }
+  [data-doc-toc-root].is-mobile-toc-open .doc-mobile-toc-mask,
+  .doc-home-grid.is-mobile-toc-open .doc-mobile-toc-mask,
+  [data-home-directory-root].is-mobile-toc-open .doc-mobile-toc-mask {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.3s ease, visibility 0s linear 0s;
   }
 
   .hero-banner {
