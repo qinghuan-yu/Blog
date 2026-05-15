@@ -63,6 +63,21 @@
     return null;
   }
 
+  function scheduleFrame(callback) {
+    var frameId = 0;
+
+    return function () {
+      if (frameId) {
+        return;
+      }
+
+      frameId = window.requestAnimationFrame(function () {
+        frameId = 0;
+        callback();
+      });
+    };
+  }
+
   function initPanelScrollGuards() {
     var guardedPanels = [];
 
@@ -298,123 +313,74 @@
   }
 
   function initMobileTocDrawer() {
-    var tocRoots = Array.prototype.slice.call(document.querySelectorAll("[data-doc-toc-root]"));
-    if (!tocRoots.length) {
-      return;
-    }
-
-    var mobileQuery = window.matchMedia("(max-width: 1080px)");
-
-    tocRoots.forEach(function (root) {
-      var trigger = root.querySelector("[data-mobile-toc-trigger]");
-      var mask = root.querySelector("[data-mobile-toc-mask]");
-      var closeBtn = root.querySelector("[data-mobile-toc-close]");
-      var tocPanel = root.querySelector(".doc-page-toc");
-      var tocList = root.querySelector("[data-toc-list]");
-
-      if (!trigger || !mask || !tocPanel) {
-        return;
-      }
-
-      function syncBodyLock() {
-        var hasOpen = document.querySelector("[data-doc-toc-root].is-mobile-toc-open") !== null;
-        document.body.classList.toggle("is-mobile-toc-open", hasOpen);
-      }
-
-      function setOpen(open) {
-        var canOpen = mobileQuery.matches && !trigger.hidden;
-        var shouldOpen = Boolean(open && canOpen);
-        root.classList.toggle("is-mobile-toc-open", shouldOpen);
-        syncBodyLock();
-        trigger.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
-        tocPanel.setAttribute("aria-hidden", shouldOpen ? "false" : "true");
-        mask.hidden = !shouldOpen;
-      }
-
-      trigger.addEventListener("click", function () {
-        setOpen(true);
-      });
-
-      mask.addEventListener("click", function () {
-        setOpen(false);
-      });
-
-      if (closeBtn) {
-        closeBtn.addEventListener("click", function () {
-          setOpen(false);
-        });
-      }
-
-      if (tocList) {
-        tocList.addEventListener("click", function (event) {
-          if (event.target.closest("a")) {
-            setOpen(false);
-          }
-        });
-      }
-
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-          setOpen(false);
-        }
-      });
-
-      function syncByViewport() {
-        if (!mobileQuery.matches) {
-          setOpen(false);
-        }
-      }
-
-      window.addEventListener("resize", syncByViewport, { passive: true });
-      if (mobileQuery.addEventListener) {
-        mobileQuery.addEventListener("change", syncByViewport);
-      }
-
-      setOpen(false);
+    initMobileDrawerGroup({
+      rootSelector: "[data-doc-toc-root]",
+      triggerSelector: "[data-mobile-toc-trigger]",
+      maskSelector: "[data-mobile-toc-mask]",
+      closeSelector: "[data-mobile-toc-close]",
+      panelSelector: ".doc-page-toc",
+      listSelector: "[data-toc-list]",
     });
   }
 
   function initMobileDirectoryDrawer() {
-    var homeRoots = Array.prototype.slice.call(document.querySelectorAll("[data-home-directory-root]"));
-    if (!homeRoots.length) {
+    initMobileDrawerGroup({
+      rootSelector: "[data-home-directory-root]",
+      triggerSelector: "[data-mobile-directory-trigger]",
+      maskSelector: "[data-mobile-directory-mask]",
+      closeSelector: "[data-mobile-directory-close]",
+      panelSelector: ".doc-directory",
+      listSelector: "[data-directory-list]",
+      requireVisibleItems: true,
+    });
+  }
+
+  function syncMobileBodyLock() {
+    var hasOpen =
+      document.querySelector("[data-doc-toc-root].is-mobile-toc-open") !== null ||
+      document.querySelector("[data-home-directory-root].is-mobile-toc-open") !== null;
+    document.body.classList.toggle("is-mobile-toc-open", hasOpen);
+  }
+
+  function initMobileDrawerGroup(options) {
+    var roots = Array.prototype.slice.call(document.querySelectorAll(options.rootSelector));
+    if (!roots.length) {
       return;
     }
 
     var mobileQuery = window.matchMedia("(max-width: 1080px)");
 
-    homeRoots.forEach(function (root) {
-      var trigger = root.querySelector("[data-mobile-directory-trigger]");
-      var mask = root.querySelector("[data-mobile-directory-mask]");
-      var closeBtn = root.querySelector("[data-mobile-directory-close]");
-      var panel = root.querySelector(".doc-directory");
-      var list = root.querySelector("[data-directory-list]");
+    roots.forEach(function (root) {
+      var trigger = root.querySelector(options.triggerSelector);
+      var mask = root.querySelector(options.maskSelector);
+      var closeBtn = root.querySelector(options.closeSelector);
+      var panel = root.querySelector(options.panelSelector);
+      var list = root.querySelector(options.listSelector);
 
-      if (!trigger || !mask || !panel || !list) {
+      if (!trigger || !mask || !panel || (options.requireVisibleItems && !list)) {
         return;
       }
 
-      function syncBodyLock() {
-        var hasOpen =
-          document.querySelector("[data-doc-toc-root].is-mobile-toc-open") !== null ||
-          document.querySelector("[data-home-directory-root].is-mobile-toc-open") !== null;
-        document.body.classList.toggle("is-mobile-toc-open", hasOpen);
+      function hasVisibleItems() {
+        return !options.requireVisibleItems || (list && list.querySelector("a:not([hidden])") !== null);
       }
 
       function setOpen(open) {
-        var hasItems = list.querySelector("a:not([hidden])") !== null;
-        var canOpen = mobileQuery.matches && !trigger.hidden && hasItems;
-        var shouldOpen = Boolean(open && canOpen);
+        var shouldOpen = Boolean(open && mobileQuery.matches && !trigger.hidden && hasVisibleItems());
         root.classList.toggle("is-mobile-toc-open", shouldOpen);
-        syncBodyLock();
+        syncMobileBodyLock();
         trigger.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
         panel.setAttribute("aria-hidden", shouldOpen ? "false" : "true");
         mask.hidden = !shouldOpen;
       }
 
       function syncTriggerVisibility() {
-        var hasItems = list.querySelector("a:not([hidden])") !== null;
-        trigger.hidden = !hasItems;
-        if (!hasItems) {
+        if (!options.requireVisibleItems) {
+          return;
+        }
+
+        trigger.hidden = !hasVisibleItems();
+        if (trigger.hidden) {
           setOpen(false);
         }
       }
@@ -433,11 +399,13 @@
         });
       }
 
-      list.addEventListener("click", function (event) {
-        if (event.target.closest("a")) {
-          setOpen(false);
-        }
-      });
+      if (list) {
+        list.addEventListener("click", function (event) {
+          if (event.target.closest("a")) {
+            setOpen(false);
+          }
+        });
+      }
 
       document.addEventListener("keydown", function (event) {
         if (event.key === "Escape") {
@@ -470,7 +438,9 @@
       document.body.classList.toggle("home-scrolled", window.scrollY > 36);
     }
 
-    window.addEventListener("scroll", syncHeaderState, { passive: true });
+    var scheduleHeaderState = scheduleFrame(syncHeaderState);
+
+    window.addEventListener("scroll", scheduleHeaderState, { passive: true });
     syncHeaderState();
   }
 
@@ -555,8 +525,11 @@
       syncPinnedState();
     }
 
-    window.addEventListener("scroll", syncPinnedState, { passive: true });
-    window.addEventListener("resize", refresh, { passive: true });
+    var schedulePinnedState = scheduleFrame(syncPinnedState);
+    var scheduleRefresh = scheduleFrame(refresh);
+
+    window.addEventListener("scroll", schedulePinnedState, { passive: true });
+    window.addEventListener("resize", scheduleRefresh, { passive: true });
     if (desktopQuery.addEventListener) {
       desktopQuery.addEventListener("change", refresh);
     }

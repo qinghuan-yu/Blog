@@ -1,6 +1,17 @@
 <%
   var posts = page.posts ? page.posts.toArray() : [];
   var tags = site.tags ? site.tags.toArray().sort(function(a, b){ return a.name.localeCompare(b.name); }) : [];
+  var postEntries = posts.map(function(post, index){
+    var tagList = post.tags ? post.tags.toArray() : [];
+    var tagNames = tagList.map(function(tag){ return tag.name; });
+    return {
+      post: post,
+      tagList: tagList,
+      tagNames: tagNames,
+      summary: post.desc || post.excerpt || '',
+      anchorId: 'doc-' + (post.slug || ('post-' + index))
+    };
+  });
 %>
 
 <section class="doc-home">
@@ -9,7 +20,7 @@
       <p class="hero-kicker">Knowledge Base</p>
       <h1><%= config.title %></h1>
       <div class="hero-subline">
-        <p class="hero-text"><%= config.description || config.subtitle || '按主题沉淀文章，像文档一样浏览与定位。' %></p>
+        <p class="hero-text"><%= config.description || config.subtitle || "按主题沉淀文章，像文档一样浏览与定位。" %></p>
       </div>
       <div class="hero-bottom">
         <div class="hero-meta">
@@ -51,25 +62,21 @@
 
   <div class="doc-home-grid" data-home-root data-home-directory-root>
     <section class="doc-feed">
-      <% posts.forEach(function(post, index){
-        var tagList = post.tags ? post.tags.toArray() : [];
-        var summary = post.desc || post.excerpt || '';
-        var anchorId = 'doc-' + (post.slug || ('post-' + index));
-      %>
-        <article class="doc-card" id="<%= anchorId %>" data-doc-card data-card-tags="<%= tagList.map(function(tag){ return tag.name; }).join('|') %>">
+      <% postEntries.forEach(function(entry){ %>
+        <article class="doc-card" id="<%= entry.anchorId %>" data-doc-card data-card-tags="<%= entry.tagNames.join('|') %>">
           <div class="doc-card-meta">
-            <span><%= post.date.format('YYYY-MM-DD') %></span>
-            <% if (tagList.length) { %>
-              <span><%= tagList.length %> 个标签</span>
+            <span><%= entry.post.date.format('YYYY-MM-DD') %></span>
+            <% if (entry.tagList.length) { %>
+              <span><%= entry.tagList.length %> 个标签</span>
             <% } %>
           </div>
-          <h3><a href="<%- url_for(post.path) %>"><%= post.title %></a></h3>
-          <% if (summary) { %>
-            <div class="doc-card-summary"><%- summary %></div>
+          <h3><a href="<%- url_for(entry.post.path) %>"><%= entry.post.title %></a></h3>
+          <% if (entry.summary) { %>
+            <div class="doc-card-summary"><%- entry.summary %></div>
           <% } %>
-          <% if (tagList.length) { %>
+          <% if (entry.tagList.length) { %>
             <div class="doc-card-tags">
-              <% tagList.forEach(function(tag){ %>
+              <% entry.tagList.forEach(function(tag){ %>
                 <button class="doc-tag" type="button" data-filter-tag="<%= tag.name %>"><%= tag.name %></button>
               <% }) %>
             </div>
@@ -87,11 +94,8 @@
         </div>
         <h2>目录</h2>
         <nav class="doc-directory-list" data-directory-list>
-          <% posts.forEach(function(post, index){
-            var tagList = post.tags ? post.tags.toArray() : [];
-            var anchorId = 'doc-' + (post.slug || ('post-' + index));
-          %>
-            <a href="#<%= anchorId %>" data-directory-item data-card-tags="<%= tagList.map(function(tag){ return tag.name; }).join('|') %>"><%= post.title %></a>
+          <% postEntries.forEach(function(entry){ %>
+            <a href="#<%= entry.anchorId %>" data-directory-item data-card-tags="<%= entry.tagNames.join('|') %>"><%= entry.post.title %></a>
           <% }) %>
         </nav>
       </div>
