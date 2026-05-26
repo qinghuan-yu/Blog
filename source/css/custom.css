@@ -201,7 +201,7 @@ button {
   border-top: 0;
   background:
     linear-gradient(148deg, rgba(11, 20, 28, 0.34), rgba(11, 20, 28, 0.72)),
-    url("/images/title.png") center 18% / cover no-repeat;
+    url("/images/title.webp") center 18% / cover no-repeat;
 }
 
 .hero-banner::before {
@@ -209,7 +209,7 @@ button {
   position: absolute;
   inset: -3%;
   z-index: -2;
-  background: url("/images/title.png") center/cover no-repeat;
+  background: url("/images/title.webp") center/cover no-repeat;
   filter: blur(8px);
   opacity: 0.35;
   transform: scale(1.06);
@@ -653,15 +653,6 @@ button {
   background: var(--panel);
   box-shadow: var(--shadow);
   z-index: 12;
-}
-
-.doc-directory.is-pinned,
-.doc-page-toc.is-pinned {
-  position: fixed;
-  top: var(--pin-top, 102px);
-  left: var(--pin-left, auto);
-  width: var(--pin-width, var(--side-card-width));
-  right: auto;
 }
 
 .doc-toc-list .lv3 {

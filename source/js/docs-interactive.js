@@ -25,44 +25,6 @@
       .replace(/\s+/g, "-");
   }
 
-  function bindPanelWheelScroll(panel, scrollList) {
-    if (!panel || !scrollList) {
-      return;
-    }
-
-    panel.addEventListener(
-      "wheel",
-      function (event) {
-        if (!panel.contains(event.target)) {
-          return;
-        }
-
-        var canScroll = scrollList.scrollHeight > scrollList.clientHeight;
-        if (!canScroll) {
-          return;
-        }
-
-        event.preventDefault();
-        var nextTop = scrollList.scrollTop + event.deltaY;
-        var maxTop = scrollList.scrollHeight - scrollList.clientHeight;
-        scrollList.scrollTop = Math.max(0, Math.min(nextTop, maxTop));
-      },
-      { passive: false }
-    );
-  }
-
-  function getScrollableTarget(panel, preferredList) {
-    if (preferredList && preferredList.scrollHeight > preferredList.clientHeight) {
-      return preferredList;
-    }
-
-    if (panel && panel.scrollHeight > panel.clientHeight) {
-      return panel;
-    }
-
-    return null;
-  }
-
   function scheduleFrame(callback) {
     var frameId = 0;
 
@@ -76,70 +38,6 @@
         callback();
       });
     };
-  }
-
-  function initPanelScrollGuards() {
-    var guardedPanels = [];
-
-    Array.prototype.slice.call(document.querySelectorAll(".doc-page-toc")).forEach(function (panel) {
-      var list = panel.querySelector("[data-toc-list]");
-      if (list) {
-        bindPanelWheelScroll(panel, list);
-        guardedPanels.push({ panel: panel, list: list });
-      }
-    });
-
-    Array.prototype.slice.call(document.querySelectorAll(".doc-directory")).forEach(function (panel) {
-      var list = panel.querySelector("[data-directory-list]");
-      if (list) {
-        bindPanelWheelScroll(panel, list);
-        guardedPanels.push({ panel: panel, list: list });
-      }
-    });
-
-    if (!guardedPanels.length) {
-      return;
-    }
-
-    var activePanelIndex = -1;
-
-    guardedPanels.forEach(function (item, index) {
-      item.panel.addEventListener("mouseenter", function () {
-        activePanelIndex = index;
-      });
-
-      item.panel.addEventListener("mouseleave", function () {
-        if (activePanelIndex === index) {
-          activePanelIndex = -1;
-        }
-      });
-    });
-
-    document.addEventListener(
-      "wheel",
-      function (event) {
-        if (activePanelIndex < 0) {
-          return;
-        }
-
-        var current = guardedPanels[activePanelIndex];
-        if (!current || !current.panel.matches(":hover")) {
-          activePanelIndex = -1;
-          return;
-        }
-
-        var target = getScrollableTarget(current.panel, current.list);
-        if (!target) {
-          return;
-        }
-
-        event.preventDefault();
-        var nextTop = target.scrollTop + event.deltaY;
-        var maxTop = target.scrollHeight - target.clientHeight;
-        target.scrollTop = Math.max(0, Math.min(nextTop, maxTop));
-      },
-      { passive: false, capture: true }
-    );
   }
 
   function initHomeFilters() {
@@ -444,107 +342,12 @@
     syncHeaderState();
   }
 
-  function initSidebarPinning() {
-    var panels = Array.prototype.slice.call(document.querySelectorAll(".doc-directory, .doc-page-toc"));
-    if (!panels.length) {
-      return;
-    }
-
-    var desktopQuery = window.matchMedia("(min-width: 1081px)");
-    var topOffset = 102;
-
-    function clearPinnedState() {
-      panels.forEach(function (panel) {
-        panel.classList.remove("is-pinned");
-        panel.style.setProperty("--pin-top", topOffset + "px");
-      });
-    }
-
-    function measureStartPositions() {
-      clearPinnedState();
-      panels.forEach(function (panel) {
-        var container = panel.closest(".doc-home-grid, .doc-page-layout");
-        var rect = panel.getBoundingClientRect();
-        var startY = window.scrollY + rect.top - topOffset;
-        var startRounded = Math.max(0, Math.round(startY));
-        var containerBottom = container
-          ? window.scrollY + container.getBoundingClientRect().bottom
-          : window.scrollY + rect.bottom;
-        var panelHeight = rect.height;
-        var endY = Math.round(containerBottom - topOffset - panelHeight);
-        var pinRange = endY - startRounded;
-
-        panel.setAttribute("data-pin-start", String(startRounded));
-        panel.setAttribute("data-pin-end", String(Math.max(startRounded, endY)));
-        panel.setAttribute("data-pin-disabled", pinRange <= 0 ? "1" : "0");
-        panel.style.setProperty("--pin-left", Math.round(rect.left) + "px");
-        panel.style.setProperty("--pin-width", Math.round(rect.width) + "px");
-        panel.style.setProperty("--pin-top", topOffset + "px");
-      });
-    }
-
-    function syncPinnedState() {
-      if (!desktopQuery.matches) {
-        clearPinnedState();
-        return;
-      }
-
-      var currentY = window.scrollY;
-      panels.forEach(function (panel) {
-        if (panel.getAttribute("data-pin-disabled") === "1") {
-          panel.classList.remove("is-pinned");
-          panel.style.setProperty("--pin-top", topOffset + "px");
-          return;
-        }
-
-        var startY = Number(panel.getAttribute("data-pin-start") || "0");
-        var endY = Number(panel.getAttribute("data-pin-end") || String(startY));
-
-        if (currentY < startY) {
-          panel.classList.remove("is-pinned");
-          panel.style.setProperty("--pin-top", topOffset + "px");
-          return;
-        }
-
-        panel.classList.add("is-pinned");
-
-        if (currentY <= endY) {
-          panel.style.setProperty("--pin-top", topOffset + "px");
-        } else {
-          panel.style.setProperty("--pin-top", topOffset - (currentY - endY) + "px");
-        }
-      });
-    }
-
-    function refresh() {
-      if (!desktopQuery.matches) {
-        clearPinnedState();
-        return;
-      }
-      measureStartPositions();
-      syncPinnedState();
-    }
-
-    var schedulePinnedState = scheduleFrame(syncPinnedState);
-    var scheduleRefresh = scheduleFrame(refresh);
-
-    window.addEventListener("scroll", schedulePinnedState, { passive: true });
-    window.addEventListener("resize", scheduleRefresh, { passive: true });
-    if (desktopQuery.addEventListener) {
-      desktopQuery.addEventListener("change", refresh);
-    }
-
-    refresh();
-  }
-
   function init() {
-    initPanelScrollGuards();
     initHomeFilters();
     initToc();
     initMobileTocDrawer();
     initMobileDirectoryDrawer();
     initHomeHeaderMotion();
-    initSidebarPinning();
   }
 
   if (document.readyState === "loading") {
