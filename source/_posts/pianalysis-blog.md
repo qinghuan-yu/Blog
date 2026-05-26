@@ -2,7 +2,7 @@
 title: "关于Pianalysis的训练日志"
 date: "2026-04-14"
 desc: "关于Pianalysis项目的细节披露和内容记录"
-tags: ["深度学习"]
+tags: ["深度学习","项目"]
 ---
 
 # Pianalysis 项目日志：从单旋律到复调钢琴生成的实践复盘
