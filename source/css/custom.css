@@ -655,6 +655,15 @@ button {
   z-index: 12;
 }
 
+.doc-directory.is-docked,
+.doc-page-toc.is-docked {
+  position: fixed;
+  top: var(--dock-top, 102px);
+  left: var(--dock-left);
+  width: var(--dock-width, var(--side-card-width));
+  max-height: calc(100vh - var(--dock-top, 102px) - 16px);
+}
+
 .doc-toc-list .lv3 {
   padding-left: 24px;
   font-size: 0.92rem;

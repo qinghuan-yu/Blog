@@ -342,12 +342,78 @@
     syncHeaderState();
   }
 
+  function initSidebarDocking() {
+    var panels = Array.prototype.slice.call(document.querySelectorAll(".doc-directory, .doc-page-toc"));
+    if (!panels.length) {
+      return;
+    }
+
+    var desktopQuery = window.matchMedia("(min-width: 1081px)");
+    var topOffset = 102;
+
+    function clearDock(panel) {
+      panel.classList.remove("is-docked");
+      panel.style.removeProperty("--dock-left");
+      panel.style.removeProperty("--dock-width");
+      panel.style.removeProperty("--dock-top");
+    }
+
+    function measurePanel(panel) {
+      clearDock(panel);
+
+      var rect = panel.getBoundingClientRect();
+      panel.setAttribute("data-dock-start", String(Math.max(0, Math.round(window.scrollY + rect.top - topOffset))));
+      panel.style.setProperty("--dock-left", Math.round(rect.left) + "px");
+      panel.style.setProperty("--dock-width", Math.round(rect.width) + "px");
+      panel.style.setProperty("--dock-top", topOffset + "px");
+    }
+
+    function refreshDocking() {
+      panels.forEach(function (panel) {
+        if (!desktopQuery.matches) {
+          clearDock(panel);
+          panel.removeAttribute("data-dock-start");
+          return;
+        }
+
+        measurePanel(panel);
+      });
+
+      syncDocking();
+    }
+
+    function syncDocking() {
+      if (!desktopQuery.matches) {
+        panels.forEach(clearDock);
+        return;
+      }
+
+      panels.forEach(function (panel) {
+        var start = Number(panel.getAttribute("data-dock-start") || "0");
+        panel.classList.toggle("is-docked", window.scrollY >= start);
+      });
+    }
+
+    var scheduleRefreshDocking = scheduleFrame(refreshDocking);
+    var scheduleSyncDocking = scheduleFrame(syncDocking);
+
+    window.addEventListener("scroll", scheduleSyncDocking, { passive: true });
+    window.addEventListener("resize", scheduleRefreshDocking, { passive: true });
+    window.addEventListener("load", scheduleRefreshDocking, { once: true });
+    if (desktopQuery.addEventListener) {
+      desktopQuery.addEventListener("change", refreshDocking);
+    }
+
+    refreshDocking();
+  }
+
   function init() {
     initHomeFilters();
     initToc();
     initMobileTocDrawer();
     initMobileDirectoryDrawer();
     initHomeHeaderMotion();
+    initSidebarDocking();
   }
 
   if (document.readyState === "loading") {
