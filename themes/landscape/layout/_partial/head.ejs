@@ -46,5 +46,5 @@
     </script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   <% } %>
-  <%- css('css/custom') %>
+  <link rel="stylesheet" href="<%- url_for('/css/custom.css') %>?v=<%= config.asset_version || 'dev' %>">
 </head>

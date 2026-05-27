@@ -26,6 +26,6 @@
     </footer>
   </div>
 
-  <%- js('js/docs-interactive') %>
+  <script src="<%- url_for('/js/docs-interactive.js') %>?v=<%= config.asset_version || 'dev' %>"></script>
 </body>
 </html>
