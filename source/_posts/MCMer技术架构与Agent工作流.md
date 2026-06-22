@@ -1,5 +1,5 @@
 ---
-title: "MCMer技术架构与 Agent 工作流解析"
+title: "MCMer解析"
 date: "2026-05-16"
 desc: "关于MCMer的技术解析。"
 tags: ["Agent","项目"]

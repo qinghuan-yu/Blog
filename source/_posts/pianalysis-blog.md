@@ -1,8 +1,8 @@
 ---
-title: "Pianalysis 技术解析：从旋律 MIDI 到风格化钢琴伴奏生成"
+title: "Pianalysis 解析"
 date: "2026-06-10"
-desc: "一次从数据清洗、旋律抽取、token 设计、条件训练到 MIDI 生成闭环的完整工程复盘"
-tags: ["深度学习","符号音乐生成","Transformer","MIDI","项目"]
+desc: "闭环的完整工程复盘"
+tags: ["深度学习","Transformer","项目"]
 ---
 
 # Pianalysis 技术解析：从旋律 MIDI 到风格化钢琴伴奏生成
