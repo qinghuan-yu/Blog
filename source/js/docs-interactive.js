@@ -210,6 +210,47 @@
     });
   }
 
+  function initHomeDirectoryTracking() {
+    var homeRoot = document.querySelector("[data-home-directory-root]");
+    if (!homeRoot) {
+      return;
+    }
+
+    var cards = Array.prototype.slice.call(homeRoot.querySelectorAll("[data-doc-card]"));
+    var links = Array.prototype.slice.call(homeRoot.querySelectorAll("[data-directory-item]"));
+    if (!cards.length || !links.length) {
+      return;
+    }
+
+    function setActive(id) {
+      links.forEach(function (link) {
+        link.classList.toggle("is-active", link.getAttribute("href") === "#" + id);
+      });
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !entry.target.hidden) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-20% 0px -65% 0px", threshold: 0 }
+    );
+
+    cards.forEach(function (card) {
+      observer.observe(card);
+    });
+
+    var firstVisible = cards.find(function (card) {
+      return !card.hidden;
+    });
+    if (firstVisible) {
+      setActive(firstVisible.id);
+    }
+  }
+
   function initMobileTocDrawer() {
     initMobileDrawerGroup({
       rootSelector: "[data-doc-toc-root]",
@@ -246,7 +287,7 @@
       return;
     }
 
-    var mobileQuery = window.matchMedia("(max-width: 1080px)");
+    var mobileQuery = window.matchMedia("(max-width: 980px)");
 
     roots.forEach(function (root) {
       var trigger = root.querySelector(options.triggerSelector);
@@ -348,8 +389,8 @@
       return;
     }
 
-    var desktopQuery = window.matchMedia("(min-width: 1081px)");
-    var topOffset = 102;
+    var desktopQuery = window.matchMedia("(min-width: 981px)");
+    var topOffset = 24;
 
     function clearDock(panel) {
       panel.classList.remove("is-docked");
@@ -409,6 +450,7 @@
 
   function init() {
     initHomeFilters();
+    initHomeDirectoryTracking();
     initToc();
     initMobileTocDrawer();
     initMobileDirectoryDrawer();
