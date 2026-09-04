@@ -368,21 +368,6 @@
     });
   }
 
-  function initHomeHeaderMotion() {
-    if (!document.body.classList.contains("page-home")) {
-      return;
-    }
-
-    function syncHeaderState() {
-      document.body.classList.toggle("home-scrolled", window.scrollY > 36);
-    }
-
-    var scheduleHeaderState = scheduleFrame(syncHeaderState);
-
-    window.addEventListener("scroll", scheduleHeaderState, { passive: true });
-    syncHeaderState();
-  }
-
   function initSidebarDocking() {
     var panels = Array.prototype.slice.call(document.querySelectorAll(".doc-directory, .doc-page-toc"));
     if (!panels.length) {
@@ -454,7 +439,6 @@
     initToc();
     initMobileTocDrawer();
     initMobileDirectoryDrawer();
-    initHomeHeaderMotion();
     initSidebarDocking();
   }
 
