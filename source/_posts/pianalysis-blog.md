@@ -9,7 +9,7 @@ tags: ["深度学习","Transformer","项目"]
 
 ## 0. 写在前面
 
-Pianalysis 的目标可以用一句话概括：
+Pianalysis 的目标如下。
 
 > 输入一段旋律 MIDI，让模型补全钢琴伴奏织体，最后输出一份保留原旋律、带有风格化伴奏的 MIDI。
 
@@ -598,7 +598,7 @@ Minimum window length: 17 tokens
 Maximum window length: 1023 tokens
 ```
 
-这意味着现在的数据已经真正适配 `max_length=1024` 的 GPT-2 训练。
+现在的数据已经真正适配 `max_length=1024` 的 GPT-2 训练。
 
 ---
 
@@ -1043,7 +1043,7 @@ only-my-railgun
 
 ## 12. 总结
 
-Pianalysis 当前最大的进展不是生成质量已经多好，而是工程闭环真正成立了：
+Pianalysis 当前最大的进展是工程闭环真正成立了，生成质量还谈不上多好：
 
 ```text
 MIDI 数据
