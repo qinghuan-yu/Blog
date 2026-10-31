@@ -577,6 +577,35 @@ a:focus-visible {
 
 .doc-content > *:first-child { margin-top: 0; }
 
+/* 解释图直接复用正文的字体，包括页面已加载的中文字体。 */
+.doc-content .note-diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: var(--font-serif);
+}
+
+.doc-content .note-diagram g,
+.doc-content .note-diagram text {
+  font-family: inherit;
+}
+
+/* 文章页页脚分隔线与正文同宽，避开右侧目录列。 */
+.page-article .site-footer {
+  position: relative;
+  border-top: 0;
+}
+
+.page-article .site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(820px, calc(100% - var(--sidebar-width) - 48px - 36px));
+  height: 1px;
+  background: var(--line);
+}
+
 .doc-content h1,
 .doc-content h2,
 .doc-content h3,
@@ -688,6 +717,7 @@ a:focus-visible {
   body.is-mobile-toc-open { overflow: hidden; }
   .doc-home-grid, .doc-page-layout { grid-template-columns: 1fr; gap: 0; }
   .doc-page-main { padding-right: 0; }
+  .page-article .site-footer::before { width: min(820px, 100%); }
 
   .doc-directory,
   .doc-page-toc {
