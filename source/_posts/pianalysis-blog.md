@@ -13,7 +13,7 @@ Pianalysis 的目标如下。
 
 > 输入一段旋律 MIDI，让模型补全钢琴伴奏织体，最后输出一份保留原旋律、带有风格化伴奏的 MIDI。
 
-这不是音频生成任务，而是符号音乐生成任务。模型不直接预测波形，而是在 MIDI 事件被编码后的 token 序列上做条件生成。
+这是一个符号音乐生成任务：模型在 MIDI 事件编码后的 token 序列上做条件生成，直接输出符号化的伴奏事件。
 
 当前项目已经从最初的“无条件 GPT-2 音乐 token 续写”推进到了一个真正闭环的工程版本：
 
@@ -97,27 +97,16 @@ MIDI 文件虽然是结构化音乐数据，但它不是天然适合模型训练
 - velocity
 - tempo / time signature 等元事件
 
-它不会告诉我们：
+它不会直接标注：
 
-```text
-哪一个音是旋律？
-哪一些音是伴奏？
-哪一些音只是装饰音？
-哪个声部是主线？
-```
+- 哪一个音是旋律？
+- 哪一些音是伴奏？
+- 哪一些音只是装饰音？
+- 哪个声部是主线？
 
 对于钢琴独奏尤其麻烦。因为钢琴 MIDI 常常把右手旋律、右手分解和弦、左手低音、内声部全部混在一起。
 
-如果直接把完整 MIDI 当 target，而 source 又来自粗糙旋律抽取，模型会学到很多脏关系：
-
-```text
-错误旋律 -> 错误伴奏
-伴奏高音 -> 被误判为旋律
-旋律八度重复 -> 被错误拆分
-装饰音 -> 被当作主旋律
-```
-
-所以 Pianalysis 的第一件事不是训练模型，而是构造一个尽可能稳定的数据生产线。
+如果直接把完整 MIDI 当作 target，而 source 又来自粗糙的旋律抽取，模型会学到许多噪声映射（例如伴奏高音或装饰音被误判为主旋律、八度旋律被错误拆分等）。因此，Pianalysis 的第一步是构造稳定的数据清洗与标注管线。
 
 ---
 
@@ -125,11 +114,7 @@ MIDI 文件虽然是结构化音乐数据，但它不是天然适合模型训练
 
 ### 3.1 原始 Skyline 的假设
 
-Skyline 算法的基本假设是：
-
-```text
-同一时刻最高音 = 主旋律
-```
+Skyline 算法的基本假设是：**同一时刻最高音 = 主旋律**。
 
 它的优点是简单、快、容易实现。缺点也非常明显：钢琴编曲里最高音未必是旋律。
 
@@ -156,7 +141,7 @@ Pianalysis 当前实现了一个轻量但实用的方案：
 
 核心观念是：
 
-> 旋律不是某个瞬间最高的点，而是一条时间上连续、音高运动合理、节奏上有重心的线。
+> 旋律是一条在时间上连续、音高运动合理、节奏上有重心的单声部线条。
 
 ### 3.3 候选音分组
 
@@ -374,17 +359,10 @@ Average sequence length: 20966 tokens
 Maximum sequence length: 48859 tokens
 ```
 
-需要优先人工复查的曲子：
+需要优先人工复查的曲目：
 
-```text
-旋律比例偏高：
-- call-of-silence: 50.10%
-- in-the-pool: 53.67%
-- uchiage-hanabi: 58.42%
-
-旋律比例偏低：
-- only-my-railgun: 12.86%
-```
+- **旋律比例偏高**：`call-of-silence` (50.10%)、`in-the-pool` (53.67%)、`uchiage-hanabi` (58.42%)
+- **旋律比例偏低**：`only-my-railgun` (12.86%)
 
 这个结果说明：增强 Skyline + DP 可以批量生产弱标注，但仍然不能替代人工听检。
 
@@ -394,24 +372,10 @@ Maximum sequence length: 48859 tokens
 
 ### 5.1 为什么必须做闭环
 
-早期版本最大的问题之一是：
-
-```text
-训练能跑，但 token 到底能不能还原成 MIDI 不确定。
-```
-
-这在符号音乐生成里很危险。因为 loss 下降不代表生成结果可播放，更不代表节奏、音符开关、持续时间合法。
-
-因此当前项目先做了一个闭环验证：
+在符号音乐生成中，训练 loss 下降并不代表生成结果可正常播放，也不保证节奏、音符开关与持续时间合法。因此项目首先通过 `scripts/closed_loop_v1.py` 实现了编解码闭环验证：
 
 ```text
 MIDI -> note JSON -> token -> note JSON -> MIDI
-```
-
-对应脚本：
-
-```text
-scripts/closed_loop_v1.py
 ```
 
 ### 5.2 当前 token 协议
@@ -515,18 +479,7 @@ target_accompaniment = 只包含 role == accompaniment 的事件
 
 ## 6. 为什么还要切窗口
 
-整曲 token 太长：
-
-```text
-平均约 20966 tokens
-最长约 48859 tokens
-```
-
-而当前 GPT-2 配置：
-
-```text
-max_length = 1024
-```
+整曲 token 序列较长（平均约 20966 tokens，最长约 48859 tokens），而当前 GPT-2 配置的上下文窗口为 `max_length = 1024`。
 
 如果直接截断整曲，会导致：
 
@@ -539,23 +492,7 @@ max_length = 1024
 
 ### 6.1 窗口构建
 
-脚本：
-
-```text
-scripts/build_training_windows_v1.py
-```
-
-输入：
-
-```text
-data/dp_cleaned_v1/annotated_notes/*.json
-```
-
-输出：
-
-```text
-data/training_windows_v1/dataset_windows_v1.json
-```
+窗口构建脚本 `scripts/build_training_windows_v1.py` 读取 `data/dp_cleaned_v1/annotated_notes/*.json`，切分后输出至 `data/training_windows_v1/dataset_windows_v1.json`。
 
 默认窗口：
 
@@ -568,22 +505,7 @@ max_length = 1024
 
 ### 6.2 过滤规则
 
-窗口必须同时有：
-
-```text
-melody source
-accompaniment target
-```
-
-否则拒绝。
-
-拒绝原因包括：
-
-```text
-empty
-missing_source_or_target
-too_long
-```
+每个训练窗口必须同时包含 `melody source` 和 `accompaniment target`，否则会被过滤（常见过滤原因包括 `empty`、`missing_source_or_target` 和 `too_long`）。
 
 ### 6.3 当前窗口化结果
 
@@ -659,11 +581,7 @@ labels = input_ids.clone()
 
 会让模型连 source melody 和 PAD 也一起预测，导致训练目标污染。
 
-现在的目标是：
-
-```text
-看到 melody prompt 后，只学习 accompaniment target。
-```
+调整后的训练目标为：给定 melody prompt，仅对后续的 accompaniment target 计算损失。
 
 ### 7.3 Causal LM loss 运算
 
@@ -691,14 +609,7 @@ target_positions = {t | labels[t] != -100}
 
 ### 7.4 按曲目切分训练/验证
 
-窗口数据来自同一首曲子。如果随机按窗口切分，容易出现：
-
-```text
-同一首歌的一些窗口在 train
-同一首歌的另一些窗口在 eval
-```
-
-这样 eval loss 会虚高可信度，因为模型见过同曲风格和局部模式。
+窗口数据来自同一首曲子。若按窗口随机切分，同一首曲子的不同片段会同时出现在训练集和验证集中，导致验证集指标失真。
 
 当前训练脚本按 `source_piece_id` 切分：
 
@@ -792,116 +703,18 @@ output_midi = melody_notes + accompaniment_notes
 - 不规则节奏较多。
 - 和声功能还不明确。
 
-这符合预期。因为当前版本只用了：
-
-```text
-40 首弱标注 MIDI
-1530 个短窗口
-4 epoch
-无小节/拍位/和声 token
-```
-
-它证明了系统活了，但还没有证明系统好听。
+这与当前基线配置的范围一致：训练数据仅包含 40 首弱标注 MIDI（1530 个短窗口），训练轮次为 4 个 epoch，且尚未引入小节、拍位与和声 token。这一阶段主要验证数据流与条件生成链路的可行性。
 
 ---
 
-## 9. 工程问题修复对照
+## 9. 关键工程问题与处理
 
-### 9.1 关键数据和模型产物缺失
+在打通闭环的过程中，主要解决了以下几项工程与训练一致性问题：
 
-旧问题：
-
-```text
-README 写 data/、tokenizer/、model_output/，但仓库没有对应可运行数据。
-```
-
-当前修复：
-
-```text
-data/training_windows_v1/dataset_windows_v1.json
-```
-
-已经由本地 MIDI 构建得到。模型产物则由训练脚本生成：
-
-```text
-model_output/accompaniment_gpt2/final_model
-```
-
-### 9.2 条件生成未实现
-
-旧问题：
-
-```text
-训练只读 training_sequence
-生成只从 BOS 开始
-```
-
-当前修复：
-
-```text
-[BOS] source_melody [SEP] target_accompaniment [EOS]
-```
-
-训练只对 target 算 loss，生成从 melody prompt 开始。
-
-### 9.3 padding loss 污染
-
-旧问题：
-
-```python
-labels = input_ids.clone()
-```
-
-当前修复：
-
-```python
-labels[:target_start_index] = -100
-labels[padding_positions] = -100
-```
-
-### 9.4 MIDI 编解码闭环
-
-旧问题：
-
-```text
-生成 token JSON 后无法判断音乐是否合法。
-```
-
-当前修复：
-
-```text
-MIDI -> note JSON -> token -> note JSON -> MIDI
-```
-
-并且训练前已经批量验证。
-
-### 9.5 配置和代码不一致
-
-旧问题：
-
-```text
-README、config、代码参数漂移。
-```
-
-当前修复：
-
-- README 改成当前真实流程。
-- config.json 同步到当前训练数据。
-- requirements.txt 改成 pinned 版本。
-- train_v2.py 支持 CLI。
-
-### 9.6 工程化缺失
-
-当前新增：
-
-- 数据清洗脚本
-- 闭环验证脚本
-- 窗口化脚本
-- 训练元数据保存
-- 按曲目切分
-- 随机种子
-- early stopping
-- TensorBoard 日志
+1. **条件序列与损失掩码**：将无条件序列续写改为 `[BOS] source_melody [SEP] target_accompaniment [EOS]` 格式，并将 `labels[:target_start_index]` 与 padding 位置全部置为 `-100`，避免模型在 prompt 和填充位上分摊梯度。
+2. **编解码可逆性校验**：在训练前对全部样本执行 `MIDI -> note JSON -> token -> note JSON -> MIDI` 往返测试，确保生成的事件流可以无损还原为合法 MIDI。
+3. **数据集构建与切分**：由本地 MIDI 自动构建 `data/training_windows_v1/dataset_windows_v1.json`，并按曲目 ID（`source_piece_id`）切分训练集与验证集，防止同曲窗口泄漏。
+4. **训练管线规范化**：同步 `config.json` 与 CLI 参数，固定依赖版本、随机种子，并接入 early stopping 与 TensorBoard 日志记录。
 
 ---
 
@@ -1016,14 +829,7 @@ DP weak labels
 -> retrain
 ```
 
-优先修正：
-
-```text
-call-of-silence
-in-the-pool
-uchiage-hanabi
-only-my-railgun
-```
+优先复查并修正旋律比例异常的曲目：`call-of-silence`、`in-the-pool`、`uchiage-hanabi`、`only-my-railgun`。
 
 ### 11.4 表示侧
 
@@ -1057,21 +863,12 @@ MIDI 数据
 
 这是从“脚本能跑”到“任务定义正确”的关键一步。
 
-当前生成质量还只是 baseline，音乐上仍然粗糙；但现在问题已经变得清楚：
+当前生成质量仍处于基线阶段，主要瓶颈在于数据标注精度、token 表示粒度以及音乐结构条件。下一阶段的重点包括：
 
-```text
-不是模型完全不会学，
-而是数据标注、token 表示、音乐结构条件还不够好。
-```
-
-下一阶段的核心不应该是盲目堆模型，而是：
-
-```text
-人工修正标注
-更强 token 表示
-更长训练
-更严格生成后验证
-```
+- 人工修正弱标注数据
+- 引入包含小节与拍位信息的 token 表示
+- 延长训练轮次并监控验证集指标
+- 增加生成后合法性与长度校验
 
 这也是符号音乐生成里最朴素但最重要的经验：
 
