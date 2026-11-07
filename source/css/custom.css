@@ -585,6 +585,12 @@ a:focus-visible {
   font-family: var(--font-serif);
 }
 
+/* 紧凑解释图保持字号，不在桌面端被正文宽度额外放大。 */
+.doc-content .note-diagram[data-layout="compact"] {
+  max-width: 640px;
+  margin-inline: auto;
+}
+
 .doc-content .note-diagram g,
 .doc-content .note-diagram text {
   font-family: inherit;

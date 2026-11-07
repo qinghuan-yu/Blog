@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const test = require('node:test');
 
-const posts = ['计算机组成笔记', '计算机网络笔记'];
+const posts = ['计算机组成笔记', '计算机网络笔记', 'OS笔记', '数据库笔记'];
 
 test('笔记解释图嵌入文章，能够使用页面已经加载的字体', () => {
   for (const name of posts) {
@@ -40,7 +40,7 @@ test('独立 SVG 的后备字体与正文衬线字体一致', () => {
   const css = fs.readFileSync('source/css/custom.css', 'utf8');
   const normalize = value => value.replace(/["']/g, '').replace(/\s+/g, ' ').trim();
   const expected = normalize(css.match(/--font-serif:\s*([^;]+);/)[1]);
-  for (const dir of ['computer-organization', 'computer-network']) {
+  for (const dir of ['computer-organization', 'computer-network', 'operating-system', 'database']) {
     const folder = path.join('source/images/notes', dir);
     for (const name of fs.readdirSync(folder).filter(n => n.endsWith('.svg'))) {
       const svg = fs.readFileSync(path.join(folder, name), 'utf8');
@@ -48,5 +48,27 @@ test('独立 SVG 的后备字体与正文衬线字体一致', () => {
       assert.ok(family);
       assert.equal(normalize(family[1]), expected, name);
     }
+  }
+});
+
+test('三张试作图各嵌入一次，紧凑布局使用同一字号下限与可编辑文字', () => {
+  const diagrams = [
+    ['OS笔记', 'operating-system/process-states.svg'],
+    ['OS笔记', 'operating-system/race-condition-interleaving.svg'],
+    ['数据库笔记', 'database/er-to-relational-tables.svg'],
+  ];
+  for (const [post, filename] of diagrams) {
+    const source = fs.readFileSync(path.join('source/_posts', post + '.md'), 'utf8');
+    const url = '/images/notes/' + filename;
+    assert.equal(source.split('](' + url + ')').length - 1, 1, filename);
+    const svg = fs.readFileSync(path.join('source', url), 'utf8');
+    assert.match(svg, /viewBox="0 0 640 \d+"/);
+    assert.match(svg, /data-layout="compact"/);
+    assert.match(svg, /<title\b[^>]*>[^<]+<\/title>/);
+    assert.match(svg, /<desc\b[^>]*>[^<]+<\/desc>/);
+    assert.doesNotMatch(svg, /<(?:script|image|foreignObject)\b|\bhref=/i);
+    const labels = [...svg.matchAll(/<text\b[^>]*font-size="([\d.]+)"[^>]*>[^<]+<\/text>/g)];
+    assert.ok(labels.length > 10, filename + ' 应保留可编辑文字');
+    for (const label of labels) assert.ok(Number(label[1]) >= 24, filename + ' 的文字不得过小');
   }
 });

@@ -4,7 +4,7 @@ const path = require('node:path');
 // 将本站解释图嵌入文章，复用页面字体，并隔离各图的标记 ID。
 hexo.extend.helper.register('inline_note_diagrams', function (content) {
   let index = 0;
-  const images = /<img\b[^>]*\bsrc=(["'])(\/images\/notes\/(?:computer-organization|computer-network)\/[a-z0-9-]+\.svg)\1[^>]*>/g;
+  const images = /<img\b[^>]*\bsrc=(["'])(\/images\/notes\/(?:computer-organization|computer-network|operating-system|database)\/[a-z0-9-]+\.svg)\1[^>]*>/g;
   return content.replace(images, (image, quote, source) => {
     const filename = path.join(hexo.source_dir, source.slice(1));
     const prefix = 'note-diagram-' + index++ + '-';
