@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1140" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">关系代数：取行、取列、按键拼接</title>
+<desc id="desc">玩家表中P1等级60，P2等级40。选择等级大于50保留P1；投影角色名与等级保留指定列；按用户ID把用户表与评论表匹配，得到作者和评论内容。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">关系代数：取行、取列、按键拼接</text>
+<text x="30" y="105" font-size="26" fill="#243247" text-anchor="start" font-weight="600">① 选择：保留满足条件的行</text>
+<rect x="45" y="145" width="550" height="132" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="45" y="145" width="550" height="44" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="136.66666666666669" y="175" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">角色</text>
+<path d="M228.33333333333334 145 V277" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="320.0" y="175" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">等级</text>
+<path d="M411.6666666666667 145 V277" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="503.33333333333337" y="175" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">攻击力</text>
+<path d="M45 189 H595" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="45" y="189" width="550" height="44" rx="0" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="136.66666666666669" y="219" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">P1</text>
+<text x="320.0" y="219" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">60</text>
+<text x="503.33333333333337" y="219" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">120</text>
+<path d="M45 233 H595" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="136.66666666666669" y="263" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">P2</text>
+<text x="320.0" y="263" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">40</text>
+<text x="503.33333333333337" y="263" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">85</text>
+<text x="320" y="330" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">等级 &gt; 50 → 保留 P1 这一行</text>
+<text x="30" y="415" font-size="26" fill="#243247" text-anchor="start" font-weight="600">② 投影：保留指定的列</text>
+<rect x="90" y="455" width="460" height="132" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="90" y="455" width="460" height="44" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="205.0" y="485" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">角色</text>
+<path d="M320.0 455 V587" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="435.0" y="485" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">等级</text>
+<path d="M90 499 H550" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="205.0" y="529" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">P1</text>
+<text x="435.0" y="529" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">60</text>
+<path d="M90 543 H550" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="205.0" y="573" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">P2</text>
+<text x="435.0" y="573" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">40</text>
+<text x="320" y="635" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">保留角色与等级；关系代数投影去重</text>
+<text x="30" y="710" font-size="26" fill="#243247" text-anchor="start" font-weight="600">③ 连接：按同一个键匹配</text>
+<rect x="25" y="750" width="275" height="88" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="25" y="750" width="275" height="44" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="93.75" y="780" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">用户ID</text>
+<path d="M162.5 750 V838" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="231.25" y="780" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">姓名</text>
+<path d="M25 794 H300" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="93.75" y="824" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">U1</text>
+<text x="231.25" y="824" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">小林</text>
+<rect x="340" y="750" width="275" height="88" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="340" y="750" width="275" height="44" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="408.75" y="780" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">用户ID</text>
+<path d="M477.5 750 V838" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="546.25" y="780" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">评论</text>
+<path d="M340 794 H615" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="408.75" y="824" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">U1</text>
+<text x="546.25" y="824" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">喜欢这篇</text>
+<path d="M162 838 V875 H320 V910" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+<path d="M477 838 V875 H320" fill="none" stroke="#64748b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="65" y="930" width="510" height="88" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="65" y="930" width="510" height="44" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="192.5" y="960" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">姓名</text>
+<path d="M320.0 930 V1018" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="447.5" y="960" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">评论</text>
+<path d="M65 974 H575" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="192.5" y="1004" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">小林</text>
+<text x="447.5" y="1004" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">喜欢这篇</text>
+<text x="320" y="1090" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">连接条件：Users.UserID = Comments.UserID</text>
+</g>
+</svg>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 920" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">MCMer：已有论文的润色链路</title>
+<desc id="desc">输入已有论文与修改要求，依次进行任务拆解、模型一致性、数据计算、图文一致性审查，图表语言白名单过滤、措辞修订、严格模式终审，重新导出Markdown与Word。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">MCMer：已有论文的润色链路</text>
+<rect x="100" y="90" width="440" height="72" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="118.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">已有论文</text>
+<text x="320.0" y="150.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">修改要求</text>
+<path d="M320 162 V186" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="100" y="188" width="440" height="60" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="226.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">润色任务拆解</text>
+<path d="M320 248 V272" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="100" y="274" width="440" height="60" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="312.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">模型一致性审查</text>
+<path d="M320 334 V358" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="100" y="360" width="440" height="60" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="398.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">数据计算复核</text>
+<path d="M320 420 V444" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="100" y="446" width="440" height="60" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="484.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">图文一致性审查</text>
+<path d="M320 506 V530" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="100" y="532" width="440" height="60" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="570.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">图表语言白名单过滤</text>
+<path d="M320 592 V616" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="100" y="618" width="440" height="60" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="656.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">论文措辞修订</text>
+<path d="M320 678 V702" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="100" y="704" width="440" height="60" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="742.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">严格模式终审</text>
+<path d="M320 764 V788" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="100" y="790" width="440" height="72" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="818.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">重新导出</text>
+<text x="320.0" y="850.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">res.md / res.docx</text>
+</g>
+</svg>

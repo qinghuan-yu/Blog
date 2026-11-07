@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1030" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">先切分数据，再拟合预处理</title>
+<desc id="desc">时间数据按先后划分，重复记录按对象分组。插补、缩放和特征筛选的参数只从训练数据拟合，再固定应用到训练集和验证集；模型在训练侧拟合，在验证侧评估。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">先切分数据，再拟合预处理</text>
+<text x="320" y="90" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">时间数据按先后，重复记录按对象分组</text>
+<rect x="130" y="125" width="380" height="75" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="170.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">原始数据与对象 / 时间标识</text>
+<path d="M320 200 V240 H165 V285" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<path d="M320 240 H475 V285" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<rect x="40" y="285" width="250" height="80" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="165.0" y="333.0" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">训练数据</text>
+<rect x="350" y="285" width="250" height="80" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="475.0" y="333.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">验证数据</text>
+<path d="M165 365 V420" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="40" y="420" width="250" height="112" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="165.0" y="452.0" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">fit：训练侧估计</text>
+<text x="165.0" y="484.0" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">插补值 / 缩放参数</text>
+<text x="165.0" y="516.0" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">特征选择规则</text>
+<path d="M165 532 V650" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<path d="M290 475 H320 V600 H475 V650" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="385" y="570" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">固定后共用</text>
+<path d="M475 365 V650" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)"/>
+<rect x="40" y="650" width="250" height="90" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="165.0" y="687.0" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">transform</text>
+<text x="165.0" y="719.0" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">处理训练数据</text>
+<rect x="350" y="650" width="250" height="90" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="475.0" y="687.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">transform</text>
+<text x="475.0" y="719.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">处理验证数据</text>
+<path d="M165 740 V805" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="40" y="805" width="250" height="80" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="165.0" y="853.0" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">训练模型</text>
+<path d="M475 740 V805" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)"/>
+<rect x="350" y="805" width="250" height="80" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="475.0" y="853.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">独立评估</text>
+<path d="M290 845 H350" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="320" y="930" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">训练阶段确定参数，验证阶段检验泛化</text>
+<text x="320" y="978" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">同一对象的多次记录留在同一侧</text>
+</g>
+</svg>

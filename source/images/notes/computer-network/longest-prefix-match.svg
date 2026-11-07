@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 730" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">最长前缀：先匹配，再选最具体的一条</title>
+<desc id="desc">目标10.1.2.100依次落在默认路由、10.0.0.0/8、10.1.0.0/16、10.1.2.0/24的包含范围中，选择/24出口C；10.1.3.100不匹配该/24而选择/16出口B。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">最长前缀：先匹配，再选最具体的一条</text>
+<text x="320" y="84" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">目标地址 10.1.2.100</text>
+<rect x="30" y="130" width="580" height="400" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="50" y="172" font-size="26" fill="#64748b" text-anchor="start" font-weight="500">0.0.0.0/0 · 出口 D</text>
+<rect x="70" y="220" width="500" height="310" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="90" y="262" font-size="26" fill="#64748b" text-anchor="start" font-weight="500">10.0.0.0/8 · 出口 A</text>
+<rect x="110" y="310" width="420" height="220" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="130" y="352" font-size="26" fill="#64748b" text-anchor="start" font-weight="500">10.1.0.0/16 · 出口 B</text>
+<rect x="150" y="400" width="340" height="130" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="170" y="442" font-size="26" fill="#0d9488" text-anchor="start" font-weight="600">10.1.2.0/24 · 出口 C</text>
+<circle cx="320" cy="483" r="9" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320" y="576" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">四条都匹配 → 选择 /24 → 出口 C</text>
+<path d="M30 606 H610" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="320" y="650" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">换成 10.1.3.100：落在 /16，落不到 /24</text>
+<text x="320" y="695" font-size="26" fill="#2563eb" text-anchor="middle" font-weight="500">匹配 /0、/8、/16 → 出口 B</text>
+</g>
+</svg>

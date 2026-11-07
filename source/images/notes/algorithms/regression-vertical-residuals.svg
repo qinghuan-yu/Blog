@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">最小二乘：缩短竖直残差</title><desc id="desc">运行正文随机种子42的50个模拟样本并拟合一元线性回归。每条残差线固定横坐标x，从拟合值连接到观测值。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">最小二乘：缩短竖直残差</text>
+<text x="320" y="88" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">正文代码：50 个模拟样本，随机种子 42</text>
+<path d="M80 620 L605 620" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<path d="M80 620 L80 135" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="610" y="650" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">x</text>
+<text x="55" y="120" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">y</text>
+<text x="62" y="648" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">0</text>
+<circle cx="267.27" cy="412.393" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="555.357" cy="213.341" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="445.997" cy="303.972" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="379.329" cy="359.536" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="158.009" cy="560.849" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="157.997" cy="538.097" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="109.042" cy="567.038" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="513.088" cy="218.47" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="380.558" cy="339.273" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="434.036" cy="362.364" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="90.2922" cy="557.558" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="564.955" cy="222.836" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="496.221" cy="283.142" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="186.17" cy="477.023" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="170.912" cy="475.886" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="171.702" cy="478.285" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="232.121" cy="486.086" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="342.378" cy="387.493" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="295.973" cy="403.083" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="225.615" cy="436.523" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="385.926" cy="359.93" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="149.747" cy="528.26" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="226.072" cy="498.636" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="263.181" cy="473.501" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="308.035" cy="379.598" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="472.588" cy="239.872" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="179.837" cy="502.283" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="337.117" cy="352.056" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="376.207" cy="341.995" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="103.225" cy="576.935" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="383.772" cy="336.329" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="165.262" cy="464.912" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="112.526" cy="551.68" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="554.443" cy="172.229" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="562.816" cy="291.48" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="484.199" cy="247.194" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="232.307" cy="458.158" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="128.836" cy="547.343" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="422.117" cy="315.66" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="300.076" cy="469.57" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="141.019" cy="535.826" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="327.588" cy="378.595" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="97.1943" cy="517.767" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="534.66" cy="249.553" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="209.39" cy="502.212" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="411.261" cy="341.607" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="235.856" cy="430.646" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="340.034" cy="370.112" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="353.355" cy="385.876" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<circle cx="172.427" cy="490.282" r="4" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<path d="M97.1943 559.434 L97.1943 517.767" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M472.588 282.921 L472.588 239.872" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M165.262 509.296 L165.262 464.912" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M158.009 514.638 L158.009 560.849" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M554.443 222.628 L554.443 172.229" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M434.036 311.318 L434.036 362.364" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M300.076 409.992 L300.076 469.57" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M562.816 216.46 L562.816 291.48" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M80 572.099 L580 203.802" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="320" y="688" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">拟合：ŷ = 3.193 + 2.455x</text>
+<text x="320" y="739" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">残差 ei = yi − ŷi：沿 y 方向量差值</text>
+</g>
+</svg>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 850" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">TOPSIS：同时靠近好、远离差</title><desc id="desc">两项正向指标权重各0.5。四个方案原始值为(6,3)、(2,9)、(8,1)、(1,5)，归一化加权后按各维最大最小值组合出正负理想解。方案P的贴近度由到两理想解的距离计算。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">TOPSIS：同时靠近好、远离差</text>
+<text x="320" y="88" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">两项正向指标，权重各为 0.5</text>
+<path d="M100 595 L575 595" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<path d="M100 595 L100 115" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="580" y="625" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">v₁</text>
+<text x="75" y="100" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">v₂</text>
+<text x="82" y="623" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">0</text>
+<circle cx="407.409" cy="448.765" r="7" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<text x="389.409" y="481.765" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">P</text>
+<circle cx="202.47" cy="156.295" r="7" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<text x="184.47" y="189.295" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">Q</text>
+<circle cx="509.878" cy="546.255" r="7" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<text x="491.878" y="579.255" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">R</text>
+<circle cx="151.235" cy="351.275" r="7" fill="#64748b" stroke="#64748b" stroke-width="2"/>
+<text x="133.235" y="384.275" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">S</text>
+<circle cx="509.878" cy="156.295" r="9" fill="#0d9488" stroke="#0d9488" stroke-width="2"/>
+<text x="467.878" y="136.295" font-size="28" fill="#0d9488" text-anchor="middle" font-weight="500">A⁺</text>
+<circle cx="151.235" cy="546.255" r="9" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<text x="119.235" y="551.255" font-size="28" fill="#2563eb" text-anchor="middle" font-weight="500">A⁻</text>
+<path d="M407.409 448.765 L509.878 156.295" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<path d="M407.409 448.765 L151.235 546.255" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<text x="440" y="332" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">D⁺</text>
+<text x="275" y="535" font-size="26" fill="#2563eb" text-anchor="middle" font-weight="500">D⁻</text>
+<text x="320" y="679" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">理想解取各列极值，再计算欧氏距离</text>
+<text x="320" y="725" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">P：D⁺ ≈ 0.295，D⁻ ≈ 0.261</text>
+<text x="320" y="785" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="600">C = D⁻ / (D⁺ + D⁻) ≈ 0.469</text>
+</g>
+</svg>

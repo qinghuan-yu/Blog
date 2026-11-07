@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1550" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">MCMer：从题目到可交付论文</title>
+<desc id="desc">写作流程分为拆题建模、求解复核、写作导出三段；用户输入、工作区、各Agent与结构化文件沿原有顺序传递。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">MCMer：从题目到可交付论文</text>
+<text x="320" y="82" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">处理步骤用灰框，交接文件用青框</text>
+<text x="30" y="128" font-size="26" fill="#243247" text-anchor="start" font-weight="600">① 拆题与建模</text>
+<rect x="80" y="152" width="480" height="56" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="188.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">题目与数据</text>
+<path d="M320 208 V228" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="80" y="234" width="480" height="56" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="270.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">创建 work_dir 与 task_info</text>
+<path d="M320 290 V310" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="80" y="316" width="480" height="56" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="352.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">题目拆解 Agent</text>
+<path d="M320 372 V392" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="80" y="398" width="480" height="56" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="434.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">problem_facts.json</text>
+<path d="M320 454 V474" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="80" y="480" width="480" height="56" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="516.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">建模 Agent → 模型审查 Agent</text>
+<path d="M320 536 V556" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="80" y="562" width="480" height="56" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="598.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">solve_spec.json</text>
+<path d="M320 618 V638" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="30" y="680" font-size="26" fill="#243247" text-anchor="start" font-weight="600">② 求解与复核</text>
+<rect x="80" y="704" width="480" height="56" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="740.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">CoderAgent 分步求解</text>
+<path d="M320 760 V780" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="80" y="786" width="480" height="56" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="822.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">结构化结果文件</text>
+<path d="M320 842 V862" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="80" y="868" width="480" height="56" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="904.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">result_registry.json</text>
+<path d="M320 924 V944" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="80" y="950" width="480" height="56" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="986.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">数值复核 → 结果分析 Agent</text>
+<path d="M320 1006 V1026" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="30" y="1068" font-size="26" fill="#243247" text-anchor="start" font-weight="600">③ 写作与导出</text>
+<rect x="80" y="1092" width="480" height="56" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="1128.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">图表与一致性 Agent</text>
+<path d="M320 1148 V1168" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="80" y="1174" width="480" height="56" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="1210.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">图表语言与白名单闸门</text>
+<path d="M320 1230 V1250" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="80" y="1256" width="480" height="56" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="1292.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">WriterAgent 成文</text>
+<path d="M320 1312 V1332" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="80" y="1338" width="480" height="56" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="1374.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">严格模式终审与返工</text>
+<path d="M320 1394 V1414" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="80" y="1420" width="480" height="80" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="1452.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">res.md / res.docx</text>
+<text x="320.0" y="1484.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">notebook.ipynb</text>
+</g>
+</svg>

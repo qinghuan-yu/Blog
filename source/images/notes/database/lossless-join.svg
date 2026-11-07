@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1260" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">无损连接：拆开后能准确拼回</title>
+<desc id="desc">左例满足A决定B，R有(a,b,c1)、(a,b,c2)，投影AB与AC后连接准确还原。右例独立采用无A决定B约束的数据(a,b1,c1)、(a,b2,c2)，投影后连接产生额外(a,b1,c2)、(a,b2,c1)。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">无损连接：拆开后能准确拼回</text>
+<text x="30" y="100" font-size="26" fill="#243247" text-anchor="start" font-weight="600">① A → B：公共列能确定一侧</text>
+<rect x="65" y="130" width="510" height="132" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="65" y="130" width="510" height="44" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="150.0" y="160" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">A</text>
+<path d="M235.0 130 V262" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="320.0" y="160" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">B</text>
+<path d="M405.0 130 V262" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="490.0" y="160" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">C</text>
+<path d="M65 174 H575" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="150.0" y="204" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a</text>
+<text x="320.0" y="204" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">b</text>
+<text x="490.0" y="204" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">c1</text>
+<path d="M65 218 H575" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="150.0" y="248" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a</text>
+<text x="320.0" y="248" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">b</text>
+<text x="490.0" y="248" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">c2</text>
+<path d="M320 280 V325" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+<rect x="35" y="350" width="250" height="88" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="35" y="350" width="250" height="44" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="97.5" y="380" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">A</text>
+<path d="M160.0 350 V438" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="222.5" y="380" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">B</text>
+<path d="M35 394 H285" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="97.5" y="424" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a</text>
+<text x="222.5" y="424" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">b</text>
+<rect x="355" y="350" width="250" height="132" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="355" y="350" width="250" height="44" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="417.5" y="380" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">A</text>
+<path d="M480.0 350 V482" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="542.5" y="380" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">C</text>
+<path d="M355 394 H605" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="417.5" y="424" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a</text>
+<text x="542.5" y="424" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">c1</text>
+<path d="M355 438 H605" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="417.5" y="468" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a</text>
+<text x="542.5" y="468" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">c2</text>
+<text x="320" y="530" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">按 A 连接 → 原来的两行</text>
+<text x="30" y="615" font-size="26" fill="#243247" text-anchor="start" font-weight="600">② A 可对应多个 B、多个 C</text>
+<rect x="65" y="645" width="510" height="132" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="65" y="645" width="510" height="44" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="150.0" y="675" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">A</text>
+<path d="M235.0 645 V777" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="320.0" y="675" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">B</text>
+<path d="M405.0 645 V777" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="490.0" y="675" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">C</text>
+<path d="M65 689 H575" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="150.0" y="719" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a</text>
+<text x="320.0" y="719" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">b1</text>
+<text x="490.0" y="719" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">c1</text>
+<path d="M65 733 H575" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="150.0" y="763" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a</text>
+<text x="320.0" y="763" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">b2</text>
+<text x="490.0" y="763" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">c2</text>
+<text x="320" y="830" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">投影为 AB、AC 后，按 A 两两组合</text>
+<rect x="65" y="870" width="510" height="220" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="65" y="870" width="510" height="44" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="150.0" y="900" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">A</text>
+<path d="M235.0 870 V1090" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="320.0" y="900" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">B</text>
+<path d="M405.0 870 V1090" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="490.0" y="900" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">C</text>
+<path d="M65 914 H575" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="150.0" y="944" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a</text>
+<text x="320.0" y="944" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">b1</text>
+<text x="490.0" y="944" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">c1</text>
+<path d="M65 958 H575" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="65" y="958" width="510" height="44" rx="0" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="150.0" y="988" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a</text>
+<text x="320.0" y="988" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">b1</text>
+<text x="490.0" y="988" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">c2</text>
+<path d="M65 1002 H575" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="65" y="1002" width="510" height="44" rx="0" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="150.0" y="1032" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a</text>
+<text x="320.0" y="1032" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">b2</text>
+<text x="490.0" y="1032" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">c1</text>
+<path d="M65 1046 H575" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="150.0" y="1076" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a</text>
+<text x="320.0" y="1076" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">b2</text>
+<text x="490.0" y="1076" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">c2</text>
+<text x="320" y="1150" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">高亮两行是连接产生的伪元组</text>
+<text x="320" y="1200" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">公共列确定一侧，才能保证这种分解无损</text>
+</g>
+</svg>

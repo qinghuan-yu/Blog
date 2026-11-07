@@ -47,6 +47,8 @@ MCMer/
 
 ---
 
+![MCMer系统架构：Vue前端通过FastAPI提交任务，后端编排Agent并经LiteLLM与Jupyter处理，产物保存到独立工作区](/images/notes/mcmer/system-architecture.svg)
+
 ## 多阶段 Agent 拆分的动机
 
 数学建模论文生成通常难以作为单一文本生成任务处理。
@@ -113,25 +115,7 @@ Docker Compose 模式下，项目根目录的 `work_dir` 会挂载到容器内 `
 
 写作任务的主流程由 `backend/app/core/workflow.py` 编排。可以简化成下面这张图：
 
-```mermaid
-flowchart TD
-    A["用户提交题目与数据"] --> B["创建 work_dir 与 task_info"]
-    B --> C["题目拆解 Agent"]
-    C --> D["problem_facts.json"]
-    D --> E["建模 Agent"]
-    E --> F["模型审查 Agent"]
-    F --> G["solve_spec.json"]
-    G --> H["CoderAgent 分步求解"]
-    H --> I["结构化结果文件"]
-    I --> J["result_registry.json"]
-    J --> K["数值复核 Agent"]
-    K --> L["结果分析 Agent"]
-    L --> M["图表与一致性 Agent"]
-    M --> N["图表语言与白名单闸门"]
-    N --> O["WriterAgent 成文"]
-    O --> P["严格模式终审与返工"]
-    P --> Q["res.md / res.docx / notebook.ipynb"]
-```
+![MCMer写作工作流：拆题建模、求解复核、写作导出，Agent通过结构化文件交接](/images/notes/mcmer/writing-workflow.svg)
 
 ### 1. 题目拆解
 
@@ -327,6 +311,8 @@ MCMer 支持三种工作流模式。它们分别配置预算、复核强度和�
 
 ---
 
+![MCMer产物闸门：数值通过结果注册表复核，图表通过语言和目录白名单，两路合并进入写作并在终稿再次核验](/images/notes/mcmer/artifact-gates.svg)
+
 ## 调试图和最终图的隔离
 
 代码求解阶段经常会产生探索性图表，例如：
@@ -351,17 +337,7 @@ MCMer 支持三种工作流模式。它们分别配置预算、复核强度和�
 
 它的流程大致如下：
 
-```mermaid
-flowchart TD
-    A["输入已有论文与修改要求"] --> B["润色任务拆解"]
-    B --> C["模型一致性审查"]
-    C --> D["数据计算复核"]
-    D --> E["图文一致性审查"]
-    E --> F["图表语言白名单过滤"]
-    F --> G["论文措辞修订"]
-    G --> H["严格模式终审"]
-    H --> I["重新导出 res.md / res.docx"]
-```
+![MCMer润色工作流：依次审查模型、数据、图文与语言，修订后终审并重新导出](/images/notes/mcmer/polishing-workflow.svg)
 
 润色阶段同样使用图表语言契约。如果重新绘制替代图，也必须登记语言审查元数据；否则不会进入最终论文。
 

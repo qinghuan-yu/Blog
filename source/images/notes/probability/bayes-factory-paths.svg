@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 820" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">贝叶斯：从次品反推来源</title><desc id="desc">甲乙丙供货占比0.5、0.3、0.2，次品率0.02、0.03、0.04。次品联合概率分别0.010、0.009、0.008，总概率0.027，次品来自甲厂的后验10/27。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">贝叶斯：从次品反推来源</text>
+<rect x="215" y="105" width="210" height="65" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320" y="146" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">随机抽一件</text>
+<path d="M320 170 V205 H110 V260" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="110" y="244" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">50%</text>
+<rect x="30" y="260" width="160" height="65" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="110" y="302" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">甲厂</text>
+<path d="M110 325 L110 410" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="158" y="372" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">2%</text>
+<rect x="30" y="410" width="160" height="65" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="110" y="452" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">次品</text>
+<text x="110" y="523" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="600">0.010</text>
+<path d="M320 170 V205 H320 V260" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="320" y="244" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">30%</text>
+<rect x="240" y="260" width="160" height="65" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320" y="302" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">乙厂</text>
+<path d="M320 325 L320 410" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="368" y="372" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">3%</text>
+<rect x="240" y="410" width="160" height="65" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320" y="452" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">次品</text>
+<text x="320" y="523" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="600">0.009</text>
+<path d="M320 170 V205 H530 V260" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="530" y="244" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">20%</text>
+<rect x="450" y="260" width="160" height="65" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="530" y="302" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">丙厂</text>
+<path d="M530 325 L530 410" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="578" y="372" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">4%</text>
+<rect x="450" y="410" width="160" height="65" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="530" y="452" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">次品</text>
+<text x="530" y="523" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="600">0.008</text>
+<text x="320" y="582" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">路径相乘，再把三条路径相加</text>
+<text x="320" y="630" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">P(次品) = 0.010 + 0.009 + 0.008</text>
+<text x="320" y="669" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">= 0.027</text>
+<rect x="30" y="706" width="580" height="75" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320" y="752" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="600">P(甲厂 | 次品) = 0.010 / 0.027 ≈ 37.0%</text>
+</g>
+</svg>

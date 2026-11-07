@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" data-layout="compact" role="img" aria-labelledby="title desc">
+  <title id="title">分页：逻辑相邻，物理可以分散</title>
+  <desc id="desc">10KB 的进程按 4KB 分页，形成页0、页1、页2。页表将其映射到物理页框3、0、5；最后一页使用2KB，已分配页框内部还剩2KB。</desc>
+  <defs>
+    <marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+    <marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+    <marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+  </defs>
+  <g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+    <text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">分页：逻辑相邻，物理可以分散</text>
+    <text x="320" y="84" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">10KB 进程 · 每页与页框均为 4KB</text>
+    <text x="115" y="133" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">逻辑页面</text>
+    <text x="510" y="133" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">物理页框</text>
+    <rect x="30" y="165" width="170" height="78" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="115" y="197" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="600">页 0</text>
+    <text x="115" y="229" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">4KB</text>
+    <rect x="30" y="270" width="170" height="78" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="115" y="302" font-size="26" fill="#2563eb" text-anchor="middle" font-weight="600">页 1</text>
+    <text x="115" y="334" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">4KB</text>
+    <rect x="30" y="375" width="170" height="78" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="115" y="407" font-size="26" fill="#64748b" text-anchor="middle" font-weight="600">页 2</text>
+    <text x="115" y="439" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">2KB 数据</text>
+    <rect x="410" y="155" width="200" height="75" rx="0" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="510" y="200" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">框 0 · 页 1</text>
+    <rect x="410" y="230" width="200" height="75" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+    <text x="510" y="275" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">框 1 · 其他</text>
+    <rect x="410" y="305" width="200" height="75" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+    <text x="510" y="350" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">框 2 · 其他</text>
+    <rect x="410" y="380" width="200" height="75" rx="0" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="510" y="425" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">框 3 · 页 0</text>
+    <rect x="410" y="455" width="200" height="75" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+    <text x="510" y="500" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">框 4 · 其他</text>
+    <rect x="410" y="530" width="200" height="75" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <rect x="410" y="567.5" width="200" height="37.5" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+    <text x="510" y="558" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">框 5 · 页 2</text>
+    <text x="510" y="595" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">空余 2KB</text>
+    <path d="M200 204 H280 V417 H410" fill="none" stroke="#0d9488" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+    <path d="M200 309 H320 V192 H410" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#blue)"/>
+    <path d="M200 414 H360 V567 H410" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#gray)"/>
+    <text x="115" y="514" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">页表映射</text>
+    <text x="115" y="550" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">0 → 3</text>
+    <text x="115" y="586" font-size="26" fill="#2563eb" text-anchor="middle" font-weight="500">1 → 0</text>
+    <text x="115" y="622" font-size="26" fill="#64748b" text-anchor="middle" font-weight="500">2 → 5</text>
+    <text x="320" y="697" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">3 个页框共 12KB，容纳 10KB 数据</text>
+    <text x="320" y="740" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">最后一页框内的 2KB 是内部碎片</text>
+    <text x="320" y="779" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">页表把逻辑页号映射为物理页框号</text>
+  </g>
+</svg>

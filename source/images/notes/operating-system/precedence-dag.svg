@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 580" data-layout="compact" role="img" aria-labelledby="title desc">
+  <title id="title">前趋图：箭头规定先后</title>
+  <desc id="desc">操作A和B之间没有依赖，可以并发；A和B分别指向操作C，表示C需要等待两者都完成后才能开始。箭头表示先后依赖。</desc>
+  <defs>
+    <marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+    <marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+    <marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+  </defs>
+  <g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+    <text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">前趋图：箭头规定先后</text>
+    <text x="320" y="84" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">A、B 可并发，C 等待两者完成</text>
+    <path d="M181 241 L277 387" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+    <path d="M459 241 L363 387" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+    <circle cx="145" cy="185" r="70" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="145" y="194" font-size="28" fill="#0d9488" text-anchor="middle" font-weight="600">操作 A</text>
+    <circle cx="495" cy="185" r="70" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="495" y="194" font-size="28" fill="#2563eb" text-anchor="middle" font-weight="600">操作 B</text>
+    <circle cx="320" cy="445" r="70" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="320" y="454" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">操作 C</text>
+    <text x="320" y="558" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">入边共同构成依赖：A 完成，且 B 完成</text>
+  </g>
+</svg>

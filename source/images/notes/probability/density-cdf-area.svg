@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 940" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">密度的面积，等于分布函数的增量</title><desc id="desc">密度3x²在0&lt;x&lt;1上积分为1；0.3至0.7间概率为0.316。分布函数在0到1为x³，区间外分别为0与1。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">密度的面积，等于分布函数的增量</text>
+<text x="320" y="88" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">f(x) = 3x²  →  F(x) = x³</text>
+<path d="M60 410 L595 410" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<path d="M60 410 L60 110" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="600" y="440" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">x</text>
+<text x="35" y="95" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">f</text>
+<path d="M100.00 410.00 L104.04 409.97 L108.08 409.90 L112.12 409.77 L116.16 409.58 L120.20 409.35 L124.24 409.06 L128.28 408.73 L132.32 408.33 L136.36 407.89 L140.40 407.40 L144.44 406.85 L148.48 406.25 L152.53 405.60 L156.57 404.90 L160.61 404.15 L164.65 403.34 L168.69 402.48 L172.73 401.57 L176.77 400.61 L180.81 399.59 L184.85 398.53 L188.89 397.41 L192.93 396.24 L196.97 395.01 L201.01 393.74 L205.05 392.41 L209.09 391.03 L213.13 389.60 L217.17 388.12 L221.21 386.58 L225.25 385.00 L229.29 383.36 L233.33 381.67 L237.37 379.92 L241.41 378.13 L245.45 376.28 L249.49 374.38 L253.54 372.43 L257.58 370.43 L261.62 368.37 L265.66 366.26 L269.70 364.10 L273.74 361.89 L277.78 359.63 L281.82 357.31 L285.86 354.95 L289.90 352.53 L293.94 350.06 L297.98 347.53 L302.02 344.96 L306.06 342.33 L310.10 339.65 L314.14 336.92 L318.18 334.13 L322.22 331.30 L326.26 328.41 L330.30 325.47 L334.34 322.48 L338.38 319.43 L342.42 316.34 L346.46 313.19 L350.51 309.99 L354.55 306.74 L358.59 303.43 L362.63 300.07 L366.67 296.67 L370.71 293.21 L374.75 289.69 L378.79 286.13 L382.83 282.51 L386.87 278.84 L390.91 275.12 L394.95 271.35 L398.99 267.53 L403.03 263.65 L407.07 259.72 L411.11 255.74 L415.15 251.71 L419.19 247.62 L423.23 243.49 L427.27 239.30 L431.31 235.06 L435.35 230.76 L439.39 226.42 L443.43 222.02 L447.47 217.57 L451.52 213.07 L455.56 208.52 L459.60 203.91 L463.64 199.26 L467.68 194.55 L471.72 189.79 L475.76 184.97 L479.80 180.11 L483.84 175.19 L487.88 170.22 L491.92 165.20 L495.96 160.13 L500.00 155.00" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M220 410 L220 387.05 L223.265 385.784 L226.531 384.484 L229.796 383.15 L233.061 381.782 L236.327 380.38 L239.592 378.944 L242.857 377.474 L246.122 375.971 L249.388 374.433 L252.653 372.861 L255.918 371.255 L259.184 369.615 L262.449 367.941 L265.714 366.234 L268.98 364.492 L272.245 362.716 L275.51 360.906 L278.776 359.063 L282.041 357.185 L285.306 355.273 L288.571 353.328 L291.837 351.348 L295.102 349.334 L298.367 347.287 L301.633 345.205 L304.898 343.089 L308.163 340.94 L311.429 338.756 L314.694 336.539 L317.959 334.287 L321.224 332.001 L324.49 329.682 L327.755 327.328 L331.02 324.941 L334.286 322.519 L337.551 320.064 L340.816 317.574 L344.082 315.051 L347.347 312.494 L350.612 309.902 L353.878 307.277 L357.143 304.617 L360.408 301.924 L363.673 299.197 L366.939 296.435 L370.204 293.64 L373.469 290.811 L376.735 287.947 L380 285.05 L380 410 Z" fill="#e8f5f3" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M60 410 L100 410" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M500 410 L580 410" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="100" y="443" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">0</text>
+<text x="220" y="443" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">0.3</text>
+<text x="380" y="443" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">0.7</text>
+<text x="500" y="443" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">1</text>
+<text x="320" y="465" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">阴影面积 = P(0.3 &lt; X &lt; 0.7) = 0.316</text>
+<path d="M60 820 L595 820" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<path d="M60 820 L60 520" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="600" y="850" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">x</text>
+<text x="35" y="505" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">F</text>
+<path d="M60 820 L100 820" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M100.00 820.00 L104.04 820.00 L108.08 820.00 L112.12 819.99 L116.16 819.98 L120.20 819.97 L124.24 819.94 L128.28 819.90 L132.32 819.86 L136.36 819.80 L140.40 819.72 L144.44 819.63 L148.48 819.52 L152.53 819.39 L156.57 819.24 L160.61 819.06 L164.65 818.86 L168.69 818.63 L172.73 818.38 L176.77 818.09 L180.81 817.77 L184.85 817.42 L188.89 817.04 L192.93 816.61 L196.97 816.15 L201.01 815.65 L205.05 815.11 L209.09 814.52 L213.13 813.89 L217.17 813.21 L221.21 812.49 L225.25 811.71 L229.29 810.88 L233.33 810.00 L237.37 809.06 L241.41 808.07 L245.45 807.02 L249.49 805.91 L253.54 804.73 L257.58 803.49 L261.62 802.19 L265.66 800.82 L269.70 799.38 L273.74 797.88 L277.78 796.30 L281.82 794.64 L285.86 792.91 L289.90 791.11 L293.94 789.23 L297.98 787.26 L302.02 785.22 L306.06 783.09 L310.10 780.87 L314.14 778.57 L318.18 776.18 L322.22 773.70 L326.26 771.13 L330.30 768.47 L334.34 765.71 L338.38 762.85 L342.42 759.89 L346.46 756.84 L350.51 753.68 L354.55 750.42 L358.59 747.05 L362.63 743.58 L366.67 740.00 L370.71 736.31 L374.75 732.50 L378.79 728.59 L382.83 724.56 L386.87 720.41 L390.91 716.14 L394.95 711.75 L398.99 707.24 L403.03 702.61 L407.07 697.85 L411.11 692.96 L415.15 687.95 L419.19 682.80 L423.23 677.53 L427.27 672.12 L431.31 666.57 L435.35 660.89 L439.39 655.07 L443.43 649.11 L447.47 643.01 L451.52 636.76 L455.56 630.37 L459.60 623.83 L463.64 617.15 L467.68 610.31 L471.72 603.32 L475.76 596.18 L479.80 588.88 L483.84 581.42 L487.88 573.81 L491.92 566.04 L495.96 558.10 L500.00 550.00" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M500 550 L580 550" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M220 820 L220 812.71" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<circle cx="220" cy="812.71" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<path d="M380 820 L380 727.39" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<circle cx="380" cy="727.39" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<text x="220" y="856" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">0.3</text>
+<text x="380" y="856" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">0.7</text>
+<text x="500" y="856" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">1</text>
+<text x="320" y="904" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">F(0.7) − F(0.3) = 0.343 − 0.027</text>
+</g>
+</svg>

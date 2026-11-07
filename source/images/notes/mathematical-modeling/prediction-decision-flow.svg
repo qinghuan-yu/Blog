@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 820" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">预测与决策：把不确定性传下去</title>
+<desc id="desc">历史数据支持销量、产量或价格预测。预测分布或误差生成不同输入情景，优化模型在这些情景和资源约束下选择订货或排产方案，再检查独立表现与敏感性。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">预测与决策：把不确定性传下去</text>
+<rect x="140" y="115" width="360" height="75" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="160.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">历史数据与业务信息</text>
+<path d="M320 190 V230" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<rect x="140" y="230" width="360" height="90" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="283.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">预测：销量 / 价格 / 产量</text>
+<path d="M320 320 V360" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M320 360 H110 V405" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="20" y="405" width="180" height="75" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="110.0" y="450.5" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">偏低情景</text>
+<path d="M110 480 V530 H320" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M320 360 H320 V405" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="230" y="405" width="180" height="75" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="450.5" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">中心情景</text>
+<path d="M320 480 V530 H320" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M320 360 H530 V405" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="440" y="405" width="180" height="75" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="530.0" y="450.5" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">偏高情景</text>
+<path d="M530 480 V530 H320" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M320 530 V570" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="320" y="84" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">预测误差 → 情景范围</text>
+<rect x="100" y="570" width="440" height="105" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="614.5" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">优化：目标收益 + 资源约束</text>
+<text x="320.0" y="646.5" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">决定订货量 / 排产量</text>
+<path d="M320 675 V725" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="100" y="725" width="440" height="70" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="768.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">独立验证与敏感性分析</text>
+</g>
+</svg>

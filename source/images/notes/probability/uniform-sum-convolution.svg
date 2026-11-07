@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1040" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">卷积：沿 x+y=z 截取单位正方形</title><desc id="desc">独立均匀变量X和Y均在0到1。固定z时，积分变量x从max(0,z−1)到min(1,z)，积分区间长度给出和的三角形密度。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">卷积：沿 x+y=z 截取单位正方形</text>
+<text x="320" y="88" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">X、Y 独立，均服从 U(0,1)</text>
+<rect x="140" y="155" width="340" height="340" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<path d="M140 495 L495 495" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<path d="M140 495 L140 140" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="500" y="525" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">x</text>
+<text x="115" y="125" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">y</text>
+<text x="122" y="523" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">0</text>
+<text x="480" y="525" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">1</text>
+<text x="115" y="163" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">1</text>
+<path d="M140 291 L344 495" fill="none" stroke="#0d9488" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M276 155 L480 359" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="200" y="465" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">z = 0.6</text>
+<text x="405" y="235" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">z = 1.4</text>
+<text x="320" y="557" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">x 从 max(0,z−1) 积到 min(1,z)</text>
+<path d="M100 875 L565 875" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<path d="M100 875 L100 630" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="570" y="905" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">z</text>
+<text x="75" y="615" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">fZ</text>
+<text x="82" y="903" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">0</text>
+<path d="M100 875 L320 655 L540 875 Z" fill="#e8f5f3" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="320" y="909" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">1</text>
+<text x="540" y="909" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">2</text>
+<text x="72" y="663" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">1</text>
+<text x="215" y="784" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">z</text>
+<text x="425" y="784" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">2−z</text>
+<text x="320" y="951" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="600">fZ(z) = 积分区间长度</text>
+<text x="320" y="994" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">0 &lt; z ≤ 1 时为 z；1 &lt; z &lt; 2 时为 2−z</text>
+</g>
+</svg>

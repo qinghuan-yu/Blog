@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 850" data-layout="compact" role="img" aria-labelledby="title desc">
+  <title id="title">分区分配：同一批作业，不同落点</title>
+  <desc id="desc">初始空闲区F1为200KB、F2为60KB，作业依次为A30KB、B70KB、C50KB。首次适应和最坏适应均把A、B、C放入F1，剩余F1=50、F2=60。最佳适应将A放入F2，B与C放入F1，剩余F1=80、F2=30。</desc>
+  <defs>
+    <marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+    <marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+    <marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+  </defs>
+  <g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+    <text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">分区分配：同一批作业，不同落点</text>
+    <text x="320" y="83" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">初始 F1=200KB，F2=60KB</text>
+    <text x="320" y="122" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">到达顺序：A 30KB → B 70KB → C 50KB</text>
+    <text x="320" y="180" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">首次适应：从低地址找第一个够大的区</text>
+    <text x="36" y="241" font-size="24" fill="#243247" text-anchor="start" font-weight="500">F1</text>
+    <rect x="110" y="204" width="72.0" height="56" rx="0" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="146.0" y="239" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">A 30</text>
+    <rect x="182.0" y="204" width="168.0" height="56" rx="0" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="266.0" y="239" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">B 70</text>
+    <rect x="350.0" y="204" width="120.0" height="56" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="410.0" y="239" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">C 50</text>
+    <rect x="470.0" y="204" width="120.0" height="56" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+    <text x="530.0" y="239" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">50</text>
+    <text x="36" y="312" font-size="24" fill="#243247" text-anchor="start" font-weight="500">F2</text>
+    <rect x="110" y="275" width="144.0" height="56" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+    <text x="182.0" y="310" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">60</text>
+    <text x="320" y="403" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">最佳适应：选择够用的最小空闲区</text>
+    <text x="36" y="464" font-size="24" fill="#243247" text-anchor="start" font-weight="500">F1</text>
+    <rect x="110" y="427" width="168.0" height="56" rx="0" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="194.0" y="462" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">B 70</text>
+    <rect x="278.0" y="427" width="120.0" height="56" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="338.0" y="462" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">C 50</text>
+    <rect x="398.0" y="427" width="192.0" height="56" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+    <text x="494.0" y="462" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">80</text>
+    <text x="36" y="535" font-size="24" fill="#243247" text-anchor="start" font-weight="500">F2</text>
+    <rect x="110" y="498" width="72.0" height="56" rx="0" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="146.0" y="533" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">A 30</text>
+    <rect x="182.0" y="498" width="72.0" height="56" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+    <text x="218.0" y="533" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">30</text>
+    <text x="320" y="626" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">最坏适应：每次选择最大的空闲区</text>
+    <text x="36" y="687" font-size="24" fill="#243247" text-anchor="start" font-weight="500">F1</text>
+    <rect x="110" y="650" width="72.0" height="56" rx="0" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="146.0" y="685" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">A 30</text>
+    <rect x="182.0" y="650" width="168.0" height="56" rx="0" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="266.0" y="685" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">B 70</text>
+    <rect x="350.0" y="650" width="120.0" height="56" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="410.0" y="685" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">C 50</text>
+    <rect x="470.0" y="650" width="120.0" height="56" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+    <text x="530.0" y="685" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">50</text>
+    <text x="36" y="758" font-size="24" fill="#243247" text-anchor="start" font-weight="500">F2</text>
+    <rect x="110" y="721" width="144.0" height="56" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+    <text x="182.0" y="756" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">60</text>
+    <text x="320" y="827" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">数字单位：KB；无填色区为剩余空闲空间</text>
+  </g>
+</svg>

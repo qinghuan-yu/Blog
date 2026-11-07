@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 880" data-layout="compact" role="img" aria-labelledby="title desc">
+  <title id="title">段页查表：5000 怎样变成 852872</title>
+  <desc id="desc">逻辑地址为段0、段内偏移5000。每页4096字节，页号1、页内偏移904。查段表0得到页表地址并通过段长检查，再查页表1得到物理块208。物理地址为208乘4096加904，即852872。段表、页表和数据分别在内存中访问。</desc>
+  <defs>
+    <marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+    <marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+    <marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+  </defs>
+  <g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+    <text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">段页查表：5000 怎样变成 852872</text>
+    <text x="320" y="84" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">段 0 · 段内偏移 5000 · 页大小 4096B</text>
+    <rect x="80" y="115" width="480" height="75" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="320.0" y="160.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">5000 = 1 × 4096 + 904</text>
+    <text x="200" y="226" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">段号 0</text>
+    <text x="470" y="226" font-size="26" fill="#2563eb" text-anchor="middle" font-weight="500">页内偏移 904</text>
+    <path d="M200 243 V285" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+    <path d="M470 243 H606 V734 H560" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#blue)"/>
+    <rect x="80" y="285" width="480" height="108" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="320" y="319" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">① 查段表第 0 项</text>
+    <text x="320" y="353" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">段长检查通过 → 取得页表起址</text>
+    <text x="320" y="383" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">段表寄存器提供段表起址</text>
+    <path d="M320 393 V438" fill="none" stroke="#64748b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#gray)"/>
+    <rect x="80" y="438" width="480" height="108" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="320" y="474" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">② 查页表第 1 项</text>
+    <text x="320" y="515" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">页 1 → 物理块 208</text>
+    <path d="M320 546 V592" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+    <rect x="80" y="592" width="480" height="80" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="320.0" y="640.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">块起址 = 208 × 4096 = 851968</text>
+    <path d="M320 672 V700" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+    <rect x="80" y="700" width="480" height="68" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="320.0" y="742.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">851968 + 904 = 852872</text>
+    <path d="M320 768 V802" fill="none" stroke="#2563eb" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#blue)"/>
+    <text x="320" y="838" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">③ 访问物理地址 852872，读取数据</text>
+  </g>
+</svg>

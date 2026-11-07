@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 900" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">LEFT JOIN：保留每个学生</title>
+<desc id="desc">Student中有S1小林、S2小周；SC中S1选了C1和C2。左连接结果中小林对应两行，小周仍保留一行，其课程号与成绩为NULL。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">LEFT JOIN：保留每个学生</text>
+<text x="170" y="110" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">Student</text>
+<text x="480" y="110" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">SC</text>
+<rect x="25" y="145" width="275" height="132" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="25" y="145" width="275" height="44" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="93.75" y="175" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">Sno</text>
+<path d="M162.5 145 V277" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="231.25" y="175" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">Sname</text>
+<path d="M25 189 H300" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="93.75" y="219" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">S1</text>
+<text x="231.25" y="219" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">小林</text>
+<path d="M25 233 H300" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="93.75" y="263" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">S2</text>
+<text x="231.25" y="263" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">小周</text>
+<rect x="340" y="145" width="275" height="132" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="340" y="145" width="275" height="44" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="385.8333333333333" y="175" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">Sno</text>
+<path d="M431.6666666666667 145 V277" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="477.5" y="175" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">Cno</text>
+<path d="M523.3333333333334 145 V277" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="569.1666666666667" y="175" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">Grade</text>
+<path d="M340 189 H615" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="385.8333333333333" y="219" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">S1</text>
+<text x="477.5" y="219" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">C1</text>
+<text x="569.1666666666667" y="219" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">90</text>
+<path d="M340 233 H615" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="385.8333333333333" y="263" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">S1</text>
+<text x="477.5" y="263" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">C2</text>
+<text x="569.1666666666667" y="263" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">85</text>
+<path d="M162 277 V330 H320" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M320 370 V405" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+<path d="M477 277 V330 H320" fill="none" stroke="#64748b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="320" y="360" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">按 Sno 左连接</text>
+<rect x="35" y="420" width="570" height="176" rx="0" fill="none" stroke="#64748b" stroke-width="2"/>
+<rect x="35" y="420" width="570" height="44" rx="0" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="130.0" y="450" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">Sname</text>
+<path d="M225.0 420 V596" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="320.0" y="450" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">Cno</text>
+<path d="M415.0 420 V596" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="510.0" y="450" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">Grade</text>
+<path d="M35 464 H605" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="130.0" y="494" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">小林</text>
+<text x="320.0" y="494" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">C1</text>
+<text x="510.0" y="494" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">90</text>
+<path d="M35 508 H605" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="130.0" y="538" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">小林</text>
+<text x="320.0" y="538" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">C2</text>
+<text x="510.0" y="538" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">85</text>
+<path d="M35 552 H605" fill="none" stroke="#64748b" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="35" y="552" width="570" height="44" rx="0" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="130.0" y="582" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">小周</text>
+<text x="320.0" y="582" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">NULL</text>
+<text x="510.0" y="582" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">NULL</text>
+<text x="320" y="660" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">一对多匹配 → 小林出现两行</text>
+<text x="320" y="710" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">没有匹配课程 → 小周仍有一行</text>
+<text x="320" y="760" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">右表列用 NULL 补齐</text>
+<text x="320" y="835" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">结果行数由匹配数量共同决定</text>
+</g>
+</svg>

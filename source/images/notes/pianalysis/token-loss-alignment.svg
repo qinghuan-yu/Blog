@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 865" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">旋律作条件，伴奏与 EOS 计算损失</title>
+<desc id="desc">例子输入BOS m SEP a1 a2 EOS PAD，对应labels为-100 -100 -100 a1 a2 EOS -100。模型内部用logits位置t预测labels位置t+1，SEP位置预测a1，a1预测a2，a2预测EOS；旋律参与上下文但其标签损失被忽略，PAD也忽略。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">旋律作条件，伴奏与 EOS 计算损失</text>
+<text x="320" y="85" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">例：m 是旋律片段，a₁ / a₂ 是伴奏 token</text>
+<text x="30" y="132" font-size="26" fill="#243247" text-anchor="start" font-weight="600">输入序列 input_ids</text>
+<text x="30" y="265" font-size="26" fill="#243247" text-anchor="start" font-weight="600">标签 labels</text>
+<rect x="26" y="155" width="80" height="58" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="66.0" y="192.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">BOS</text>
+<rect x="26" y="288" width="80" height="58" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="66.0" y="325.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">−100</text>
+<text x="66.0" y="240" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">0</text>
+<rect x="110" y="155" width="80" height="58" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="150.0" y="192.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">m</text>
+<rect x="110" y="288" width="80" height="58" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="150.0" y="325.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">−100</text>
+<text x="150.0" y="240" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">1</text>
+<rect x="194" y="155" width="80" height="58" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="234.0" y="192.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">SEP</text>
+<rect x="194" y="288" width="80" height="58" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="234.0" y="325.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">−100</text>
+<text x="234.0" y="240" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">2</text>
+<rect x="278" y="155" width="80" height="58" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="318.0" y="192.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a₁</text>
+<rect x="278" y="288" width="80" height="58" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="318.0" y="325.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a₁</text>
+<text x="318.0" y="240" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">3</text>
+<rect x="362" y="155" width="80" height="58" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="402.0" y="192.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a₂</text>
+<rect x="362" y="288" width="80" height="58" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="402.0" y="325.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a₂</text>
+<text x="402.0" y="240" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">4</text>
+<rect x="446" y="155" width="80" height="58" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="486.0" y="192.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">EOS</text>
+<rect x="446" y="288" width="80" height="58" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="486.0" y="325.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">EOS</text>
+<text x="486.0" y="240" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">5</text>
+<rect x="530" y="155" width="80" height="58" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="570.0" y="192.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">PAD</text>
+<rect x="530" y="288" width="80" height="58" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="570.0" y="325.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">−100</text>
+<text x="570.0" y="240" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">6</text>
+<text x="320" y="390" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">−100：该标签不计入 loss</text>
+<text x="30" y="450" font-size="26" fill="#243247" text-anchor="start" font-weight="600">内部错位对齐：位置 t 预测下一个 token</text>
+<rect x="30" y="490" width="320" height="58" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="190.0" y="527.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">SEP 位置的 logits</text>
+<path d="M350 519 H430" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="430" y="490" width="180" height="58" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="520.0" y="527.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a₁</text>
+<rect x="30" y="575" width="320" height="58" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="190.0" y="612.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a₁ 位置的 logits</text>
+<path d="M350 604 H430" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="430" y="575" width="180" height="58" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="520.0" y="612.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a₂</text>
+<rect x="30" y="660" width="320" height="58" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="190.0" y="697.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">a₂ 位置的 logits</text>
+<path d="M350 689 H430" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="430" y="660" width="180" height="58" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="520.0" y="697.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">EOS</text>
+<text x="320" y="782" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">旋律供模型读取；有效目标为 a₁、a₂、EOS</text>
+<text x="320" y="825" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">PAD 标签也设为 −100</text>
+</g>
+</svg>

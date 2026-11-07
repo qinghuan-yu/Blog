@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 860" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">建模闭环：让结果接受验证</title>
+<desc id="desc">从变量与假设出发，建立关系式并追溯参数来源，求解得到数值结果，再用独立证据或检验验证。验证发现偏差时调整模型与参数，通过后形成结论及适用条件。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">建模闭环：让结果接受验证</text>
+<rect x="100" y="110" width="440" height="80" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="158.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">变量定义与假设</text>
+<path d="M320 190 V235" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<rect x="100" y="235" width="440" height="90" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="288.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">关系式 + 参数来源</text>
+<path d="M320 325 V375" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<rect x="100" y="375" width="440" height="90" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="428.0" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">求解器 → 数值结果</text>
+<path d="M320 465 V515" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="100" y="515" width="440" height="100" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="557.0" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">独立验证</text>
+<text x="320.0" y="589.0" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">数据、守恒、基线或敏感性</text>
+<path d="M540 565 H600 V280 H540" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)"/>
+<text x="568" y="399" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">修</text>
+<text x="568" y="431" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">正</text>
+<path d="M320 615 V705" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="384" y="663" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">通过</text>
+<rect x="100" y="705" width="440" height="90" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="758.0" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">结论与适用条件</text>
+<text x="320" y="838" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">验证发现偏差 → 回到关系式与参数</text>
+</g>
+</svg>

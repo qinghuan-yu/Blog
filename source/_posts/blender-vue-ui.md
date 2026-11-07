@@ -41,6 +41,8 @@ tags: ["设计" ]
 - **解法**：在 View Layers 中，将桌子所在的集合设置为 **Holdout**。
 - **原理**：Holdout 将桌子遮住的区域从高亮层中扣除，使其成为透明区域。导出的 PNG 保留了模型被桌面遮挡后的轮廓，叠加到底图时，两层的遮挡关系就能一致。
 
+![Holdout 与隐藏桌子的高亮图层对照：被桌面遮挡的像素变为透明，叠回底图后轮廓对齐](/images/notes/blender-vue/holdout-occlusion.svg)
+
 ---
 
 ## 第二阶段：Vue 3 前端图层与事件穿透
@@ -60,6 +62,8 @@ tags: ["设计" ]
 
 - **原理**：`event.target` 判定被最上层元素拦截。
 - **最后**：给 UI 框加上 `pointer-events: none;`。
+
+![Vue 图层与命中顺序：DOM 装饰层跳过指针事件，高亮 PNG 层接收交互，三层共享绝对定位](/images/notes/blender-vue/layer-stack-hit-testing.svg)
 
 ---
 

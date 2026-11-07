@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">D 触发器：在上升沿保存输入</title>
+<desc id="desc">D在三个上升沿前分别稳定为1、0、1，Q保持旧值到上升沿后一个clk-to-Q延迟，再更新为对应采样值。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">D 触发器：在上升沿保存输入</text>
+<text x="320" y="83" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">上升沿采样 · Q 在输出延迟后更新</text>
+<text x="30" y="186" font-size="26" fill="#243247" text-anchor="start" font-weight="600">Clock</text>
+<text x="30" y="336" font-size="26" fill="#243247" text-anchor="start" font-weight="600">D</text>
+<text x="30" y="486" font-size="26" fill="#243247" text-anchor="start" font-weight="600">Q</text>
+<path d="M130 200 H180 V150 H240 V200 H340 V150 H400 V200 H500 V150 H560 V200 H610" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M130 350 H155 V300 H270 V350 H430 V300 H610" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M130 500 H197 V450 H357 V500 H517 V450 H610" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M180 125 V530" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 6"/>
+<text x="180" y="115" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">沿 1</text>
+<path d="M180 545 V557 H197 V545" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M340 125 V530" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 6"/>
+<text x="340" y="115" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">沿 2</text>
+<path d="M340 545 V557 H357 V545" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M500 125 V530" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 6"/>
+<text x="500" y="115" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">沿 3</text>
+<path d="M500 545 V557 H517 V545" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="320" y="597" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">每次 Q 跳变都晚于时钟沿：tclk→Q</text>
+</g>
+</svg>

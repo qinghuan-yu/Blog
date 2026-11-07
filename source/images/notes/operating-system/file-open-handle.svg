@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 900" data-layout="compact" role="img" aria-labelledby="title desc">
+  <title id="title">打开文件：路径查一次，句柄反复用</title>
+  <desc id="desc">首次打开通过路径逐级查目录，定位FCB并检查权限，建立打开文件表项并向进程返回句柄。随后read或write携带句柄索引打开文件表，利用文件管理信息与当前位置访问数据块，无需从路径重新遍历。</desc>
+  <defs>
+    <marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+    <marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+    <marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+  </defs>
+  <g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+    <text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">打开文件：路径查一次，句柄反复用</text>
+    <text x="30" y="104" font-size="26" fill="#243247" text-anchor="start" font-weight="600">首次 open(path)</text>
+    <rect x="50" y="135" width="540" height="66" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="320.0" y="176.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">路径：目录 → 子目录 → 文件名</text>
+    <path d="M320 201 V241" fill="none" stroke="#64748b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#gray)"/>
+    <rect x="100" y="241" width="440" height="75" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="320.0" y="286.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">定位文件控制块 FCB · 检查权限</text>
+    <path d="M320 316 V358" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+    <rect x="100" y="358" width="440" height="95" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="320.0" y="397.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">建立打开文件表项</text>
+    <text x="320.0" y="430.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">文件引用 · 访问模式 · 当前位置</text>
+    <path d="M100 405 H32 V534 H160" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+    <rect x="160" y="497" width="320" height="74" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="320.0" y="542.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">返回句柄给进程</text>
+    <text x="30" y="635" font-size="26" fill="#243247" text-anchor="start" font-weight="600">后续 read / write(handle)</text>
+    <rect x="30" y="670" width="160" height="80" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="110.0" y="718.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">进程句柄</text>
+    <rect x="270" y="670" width="340" height="80" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="440.0" y="718.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">打开文件表项</text>
+    <path d="M190 710 H270" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+    <path d="M440 750 V793" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+    <rect x="270" y="793" width="340" height="70" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="440.0" y="836.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">按当前位置访问文件数据</text>
+  </g>
+</svg>

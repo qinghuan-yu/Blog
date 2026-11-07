@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 760" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">关键路径：前推取最大，后推取最小</title><desc id="desc">AOE网络活动为S到A3、S到B2、A到B1、A到T4、B到T3。最早最迟事件时间分别为S0/0、A3/3、B4/4、T7/7。两条关键路径S-A-T和S-A-B-T均长7。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">关键路径：前推取最大，后推取最小</text>
+<text x="320" y="88" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">节点旁：最早时间 ee / 最迟时间 le</text>
+<path d="M116.833 256.584 L293.167 168.416" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="205" y="197.5" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">3</text>
+<path d="M116.117 284.762 L293.883 385.238" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="205" y="320" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">2</text>
+<path d="M320 185 L320 370" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="292" y="277.5" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">1</text>
+<path d="M346.833 168.416 L523.167 256.584" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="435" y="197.5" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">4</text>
+<path d="M346.117 385.238 L523.883 284.762" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="435" y="320" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">3</text>
+<circle cx="90" cy="270" r="30" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="90" y="278" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">S</text>
+<circle cx="320" cy="155" r="30" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320" y="163" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">A</text>
+<circle cx="320" cy="400" r="30" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320" y="408" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">B</text>
+<circle cx="550" cy="270" r="30" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="550" y="278" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">T</text>
+<text x="90" y="336" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">0 / 0</text>
+<text x="430" y="155" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">3 / 3</text>
+<text x="320" y="466" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">4 / 4</text>
+<text x="550" y="336" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">7 / 7</text>
+<text x="320" y="535" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">ee(T) = max(3+4, 4+3) = 7</text>
+<text x="320" y="582" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">le(A) = min(7−4, 4−1) = 3</text>
+<text x="320" y="640" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">青色活动的最早、最迟开始时间相同</text>
+<text x="320" y="687" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">S → A → T 与 S → A → B → T</text>
+<text x="320" y="729" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="600">两条路径都决定工期 7</text>
+</g>
+</svg>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 980" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">两段锁：增长后转入收缩</title>
+<desc id="desc">2PL增长阶段只加锁，第一次解锁后进入只释放锁的收缩阶段。示例T1持有A申请B，T2持有B申请A，等待图出现T1到T2及T2到T1的环。等待边与冲突优先边含义不同。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">两段锁：增长后转入收缩</text>
+<text x="30" y="105" font-size="26" fill="#243247" text-anchor="start" font-weight="600">① 一次事务中的锁操作</text>
+<rect x="30" y="155" width="280" height="180" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<rect x="330" y="155" width="280" height="180" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="170" y="200" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="600">增长阶段</text>
+<text x="170" y="247" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">加锁 A → 加锁 B</text>
+<text x="470" y="200" font-size="26" fill="#64748b" text-anchor="middle" font-weight="600">收缩阶段</text>
+<text x="470" y="247" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">解锁 A → 解锁 B</text>
+<path d="M65 295 H575" fill="none" stroke="#64748b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#gray)"/>
+<text x="320" y="390" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">第一次解锁，是两个阶段的分界</text>
+<text x="30" y="480" font-size="26" fill="#243247" text-anchor="start" font-weight="600">② 两个事务互相等锁</text>
+<rect x="45" y="535" width="240" height="96" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="165.0" y="570" font-size="24" fill="#64748b" text-anchor="middle" font-weight="600">T1 持有 A</text>
+<text x="165.0" y="606" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">申请 B</text>
+<rect x="355" y="535" width="240" height="96" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="475.0" y="570" font-size="24" fill="#64748b" text-anchor="middle" font-weight="600">T2 持有 B</text>
+<text x="475.0" y="606" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">申请 A</text>
+<path d="M285 560 H355" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+<text x="320" y="520" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">等 B</text>
+<path d="M355 615 H285" fill="none" stroke="#2563eb" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#blue)"/>
+<text x="320" y="675" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">等 A</text>
+<text x="320" y="750" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">等待图：T1 → T2 → T1</text>
+<text x="320" y="810" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">边指向“占有我所需资源”的事务</text>
+<text x="320" y="870" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">遵循两段锁，仍可能出现互相等待</text>
+</g>
+</svg>

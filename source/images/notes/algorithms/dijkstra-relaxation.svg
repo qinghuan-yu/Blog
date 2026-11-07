@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 920" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">Dijkstra：定点，再松弛邻边</title><desc id="desc">非负权有向图从S出发。S到A4、S到B1、B到A2、A到T1、B到T6。依次确定S、B、A、T，距离A从4改3，T从7改4。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">Dijkstra：定点，再松弛邻边</text>
+<text x="320" y="88" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">从 S 出发，所有边权均非负</text>
+<path d="M117.064 257.056 L292.936 172.944" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="205" y="200" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">4</text>
+<path d="M116.598 283.877 L293.402 376.123" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="205" y="315" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">1</text>
+<path d="M320 360 L320 190" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="292" y="275" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">2</text>
+<path d="M347.064 172.944 L522.936 257.056" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="435" y="200" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">1</text>
+<path d="M346.598 376.123 L523.402 283.877" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="435" y="315" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">6</text>
+<circle cx="90" cy="270" r="30" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="90" y="278" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">S</text>
+<circle cx="320" cy="160" r="30" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320" y="168" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">A</text>
+<circle cx="320" cy="390" r="30" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320" y="398" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">B</text>
+<circle cx="550" cy="270" r="30" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="550" y="278" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">T</text>
+<text x="100" y="492" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">刚确定</text>
+<text x="255" y="492" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">dist(A)</text>
+<text x="400" y="492" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">dist(B)</text>
+<text x="545" y="492" font-size="24" fill="#243247" text-anchor="middle" font-weight="600">dist(T)</text>
+<path d="M40 565 L600 565" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="100" y="545" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">S</text>
+<text x="255" y="545" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">4</text>
+<text x="400" y="545" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">1</text>
+<text x="545" y="545" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">∞</text>
+<path d="M40 628 L600 628" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="100" y="608" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">B</text>
+<text x="255" y="608" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">3</text>
+<text x="400" y="608" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">1</text>
+<text x="545" y="608" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">7</text>
+<path d="M40 691 L600 691" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="100" y="671" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">A</text>
+<text x="255" y="671" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">3</text>
+<text x="400" y="671" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">1</text>
+<text x="545" y="671" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">4</text>
+<path d="M40 754 L600 754" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="100" y="734" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">T</text>
+<text x="255" y="734" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">3</text>
+<text x="400" y="734" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">1</text>
+<text x="545" y="734" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">4</text>
+<text x="320" y="826" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">经 B：A 的距离 4 → 1+2 = 3</text>
+<text x="320" y="868" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">经 A：T 的距离 7 → 3+1 = 4</text>
+</g>
+</svg>

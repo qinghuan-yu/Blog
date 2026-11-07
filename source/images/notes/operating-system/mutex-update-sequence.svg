@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 870" data-layout="compact" role="img" aria-labelledby="title desc">
+  <title id="title">互斥：把读、减、写一起保护</title>
+  <desc id="desc">线程A先获得互斥锁，读取1000并写回900后释放锁；线程B等待A释放，再获得锁读取900、写回800，最终两次扣血均生效。</desc>
+  <defs>
+    <marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+    <marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+    <marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+  </defs>
+  <g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+    <text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">互斥：把读、减、写一起保护</text>
+    <text x="320" y="83" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">Mutex 初值 1 · 共享 Boss_HP 初值 1000</text>
+    <text x="175" y="135" font-size="28" fill="#0d9488" text-anchor="middle" font-weight="600">线程 A</text>
+    <text x="465" y="135" font-size="28" fill="#2563eb" text-anchor="middle" font-weight="600">线程 B</text>
+    <rect x="50" y="165" width="250" height="255" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="175" y="205" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">P(Mutex) 获得锁</text>
+    <text x="175" y="248" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">读入 1000</text>
+    <text x="175" y="291" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">减 100 → 900</text>
+    <text x="175" y="334" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">写回 900</text>
+    <text x="175" y="377" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">V(Mutex) 释放锁</text>
+    <path d="M465 165 V420" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 8"/>
+    <text x="520" y="280" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">等待锁</text>
+    <path d="M175 420 V463 H465 V505" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+    <text x="320" y="451" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">释放后，B 获得锁</text>
+    <rect x="340" y="505" width="250" height="255" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="465" y="545" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">P(Mutex) 获得锁</text>
+    <text x="465" y="588" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">读入 900</text>
+    <text x="465" y="631" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">减 100 → 800</text>
+    <text x="465" y="674" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">写回 800</text>
+    <text x="465" y="717" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">V(Mutex) 释放锁</text>
+    <text x="175" y="608" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">A 已完成</text>
+    <text x="320" y="821" font-size="28" fill="#0d9488" text-anchor="middle" font-weight="600">共享血量：1000 → 900 → 800</text>
+  </g>
+</svg>

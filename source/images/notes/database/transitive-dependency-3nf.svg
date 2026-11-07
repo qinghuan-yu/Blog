@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 790" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">3NF：把院系属性交给院系表</title>
+<desc id="desc">Student中Sno决定DeptNo，DeptNo决定DeptName，院系名对学号产生传递依赖。拆出Department(DeptNo,DeptName)，Student保留DeptNo作为外键。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">3NF：把院系属性交给院系表</text>
+<text x="320" y="90" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">Student(Sno, Sname, DeptNo, DeptName)</text>
+<rect x="195" y="135" width="250" height="60" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="170" font-size="24" fill="#64748b" text-anchor="middle" font-weight="600">Sno</text>
+<path d="M320 195 V245" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+<rect x="195" y="245" width="250" height="60" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="280" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="600">DeptNo</text>
+<path d="M320 305 V355" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+<rect x="195" y="355" width="250" height="60" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="390" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="600">DeptName</text>
+<text x="320" y="465" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">学号 → 院系编号 → 院系名称</text>
+<path d="M320 485 V530" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+<rect x="45" y="530" width="550" height="60" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="565" font-size="24" fill="#64748b" text-anchor="middle" font-weight="600">Student(Sno, Sname, DeptNo)</text>
+<rect x="45" y="645" width="550" height="60" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="680" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="600">Department(DeptNo, DeptName)</text>
+<path d="M540 590 V645" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+<text x="320" y="745" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">Student.DeptNo 引用 Department.DeptNo</text>
+</g>
+</svg>

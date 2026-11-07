@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1130" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">野区置换：把行动转向另一侧</title>
+<desc id="desc">蓝方位于左下，红方位于右上。敌人在上路露头时，我方从下半区选择小龙或敌方下野；敌人入侵我上野时，我方可用敌方下野交换。地图标出相邻中下路线、入口和撤回方向。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">野区置换：把行动转向另一侧</text>
+<text x="320" y="86" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">蓝方视角 · 先看中下线权和敌方位置</text>
+<text x="320" y="140" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">敌方抓上 → 我方在下半区换资源</text>
+<path d="M150 505 V185 H490" fill="none" stroke="#64748b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M150 505 H490 V185" fill="none" stroke="#64748b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M150 505 L490 185" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M150 185 L490 505" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 7"/>
+<circle cx="150" cy="505" r="14" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<circle cx="490" cy="185" r="14" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="99" y="513" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">蓝方</text>
+<text x="535" y="193" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">红方</text>
+<text x="93" y="250" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">上路</text>
+<text x="535" y="485" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">下路</text>
+<text x="223" y="335" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">我上野</text>
+<text x="370" y="277" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">敌上野</text>
+<text x="274" y="464" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">我下野</text>
+<text x="425" y="399" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">敌下野</text>
+<circle cx="150" cy="220" r="15" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<path d="M180 235 L165 225" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)"/>
+<text x="250" y="223" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">敌方露头</text>
+<circle cx="330" cy="461" r="9" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<path d="M330 461 L390 463 L425 425" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<circle cx="406" cy="437" r="9" fill="none" stroke="#0d9488" stroke-width="2"/>
+<text x="545" y="435" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">小龙</text>
+<path d="M425 425 L447 462 L400 487" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)" stroke-dasharray="6 6"/>
+<text x="490" y="531" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">沿出口撤回</text>
+<text x="320" y="620" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">敌方入我上野 → 我方入敌下野</text>
+<path d="M150 985 V665 H490" fill="none" stroke="#64748b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M150 985 H490 V665" fill="none" stroke="#64748b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M150 985 L490 665" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M150 665 L490 985" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 7"/>
+<circle cx="150" cy="985" r="14" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<circle cx="490" cy="665" r="14" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="99" y="993" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">蓝方</text>
+<text x="535" y="673" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">红方</text>
+<text x="93" y="730" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">上路</text>
+<text x="535" y="965" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">下路</text>
+<text x="223" y="815" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">我上野</text>
+<text x="370" y="757" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">敌上野</text>
+<text x="274" y="944" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">我下野</text>
+<text x="425" y="879" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">敌下野</text>
+<circle cx="230" cy="783" r="15" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<path d="M340 735 L246 777" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)"/>
+<text x="250" y="725" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">敌方入侵</text>
+<circle cx="330" cy="941" r="9" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<path d="M330 941 L390 943 L425 905" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<path d="M425 905 L447 942 L400 967" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)" stroke-dasharray="6 6"/>
+<text x="500" y="1010" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">取资源后撤</text>
+<text x="320" y="1100" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">实线：进入方向　虚线箭头：撤退方向</text>
+</g>
+</svg>

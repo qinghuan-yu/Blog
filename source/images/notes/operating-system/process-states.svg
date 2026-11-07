@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 620" data-layout="compact" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 590" data-layout="compact" role="img" aria-labelledby="title desc">
   <title id="title">进程的三个基本状态</title>
-  <desc id="desc">就绪态经调度进入运行态；运行态因时间片用完或被抢占回到就绪态，因等待 I/O 或其他事件进入阻塞态；阻塞态在等待事件发生后回到就绪态，而不是直接运行。本图只画三个基本状态，不含创建、终止和挂起。</desc>
+  <desc id="desc">就绪态经调度进入运行态；运行态因时间片用完或被抢占回到就绪态，因等待 I/O 或其他事件进入阻塞态；阻塞态在等待事件发生后回到就绪态，而不是直接运行。</desc>
   <defs>
     <marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/>
@@ -37,6 +37,5 @@
     <path d="M225 470 H78 V255" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
     <text x="145" y="393" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">事件发生</text>
     <text x="320" y="567" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">事件完成 → 就绪 → 再获调度才运行</text>
-    <text x="320" y="605" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">仅画基本状态，不含创建、终止与挂起</text>
   </g>
 </svg>

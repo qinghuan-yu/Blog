@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">非线性规划：圆与可行域相切</title><desc id="desc">最小化x1²+x2²，约束x1+x2≥1且非负。可行域在直线上方。半径由小增大的目标等高圆首次在(0.5,0.5)接触可行域，最小值0.5。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">非线性规划：圆与可行域相切</text>
+<text x="320" y="88" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">最小化 f = x₁² + x₂²</text>
+<path d="M100 400 L280 580 L550 580 L550 130 L100 130 Z" fill="#e8f5f3" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M100 580 L580 580" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<path d="M100 580 L100 100" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="585" y="610" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">x₁</text>
+<text x="75" y="85" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">x₂</text>
+<text x="82" y="608" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">0</text>
+<path d="M227.27922061357856 580 A127.27922061357856 127.27922061357856 0 0 0 100 452.72077938642144" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M280 580 A180 180 0 0 0 100 400" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<path d="M370.0 580 A270.0 270.0 0 0 0 100 310.0" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<path d="M460 580 A360 360 0 0 0 100 220" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<circle cx="190" cy="490" r="7" fill="#0d9488" stroke="#0d9488" stroke-width="2"/>
+<text x="320" y="448" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="600">最优点 (0.5,0.5)</text>
+<text x="320" y="661" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">x₁+x₂ ≥ 1，x₁ ≥ 0，x₂ ≥ 0</text>
+<text x="320" y="712" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">最小值 f = 0.5² + 0.5² = 0.5</text>
+<text x="320" y="759" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">等高圆首次碰到可行域的位置就是最优点</text>
+</g>
+</svg>

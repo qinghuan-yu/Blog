@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 790" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">三级模式：两层映射接住变化</title>
+<desc id="desc">多个外模式通过外模式/模式映射连接一个逻辑模式，逻辑模式再通过模式/内模式映射连接一个内模式。前者支持逻辑数据独立性，后者支持物理数据独立性。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">三级模式：两层映射接住变化</text>
+<rect x="30" y="100" width="270" height="96" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="165.0" y="135" font-size="24" fill="#64748b" text-anchor="middle" font-weight="600">外模式 A</text>
+<text x="165.0" y="171" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">学生自己的成绩</text>
+<rect x="340" y="100" width="270" height="96" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="475.0" y="135" font-size="24" fill="#64748b" text-anchor="middle" font-weight="600">外模式 B</text>
+<text x="475.0" y="171" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">教务处的学生信息</text>
+<path d="M165 196 V240 H475 V196" fill="none" stroke="#64748b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M320 240 V250" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M320 292 V325" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+<text x="320" y="280" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">外模式 / 模式映射</text>
+<rect x="115" y="325" width="410" height="96" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="360" font-size="24" fill="#64748b" text-anchor="middle" font-weight="600">模式 · 全局逻辑结构</text>
+<text x="320.0" y="396" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">Student / Course / SC</text>
+<text x="320" y="466" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">增列后，通过映射保持应用接口</text>
+<path d="M320 485 V500" fill="none" stroke="#2563eb" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M320 542 V565" fill="none" stroke="#2563eb" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#blue)"/>
+<text x="320" y="530" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">模式 / 内模式映射</text>
+<rect x="115" y="565" width="410" height="96" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="600" font-size="24" fill="#64748b" text-anchor="middle" font-weight="600">内模式 · 物理存取结构</text>
+<text x="320.0" y="636" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">数据文件 / 索引 / 存储布局</text>
+<text x="320" y="706" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">上层映射 → 逻辑数据独立性</text>
+<text x="320" y="748" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">下层映射 → 物理数据独立性</text>
+</g>
+</svg>

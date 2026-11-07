@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 960" data-layout="compact" role="img" aria-labelledby="title desc">
+  <title id="title">文件分配：连续、链接与索引</title>
+  <desc id="desc">同一文件由四个逻辑块组成。连续分配占用块4到7；链接分配按4到9到2到12保存后继指针；索引分配把4、9、2、12存入独立索引块，按逻辑块号定位数据块。</desc>
+  <defs>
+    <marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+    <marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+    <marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+  </defs>
+  <g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+    <text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">文件分配：连续、链接与索引</text>
+    <text x="320" y="83" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">文件的逻辑顺序：第 0、1、2、3 块</text>
+    <text x="30" y="137" font-size="26" fill="#243247" text-anchor="start" font-weight="600">① 连续分配</text>
+    <rect x="60" y="170" width="130" height="82" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="125.0" y="202.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">块 4</text>
+    <text x="125.0" y="235.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">数据 0</text>
+    <rect x="190" y="170" width="130" height="82" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="255.0" y="202.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">块 5</text>
+    <text x="255.0" y="235.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">数据 1</text>
+    <rect x="320" y="170" width="130" height="82" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="385.0" y="202.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">块 6</text>
+    <text x="385.0" y="235.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">数据 2</text>
+    <rect x="450" y="170" width="130" height="82" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="515.0" y="202.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">块 7</text>
+    <text x="515.0" y="235.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">数据 3</text>
+    <text x="320" y="294" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">起始块 4 + 逻辑块号 i → 块 4+i</text>
+    <text x="30" y="358" font-size="26" fill="#243247" text-anchor="start" font-weight="600">② 链接分配</text>
+    <rect x="25" y="395" width="125" height="90" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="87.5" y="431.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">块 4</text>
+    <text x="87.5" y="464.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">数据 0</text>
+    <path d="M150 440 H180" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#gray)"/>
+    <rect x="180" y="395" width="125" height="90" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="242.5" y="431.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">块 9</text>
+    <text x="242.5" y="464.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">数据 1</text>
+    <path d="M305 440 H335" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#gray)"/>
+    <rect x="335" y="395" width="125" height="90" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="397.5" y="431.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">块 2</text>
+    <text x="397.5" y="464.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">数据 2</text>
+    <path d="M460 440 H490" fill="none" stroke="#64748b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#gray)"/>
+    <rect x="490" y="395" width="125" height="90" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="552.5" y="431.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">块 12</text>
+    <text x="552.5" y="464.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">数据 3</text>
+    <text x="320" y="527" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">每个数据块记录下一块的位置</text>
+    <text x="30" y="591" font-size="26" fill="#243247" text-anchor="start" font-weight="600">③ 索引分配</text>
+    <rect x="30" y="625" width="180" height="236" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+    <text x="120" y="661" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="600">索引块</text>
+    <text x="120" y="704" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">0 → 4</text>
+    <path d="M210 696 H390" fill="none" stroke="#0d9488" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+    <rect x="390" y="674" width="200" height="40" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="490.0" y="702.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">数据块 4</text>
+    <text x="120" y="747" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">1 → 9</text>
+    <path d="M210 739 H390" fill="none" stroke="#0d9488" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+    <rect x="390" y="717" width="200" height="40" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="490.0" y="745.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">数据块 9</text>
+    <text x="120" y="790" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">2 → 2</text>
+    <path d="M210 782 H390" fill="none" stroke="#0d9488" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+    <rect x="390" y="760" width="200" height="40" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="490.0" y="788.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">数据块 2</text>
+    <text x="120" y="833" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">3 → 12</text>
+    <path d="M210 825 H390" fill="none" stroke="#0d9488" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+    <rect x="390" y="803" width="200" height="40" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="490.0" y="831.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">数据块 12</text>
+    <text x="320" y="921" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">逻辑块号直接选中索引项，再定位数据块</text>
+  </g>
+</svg>

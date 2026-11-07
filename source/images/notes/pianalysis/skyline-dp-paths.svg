@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1040" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">最高音路线与累计得分路线</title>
+<desc id="desc">数值例子每0.5秒一个起音，三个时刻候选音为60/72、62/84、64/76，局部分分别1/1.2、1/1.3、1/1.2。按正文音程转移项计算，最高音路径72到84到76得2.60，DP路径60到62到64得3.38。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">最高音路线与累计得分路线</text>
+<text x="320" y="85" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">数值例：起音间隔 0.5 秒，音长 0.4 秒</text>
+<text x="320" y="119" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">沿正文音程转移项，累加整条路径得分</text>
+<path d="M60 460 V155" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="55" y="140" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">音高</text>
+<path d="M60 460 H595" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="130" y="500" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">0 s</text>
+<text x="320" y="500" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">0.5 s</text>
+<text x="510" y="500" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">1.0 s</text>
+<path d="M130 420 L320 400" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M130 420 L320 180" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M130 300 L320 400" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M130 300 L320 180" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M320 400 L510 380" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M320 400 L510 260" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M320 180 L510 380" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M320 180 L510 260" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M130 300 L320 180 L510 260" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)" stroke-dasharray="9 7"/>
+<path d="M130 420 L320 400 L510 380" fill="none" stroke="#0d9488" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<circle cx="130" cy="420" r="24" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="130" y="428" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">60</text>
+<circle cx="130" cy="300" r="24" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="130" y="308" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">72</text>
+<circle cx="320" cy="400" r="24" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320" y="408" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">62</text>
+<circle cx="320" cy="180" r="24" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="320" y="188" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">84</text>
+<circle cx="510" cy="380" r="24" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="510" y="388" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">64</text>
+<circle cx="510" cy="260" r="24" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="510" y="268" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">76</text>
+<text x="320" y="550" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">青色：DP 选 60 → 62 → 64</text>
+<text x="320" y="587" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">蓝色虚线：最高音 72 → 84 → 76</text>
+<text x="30" y="644" font-size="26" fill="#243247" text-anchor="start" font-weight="600">局部分输入与 DP 累计最优分</text>
+<rect x="30" y="680" width="580" height="64" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="704.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">t0 局部分：1.00 / 1.20</text>
+<text x="320.0" y="736.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">累计分：1.00 / 1.20</text>
+<rect x="30" y="760" width="580" height="64" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="784.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">t1 局部分：1.00 / 1.30</text>
+<text x="320.0" y="816.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">累计分：2.19 / 1.84</text>
+<rect x="30" y="840" width="580" height="64" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="864.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">t2 局部分：1.00 / 1.20</text>
+<text x="320.0" y="896.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">累计分：3.38 / 2.60</text>
+<text x="320" y="970" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">终点取最大累计分，再沿前驱回溯</text>
+<text x="320" y="1010" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">60 → 62 → 64：3.38；最高音路线：2.60</text>
+</g>
+</svg>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 820" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">NAPT：出站改源端点，回包改目的端点</title>
+<desc id="desc">出站把源192.168.1.10:50000改为203.0.113.8:62001；设备记录映射，回包目的为公网端点时查表恢复内网端点。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">NAPT：出站改源端点，回包改目的端点</text>
+<text x="320" y="83" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">同一条端点映射用于两个方向</text>
+<text x="30" y="130" font-size="26" fill="#0d9488" text-anchor="start" font-weight="600">① 出站：修改源端点</text>
+<rect x="90" y="155" width="460" height="60" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320" y="195" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">192.168.1.10:50000</text>
+<path d="M320 215 V260" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="430" y="246" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">出口转换</text>
+<rect x="90" y="265" width="460" height="60" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320" y="305" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">203.0.113.8:62001</text>
+<text x="30" y="505" font-size="26" fill="#2563eb" text-anchor="start" font-weight="600">② 回包：修改目的端点</text>
+<rect x="90" y="530" width="460" height="60" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="320" y="570" font-size="26" fill="#2563eb" text-anchor="middle" font-weight="500">203.0.113.8:62001</text>
+<path d="M320 590 V635" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)"/>
+<text x="430" y="621" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">查映射表</text>
+<rect x="90" y="640" width="460" height="60" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="320" y="680" font-size="26" fill="#2563eb" text-anchor="middle" font-weight="500">192.168.1.10:50000</text>
+<rect x="30" y="363" width="580" height="94" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320" y="398" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">映射表</text>
+<text x="320" y="435" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">内网 :50000  ↔  公网 :62001</text>
+<text x="320" y="780" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">内网地址与端口由保存的映射恢复</text>
+</g>
+</svg>

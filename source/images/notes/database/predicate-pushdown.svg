@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1060" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">过滤下推：先缩小连接的输入</title>
+<desc id="desc">相同查询中，先连接再按Likes大于100过滤会让1000万条Comments参与连接；下推后先过滤得到500条，再按UserID与Users连接，最后保留UserName和Content。箭头从输入向输出。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">过滤下推：先缩小连接的输入</text>
+<text x="320" y="87" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">同一查询：取点赞数 &gt; 100 的评论与作者</text>
+<text x="30" y="145" font-size="26" fill="#243247" text-anchor="start" font-weight="600">① 先连接，再过滤</text>
+<rect x="30" y="190" width="275" height="96" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="167.5" y="225" font-size="24" fill="#64748b" text-anchor="middle" font-weight="600">Comments</text>
+<text x="167.5" y="261" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">1000 万行</text>
+<rect x="365" y="190" width="245" height="96" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="487.5" y="225" font-size="24" fill="#64748b" text-anchor="middle" font-weight="600">Users</text>
+<text x="487.5" y="261" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">按 UserID 匹配</text>
+<path d="M168 286 V320 H320 V350" fill="none" stroke="#64748b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#gray)"/>
+<path d="M488 286 V320 H320" fill="none" stroke="#64748b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="170" y="350" width="300" height="60" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="385" font-size="24" fill="#64748b" text-anchor="middle" font-weight="600">连接 → 过滤</text>
+<path d="M320 410 V455" fill="none" stroke="#64748b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#gray)"/>
+<text x="320" y="488" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">保留 UserName、Content</text>
+<text x="30" y="560" font-size="26" fill="#243247" text-anchor="start" font-weight="600">② 先过滤，再连接</text>
+<rect x="30" y="600" width="275" height="96" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="167.5" y="635" font-size="24" fill="#64748b" text-anchor="middle" font-weight="600">Comments</text>
+<text x="167.5" y="671" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">1000 万行</text>
+<path d="M168 696 V735" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+<rect x="30" y="735" width="275" height="96" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="167.5" y="770" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="600">Likes &gt; 100</text>
+<text x="167.5" y="806" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">500 行</text>
+<rect x="365" y="735" width="245" height="96" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="487.5" y="770" font-size="24" fill="#64748b" text-anchor="middle" font-weight="600">Users</text>
+<text x="487.5" y="806" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">按 UserID 匹配</text>
+<path d="M168 831 V865 H320 V900" fill="none" stroke="#0d9488" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#teal)"/>
+<path d="M488 831 V865 H320" fill="none" stroke="#64748b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="170" y="900" width="300" height="60" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="935" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="600">连接 → 保留所需列</text>
+<text x="320" y="1017" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">连接输入：1000 万条评论 → 500 条</text>
+</g>
+</svg>

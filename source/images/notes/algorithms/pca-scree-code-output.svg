@@ -1,0 +1,216 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 640 620" version="1.1" data-layout="compact" data-note-plot="true" role="img" aria-labelledby="title desc" font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif" stroke-linejoin="round" stroke-linecap="butt">
+ <title id="title">PCA：方差解释率与累计值</title><desc id="desc">运行正文绘图代码生成；随机种子0。</desc><metadata>
+  <rdf:RDF>
+   <ns2:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:date>2026-11-07T15:21:48.243493</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <ns2:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </ns2:Agent>
+    </dc:creator>
+   </ns2:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 620  L 640 620  L 640 0  L 0 0  L 0 620  z " style="fill: none" />
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 101.93 526.44  L 610 526.44  L 610 74.91625  L 101.93 74.91625  L 101.93 526.44  z " style="fill: none" />
+   </g>
+   <g id="patch_3">
+    <path d="M 125.024091 526.44  L 202.004394 526.44  L 202.004394 343.679646  L 125.024091 343.679646  z " clip-path="url(#pc03eaefdb6)" style="fill: #bde5de; stroke: #0d9488; stroke-linejoin: miter" />
+   </g>
+   <g id="patch_4">
+    <path d="M 221.24947 526.44  L 298.229773 526.44  L 298.229773 366.486386  L 221.24947 366.486386  z " clip-path="url(#pc03eaefdb6)" style="fill: #bde5de; stroke: #0d9488; stroke-linejoin: miter" />
+   </g>
+   <g id="patch_5">
+    <path d="M 317.474848 526.44  L 394.455152 526.44  L 394.455152 442.420999  L 317.474848 442.420999  z " clip-path="url(#pc03eaefdb6)" style="fill: #bde5de; stroke: #0d9488; stroke-linejoin: miter" />
+   </g>
+   <g id="patch_6">
+    <path d="M 413.700227 526.44  L 490.68053 526.44  L 490.68053 523.57087  L 413.700227 523.57087  z " clip-path="url(#pc03eaefdb6)" style="fill: #bde5de; stroke: #0d9488; stroke-linejoin: miter" />
+   </g>
+   <g id="patch_7">
+    <path d="M 509.925606 526.44  L 586.905909 526.44  L 586.905909 526.01948  L 509.925606 526.01948  z " clip-path="url(#pc03eaefdb6)" style="fill: #bde5de; stroke: #0d9488; stroke-linejoin: miter" />
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m77ff5aa655" d="M 0 0  L 0 3.5  " style="stroke: #64748b; stroke-width: 0.8" />
+      </defs>
+      <g>
+       <use xlink:href="#m77ff5aa655" x="163.514242" y="526.44" style="fill: #64748b; stroke: #64748b; stroke-width: 0.8" />
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 24px;  text-anchor: middle; fill: #64748b" x="163.514242" y="552.76" transform="rotate(-0 163.514242 552.76)" font-family="inherit">1</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m77ff5aa655" x="259.739621" y="526.44" style="fill: #64748b; stroke: #64748b; stroke-width: 0.8" />
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 24px;  text-anchor: middle; fill: #64748b" x="259.739621" y="552.76" transform="rotate(-0 259.739621 552.76)" font-family="inherit">2</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m77ff5aa655" x="355.965" y="526.44" style="fill: #64748b; stroke: #64748b; stroke-width: 0.8" />
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 24px;  text-anchor: middle; fill: #64748b" x="355.965" y="552.76" transform="rotate(-0 355.965 552.76)" font-family="inherit">3</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m77ff5aa655" x="452.190379" y="526.44" style="fill: #64748b; stroke: #64748b; stroke-width: 0.8" />
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 24px;  text-anchor: middle; fill: #64748b" x="452.190379" y="552.76" transform="rotate(-0 452.190379 552.76)" font-family="inherit">4</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m77ff5aa655" x="548.415758" y="526.44" style="fill: #64748b; stroke: #64748b; stroke-width: 0.8" />
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 24px;  text-anchor: middle; fill: #64748b" x="548.415758" y="552.76" transform="rotate(-0 548.415758 552.76)" font-family="inherit">5</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 24px;  text-anchor: middle; fill: #243247" x="355.965" y="582.32" transform="rotate(-0 355.965 582.32)" font-family="inherit">主成分</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_6">
+      <defs>
+       <path id="m852fe22793" d="M 0 0  L -3.5 0  " style="stroke: #64748b; stroke-width: 0.8" />
+      </defs>
+      <g>
+       <use xlink:href="#m852fe22793" x="101.93" y="526.44" style="fill: #64748b; stroke: #64748b; stroke-width: 0.8" />
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 24px;  text-anchor: end; fill: #64748b" x="94.93" y="536.1" transform="rotate(-0 94.93 536.1)" font-family="inherit">0.0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#m852fe22793" x="101.93" y="440.435476" style="fill: #64748b; stroke: #64748b; stroke-width: 0.8" />
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 24px;  text-anchor: end; fill: #64748b" x="94.93" y="450.095476" transform="rotate(-0 94.93 450.095476)" font-family="inherit">0.2</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m852fe22793" x="101.93" y="354.430952" style="fill: #64748b; stroke: #64748b; stroke-width: 0.8" />
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 24px;  text-anchor: end; fill: #64748b" x="94.93" y="364.090952" transform="rotate(-0 94.93 364.090952)" font-family="inherit">0.4</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m852fe22793" x="101.93" y="268.426429" style="fill: #64748b; stroke: #64748b; stroke-width: 0.8" />
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 24px;  text-anchor: end; fill: #64748b" x="94.93" y="278.086429" transform="rotate(-0 94.93 278.086429)" font-family="inherit">0.6</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m852fe22793" x="101.93" y="182.421905" style="fill: #64748b; stroke: #64748b; stroke-width: 0.8" />
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 24px;  text-anchor: end; fill: #64748b" x="94.93" y="192.081905" transform="rotate(-0 94.93 192.081905)" font-family="inherit">0.8</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m852fe22793" x="101.93" y="96.417381" style="fill: #64748b; stroke: #64748b; stroke-width: 0.8" />
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 24px;  text-anchor: end; fill: #64748b" x="94.93" y="106.077381" transform="rotate(-0 94.93 106.077381)" font-family="inherit">1.0</text>
+     </g>
+    </g>
+    <g id="text_13">
+     <text style="font-size: 24px;  text-anchor: middle; fill: #243247" x="50.08125" y="300.678125" transform="rotate(-90 50.08125 300.678125)" font-family="inherit">解释率</text>
+    </g>
+   </g>
+   <g id="line2d_12">
+    <path d="M 163.514242 343.679646  L 259.739621 183.726032  L 355.965 99.707031  L 452.190379 96.837901  L 548.415758 96.417381  " clip-path="url(#pc03eaefdb6)" style="fill: none; stroke: #0d9488; stroke-width: 2.5; stroke-linecap: square" />
+    <defs>
+     <path id="m5addfdd50d" d="M 0 3  C 0.795609 3 1.55874 2.683901 2.12132 2.12132  C 2.683901 1.55874 3 0.795609 3 0  C 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132  C 1.55874 -2.683901 0.795609 -3 0 -3  C -0.795609 -3 -1.55874 -2.683901 -2.12132 -2.12132  C -2.683901 -1.55874 -3 -0.795609 -3 0  C -3 0.795609 -2.683901 1.55874 -2.12132 2.12132  C -1.55874 2.683901 -0.795609 3 0 3  z " style="stroke: #0d9488" />
+    </defs>
+    <g clip-path="url(#pc03eaefdb6)">
+     <use xlink:href="#m5addfdd50d" x="163.514242" y="343.679646" style="fill: #0d9488; stroke: #0d9488" />
+     <use xlink:href="#m5addfdd50d" x="259.739621" y="183.726032" style="fill: #0d9488; stroke: #0d9488" />
+     <use xlink:href="#m5addfdd50d" x="355.965" y="99.707031" style="fill: #0d9488; stroke: #0d9488" />
+     <use xlink:href="#m5addfdd50d" x="452.190379" y="96.837901" style="fill: #0d9488; stroke: #0d9488" />
+     <use xlink:href="#m5addfdd50d" x="548.415758" y="96.417381" style="fill: #0d9488; stroke: #0d9488" />
+    </g>
+   </g>
+   <g id="patch_8">
+    <path d="M 101.93 526.44  L 101.93 74.91625  " style="fill: none; stroke: #64748b; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square" />
+   </g>
+   <g id="patch_9">
+    <path d="M 610 526.44  L 610 74.91625  " style="fill: none; stroke: #64748b; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square" />
+   </g>
+   <g id="patch_10">
+    <path d="M 101.93 526.44  L 610 526.44  " style="fill: none; stroke: #64748b; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square" />
+   </g>
+   <g id="patch_11">
+    <path d="M 101.93 74.91625  L 610 74.91625  " style="fill: none; stroke: #64748b; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square" />
+   </g>
+   <g id="text_14">
+    <text style="font-size: 28px;  text-anchor: middle; fill: #243247" x="355.965" y="52.91625" transform="rotate(-0 355.965 52.91625)" font-family="inherit">PCA：方差解释率与累计值</text>
+   </g>
+   <g id="legend_1">
+    <g id="patch_12">
+     <path d="M 118.73 131.67625  L 243.53 131.67625  Q 248.33 131.67625 248.33 126.87625  L 248.33 91.71625  Q 248.33 86.91625 243.53 86.91625  L 118.73 86.91625  Q 113.93 86.91625 113.93 91.71625  L 113.93 126.87625  Q 113.93 131.67625 118.73 131.67625  L 118.73 131.67625  z " style="fill: none; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter" />
+    </g>
+    <g id="line2d_13">
+     <path d="M 123.53 107.43625  L 147.53 107.43625  L 171.53 107.43625  " style="fill: none; stroke: #0d9488; stroke-width: 1.5; stroke-linecap: square" />
+     <g>
+      <use xlink:href="#m5addfdd50d" x="147.53" y="107.43625" style="fill: #0d9488; stroke: #0d9488" />
+     </g>
+    </g>
+    <g id="text_15">
+     <text style="font-size: 24px;  text-anchor: start; fill: #243247" x="190.73" y="115.83625" transform="rotate(-0 190.73 115.83625)" font-family="inherit">累计</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pc03eaefdb6">
+   <rect x="101.93" y="74.91625" width="508.07" height="451.52375" />
+  </clipPath>
+ </defs>
+</svg>

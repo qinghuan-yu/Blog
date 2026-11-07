@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1110" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">PCA：旋转坐标，再舍去一个方向</title><desc id="desc">中心化点云的PC1沿最大方差方向，PC2与之正交。保留两个坐标是旋转；只保留PC1时，各点垂直投影到PC1，PC2方向差异消失。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">PCA：旋转坐标，再舍去一个方向</text>
+<text x="320" y="115" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">① 保留 PC1 和 PC2：换一套坐标</text>
+<path d="M70 340 L575 340" fill="none" stroke="#64748b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<path d="M320 500 L320 165" fill="none" stroke="#64748b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<path d="M122.546 454 L517.454 226" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="537.454" y="216" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">PC1</text>
+<path d="M434 537.454 L239.25 200.137" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)"/>
+<text x="259.25" y="190.137" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">PC2</text>
+<circle cx="164.955" cy="451.454" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<circle cx="165.887" cy="396.068" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<circle cx="237.898" cy="425.795" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<circle cx="252.909" cy="356.796" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<circle cx="317.796" cy="374.182" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<circle cx="322.204" cy="305.818" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<circle cx="387.091" cy="323.204" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<circle cx="402.102" cy="254.205" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<circle cx="474.113" cy="283.932" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<circle cx="475.045" cy="228.546" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<text x="320" y="595" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">② 只保留 PC1：投影到一条轴</text>
+<path d="M70 820 L575 820" fill="none" stroke="#64748b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<path d="M320 980 L320 645" fill="none" stroke="#64748b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<path d="M122.546 934 L517.454 706" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="537.454" y="696" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">PC1</text>
+<path d="M434 1017.45 L239.25 680.137" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)"/>
+<text x="259.25" y="670.137" font-size="24" fill="#2563eb" text-anchor="middle" font-weight="500">PC2</text>
+<path d="M164.955 931.454 L155.455 915" fill="none" stroke="#64748b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<circle cx="155.455" cy="915" r="5" fill="#0d9488" stroke="#0d9488" stroke-width="2"/>
+<circle cx="164.955" cy="931.454" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<path d="M165.887 876.068 L180.137 900.75" fill="none" stroke="#64748b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<circle cx="180.137" cy="900.75" r="5" fill="#0d9488" stroke="#0d9488" stroke-width="2"/>
+<circle cx="165.887" cy="876.068" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<path d="M237.898 905.795 L221.273 877" fill="none" stroke="#64748b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<circle cx="221.273" cy="877" r="5" fill="#0d9488" stroke="#0d9488" stroke-width="2"/>
+<circle cx="237.898" cy="905.795" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<path d="M252.909 836.796 L262.409 853.25" fill="none" stroke="#64748b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<circle cx="262.409" cy="853.25" r="5" fill="#0d9488" stroke="#0d9488" stroke-width="2"/>
+<circle cx="252.909" cy="836.796" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<path d="M317.796 854.182 L303.546 829.5" fill="none" stroke="#64748b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<circle cx="303.546" cy="829.5" r="5" fill="#0d9488" stroke="#0d9488" stroke-width="2"/>
+<circle cx="317.796" cy="854.182" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<path d="M322.204 785.818 L336.454 810.5" fill="none" stroke="#64748b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<circle cx="336.454" cy="810.5" r="5" fill="#0d9488" stroke="#0d9488" stroke-width="2"/>
+<circle cx="322.204" cy="785.818" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<path d="M387.091 803.204 L377.591 786.75" fill="none" stroke="#64748b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<circle cx="377.591" cy="786.75" r="5" fill="#0d9488" stroke="#0d9488" stroke-width="2"/>
+<circle cx="387.091" cy="803.204" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<path d="M402.102 734.205 L418.727 763" fill="none" stroke="#64748b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<circle cx="418.727" cy="763" r="5" fill="#0d9488" stroke="#0d9488" stroke-width="2"/>
+<circle cx="402.102" cy="734.205" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<path d="M474.113 763.932 L459.863 739.25" fill="none" stroke="#64748b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<circle cx="459.863" cy="739.25" r="5" fill="#0d9488" stroke="#0d9488" stroke-width="2"/>
+<circle cx="474.113" cy="763.932" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<path d="M475.045 708.546 L484.545 725" fill="none" stroke="#64748b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<circle cx="484.545" cy="725" r="5" fill="#0d9488" stroke="#0d9488" stroke-width="2"/>
+<circle cx="475.045" cy="708.546" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/>
+<text x="320" y="1060" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">保留 PC1 后，同一投影上的点无法区分</text>
+</g>
+</svg>

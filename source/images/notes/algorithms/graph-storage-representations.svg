@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1140" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">一条边，三种存法</title><desc id="desc">有向带权图A到B为2、A到C为5、B到C为1、B到D为6、C到D为3。矩阵行是起点列是终点，邻接表列出出边。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">一条边，三种存法</text>
+<path d="M118.252 199.91 L271.748 145.09" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="195" y="157.5" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">2</text>
+<path d="M117.574 221.818 L272.426 288.182" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="195" y="240" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">5</text>
+<path d="M300 165 L300 270" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<text x="272" y="217.5" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">1</text>
+<path d="M328.735 143.62 L521.265 201.38" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="425" y="157.5" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">6</text>
+<path d="M328.227 289.838 L521.773 220.162" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="425" y="240" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">3</text>
+<circle cx="90" cy="210" r="30" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="90" y="218" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">A</text>
+<circle cx="300" cy="135" r="30" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="300" y="143" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">B</text>
+<circle cx="300" cy="300" r="30" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="300" y="308" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">C</text>
+<circle cx="550" cy="210" r="30" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="550" y="218" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">D</text>
+<text x="320" y="370" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">行 = 起点，列 = 终点</text>
+<text x="135" y="425" font-size="26" fill="#243247" text-anchor="middle" font-weight="600"></text>
+<text x="223" y="425" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">A</text>
+<text x="311" y="425" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">B</text>
+<text x="399" y="425" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">C</text>
+<text x="487" y="425" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">D</text>
+<text x="135" y="484" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">A</text>
+<rect x="180" y="446" width="85" height="64" rx="0" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+<text x="222" y="484" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">0</text>
+<rect x="268" y="446" width="85" height="64" rx="0" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+<text x="310" y="484" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">2</text>
+<rect x="356" y="446" width="85" height="64" rx="0" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+<text x="398" y="484" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">5</text>
+<rect x="444" y="446" width="85" height="64" rx="0" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+<text x="486" y="484" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">∞</text>
+<text x="135" y="552" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">B</text>
+<rect x="180" y="514" width="85" height="64" rx="0" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+<text x="222" y="552" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">∞</text>
+<rect x="268" y="514" width="85" height="64" rx="0" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+<text x="310" y="552" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">0</text>
+<rect x="356" y="514" width="85" height="64" rx="0" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="398" y="552" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">1</text>
+<rect x="444" y="514" width="85" height="64" rx="0" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+<text x="486" y="552" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">6</text>
+<text x="135" y="620" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">C</text>
+<rect x="180" y="582" width="85" height="64" rx="0" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+<text x="222" y="620" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">∞</text>
+<rect x="268" y="582" width="85" height="64" rx="0" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+<text x="310" y="620" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">∞</text>
+<rect x="356" y="582" width="85" height="64" rx="0" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+<text x="398" y="620" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">0</text>
+<rect x="444" y="582" width="85" height="64" rx="0" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+<text x="486" y="620" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">3</text>
+<text x="135" y="688" font-size="26" fill="#243247" text-anchor="middle" font-weight="600">D</text>
+<rect x="180" y="650" width="85" height="64" rx="0" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+<text x="222" y="688" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">∞</text>
+<rect x="268" y="650" width="85" height="64" rx="0" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+<text x="310" y="688" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">∞</text>
+<rect x="356" y="650" width="85" height="64" rx="0" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+<text x="398" y="688" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">∞</text>
+<rect x="444" y="650" width="85" height="64" rx="0" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+<text x="486" y="688" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">0</text>
+<text x="320" y="776" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">对角线为 0；∞ 表示没有边</text>
+<rect x="65" y="814" width="70" height="50" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="100" y="849" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">A</text>
+<path d="M135 839 L190 839" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="210" y="849" font-size="26" fill="#243247" text-anchor="start" font-weight="500">(B,2) → (C,5)</text>
+<rect x="65" y="886" width="70" height="50" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="100" y="921" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">B</text>
+<path d="M135 911 L190 911" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="210" y="921" font-size="26" fill="#0d9488" text-anchor="start" font-weight="500">(C,1) → (D,6)</text>
+<rect x="65" y="958" width="70" height="50" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="100" y="993" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">C</text>
+<path d="M135 983 L190 983" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="210" y="993" font-size="26" fill="#243247" text-anchor="start" font-weight="500">(D,3)</text>
+<rect x="65" y="1030" width="70" height="50" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="100" y="1065" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">D</text>
+<path d="M135 1055 L190 1055" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="210" y="1065" font-size="26" fill="#243247" text-anchor="start" font-weight="500">空</text>
+</g>
+</svg>

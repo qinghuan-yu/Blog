@@ -28,6 +28,8 @@ MIDI 数据集
 -> 解码并导出 MIDI
 ```
 
+![训练与推理双流程：离线数据训练条件模型，在线生成伴奏，原始旋律沿独立旁路保留到最终MIDI](/images/notes/pianalysis/training-inference.svg)
+
 这篇文章会完整拆解其中的技术原理与关键运算，并说明工程选择、目前效果和后续改进方向。
 
 ---
@@ -316,6 +318,8 @@ prev[t][j] = argmax_i(...)
 
 这一步就是 `scripts/dp_melody_cleaning_v1.py` 的核心。
 
+![候选音数值例：最高音路径得2.60，结合局部分和转移分的DP路径得3.38，并从终点回溯](/images/notes/pianalysis/skyline-dp-paths.svg)
+
 ### 3.7 后处理
 
 DP 路径之后还做了两个简单后处理：
@@ -458,6 +462,8 @@ emit event token
 current_tick = event.tick
 ```
 
+![旋律音符编码：同一tick先关音再开音，再把事件时刻0、20、35转换为20和15的时间增量](/images/notes/pianalysis/note-event-encoding.svg)
+
 ### 5.4 训练序列
 
 清洗后，每个样本被编码为：
@@ -506,6 +512,8 @@ max_length = 1024
 ### 6.2 过滤规则
 
 每个训练窗口必须同时包含 `melody source` 和 `accompaniment target`，否则会被过滤（常见过滤原因包括 `empty`、`missing_source_or_target` 和 `too_long`）。
+
+![8秒窗口检查旋律与伴奏角色，超过1024 tokens的窗口递归二分，合格样本接收，过短样本过滤](/images/notes/pianalysis/window-splitting.svg)
 
 ### 6.3 当前窗口化结果
 
@@ -605,7 +613,9 @@ L = - 1/N * sum_{t in target_positions} log P(x_t | x_<t)
 target_positions = {t | labels[t] != -100}
 ```
 
-也就是只在伴奏 token 上优化。
+也就是在伴奏 token 与序列结束标记 EOS 上优化。
+
+![输入与labels对齐：旋律和PAD标签为-100，模型用前一位置预测伴奏与EOS并计算损失](/images/notes/pianalysis/token-loss-alignment.svg)
 
 ### 7.4 按曲目切分训练/验证
 
@@ -617,6 +627,8 @@ target_positions = {t | labels[t] != -100}
 Train: 36 pieces, 1306 windows
 Eval: 4 pieces, 224 windows
 ```
+
+![按source_piece_id划分训练验证曲目，同一首曲子的全部窗口留在同一侧](/images/notes/pianalysis/piece-level-split.svg)
 
 这比随机窗口切分更接近真实泛化评估。
 

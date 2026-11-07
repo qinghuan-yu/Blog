@@ -57,6 +57,8 @@ tags: ["项目"]
 | `counter_evidence` | 单列反证与边界条件 |
 | `uncertainties` | 保留不能判断的问题 |
 
+![Dialograph 证据链：本地处理、分块提取、逐字引文匹配、证据摘要与两类报告，存疑和未匹配项另行隔离](/images/notes/dialograph/evidence-to-reports.svg)
+
 ## 证据回到原话
 
 当前版本为消息和证据生成编号，并在本地核对模型引用的原话。引文必须在当前分块中找到唯一、连续、逐字一致的位置，才会作为已匹配的证据进入后续材料。

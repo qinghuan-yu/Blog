@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 850" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">线性规划：把等值线推到最优顶点</title><desc id="desc">最大化x1+2x2，约束x1+x2≤4、x1−x2≤2且非负。可行多边形顶点(0,0)、(2,0)、(3,1)、(0,4)。最优点(0,4)，目标8。</desc>
+<defs>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+</defs>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">线性规划：把等值线推到最优顶点</text>
+<text x="320" y="88" font-size="26" fill="#243247" text-anchor="middle" font-weight="500">最大化 z = x₁ + 2x₂</text>
+<path d="M100 615 L310 615 L415 510 L100 195 Z" fill="#e8f5f3" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M100 615 L575 615" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<path d="M100 615 L100 135" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<text x="580" y="645" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">x₁</text>
+<text x="75" y="120" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">x₂</text>
+<text x="82" y="643" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">0</text>
+<path d="M100 510 L310 615" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<path d="M100 405 L520 615" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<path d="M100 300 L541 520.5" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<path d="M100 195 L541 415.5" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="100" cy="195" r="7" fill="#0d9488" stroke="#0d9488" stroke-width="2"/>
+<text x="235" y="176" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="600">最优点 (0,4)</text>
+<text x="310" y="648" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">2</text>
+<text x="415" y="648" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">3</text>
+<text x="520" y="648" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">4</text>
+<text x="66" y="203" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">4</text>
+<text x="440" y="445" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">x₁+x₂=4</text>
+<text x="320" y="699" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">可行域：x₁+x₂ ≤ 4，x₁−x₂ ≤ 2</text>
+<text x="320" y="741" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">x₁ ≥ 0，x₂ ≥ 0</text>
+<text x="320" y="800" font-size="28" fill="#0d9488" text-anchor="middle" font-weight="600">zmax = 0 + 2×4 = 8</text>
+</g>
+</svg>
