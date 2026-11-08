@@ -1,51 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" data-layout="compact" role="img" aria-labelledby="title desc">
-<title id="title">先分曲目，再分配训练窗口</title>
-<desc id="desc">按source_piece_id划分曲目集合，同一首曲子的所有窗口保持在同一侧。正文数据为训练36首1306窗口，验证4首224窗口。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 890" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">V5：按曲目划分</title><desc id="desc">训练为 001、002、005 到 010 共 8 首 135 段，验证为 003 与 011 共 35 段，测试为 004 与 012 共 25 段。同曲片段不跨划分，test1 的 8 段单独用于外部生成和试听。</desc>
 <defs>
-<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#64748b"/></marker>
-<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0d9488"/></marker>
-<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563eb"/></marker>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
 </defs>
 <g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
-<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">先分曲目，再分配训练窗口</text>
-<text x="320" y="85" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">同一首曲子的窗口拥有同一个 source_piece_id</text>
-<rect x="120" y="120" width="400" height="64" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
-<text x="320.0" y="160.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">按 source_piece_id 划分曲目</text>
-<path d="M220 184 V230 H165 V270" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
-<path d="M420 184 V230 H475 V270" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)"/>
-<rect x="30" y="270" width="270" height="70" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
-<text x="165.0" y="297.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">训练曲目集合</text>
-<text x="165.0" y="329.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">36 首</text>
-<rect x="340" y="270" width="270" height="70" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
-<text x="475.0" y="297.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">验证曲目集合</text>
-<text x="475.0" y="329.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">4 首</text>
-<path d="M165 340 V395" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
-<rect x="30" y="395" width="270" height="60" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
-<text x="165.0" y="433.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">曲目 A</text>
-<rect x="30" y="495" width="84" height="56" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
-<text x="72.0" y="531.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">窗 1</text>
-<rect x="120" y="495" width="84" height="56" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
-<text x="162.0" y="531.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">窗 2</text>
-<rect x="210" y="495" width="84" height="56" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
-<text x="252.0" y="531.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">窗 3</text>
-<path d="M165 455 V475 H72 V495" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
-<path d="M165 475 V495" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
-<path d="M165 475 H252 V495" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
-<path d="M475 340 V395" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)"/>
-<rect x="340" y="395" width="270" height="60" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
-<text x="475.0" y="433.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">曲目 B</text>
-<rect x="340" y="495" width="84" height="56" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
-<text x="382.0" y="531.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">窗 1</text>
-<rect x="430" y="495" width="84" height="56" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
-<text x="472.0" y="531.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">窗 2</text>
-<rect x="520" y="495" width="84" height="56" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
-<text x="562.0" y="531.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">窗 3</text>
-<path d="M475 455 V475 H382 V495" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)"/>
-<path d="M475 475 V495" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)"/>
-<path d="M475 475 H562 V495" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)"/>
-<text x="165" y="610" font-size="26" fill="#0d9488" text-anchor="middle" font-weight="500">1306 个窗口</text>
-<text x="475" y="610" font-size="26" fill="#2563eb" text-anchor="middle" font-weight="500">224 个窗口</text>
-<text x="320" y="680" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">曲目 A 的所有窗口留在训练侧</text>
+<text x="320" y="44" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">V5：按曲目划分</text>
+<text x="320" y="86" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">12 首 POP909 · 195 个和声段</text>
+<rect x="60" y="125" width="520" height="95" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="163.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">先固定曲目划分</text>
+<text x="320.0" y="197.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">再按和声与拍点证据选择片段</text>
+<path d="M60 172 H30 V599" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M30 320 H80" fill="none" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="80" y="270" width="500" height="100" rx="8" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="330.0" y="311.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">训练：001、002、005–010</text>
+<text x="330.0" y="345.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">8 首 · 135 段</text>
+<path d="M30 455 H80" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)"/>
+<rect x="80" y="405" width="500" height="100" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="330.0" y="446.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">验证：003、011</text>
+<text x="330.0" y="480.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">2 首 · 35 段 · 选择检查点</text>
+<path d="M30 590 H80" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<rect x="80" y="540" width="500" height="100" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="330.0" y="581.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">测试：004、012</text>
+<text x="330.0" y="615.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">2 首 · 25 段 · 计算生成指标</text>
+<text x="320" y="690" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">同一首歌的片段放在同一划分</text>
+<rect x="60" y="735" width="520" height="100" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="320.0" y="776.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">外部 test1：8 个和声段</text>
+<text x="320.0" y="810.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">用于生成与试听比较</text>
 </g>
 </svg>

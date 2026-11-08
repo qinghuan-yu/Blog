@@ -1,44 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1100" data-layout="compact" role="img" aria-labelledby="title desc">
-<title id="title">Dialograph：让证据回到原话</title>
-<desc id="desc">输入先在本地进行格式校验、脱敏、清洗排序和统计，再连续分块交给模型抽取证据。引文唯一连续匹配原文的条目进入证据与摘要材料；有歧义或未匹配条目进入隔离清单。共同材料支持关系动态与人物侧写，人物生成还参考关系报告。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1440" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">Dialograph 的证据与报告流程</title>
+<desc id="desc">本地输入经过分块提取与原文绑定。唯一匹配的证据参与事件选材，覆盖不足时检索完整会话。模型输出关系与人物结论 JSON，本机校验、回填事实并编译双报告。默认交付待人工确认稿，网页支持原文回查。检索路径的两份报告独立生成，普通路径的人物侧写另参考关系报告。</desc>
 <defs>
-<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
-<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#0d9488"/></marker>
-<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
+<marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
+<marker id="teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#0d9488"/></marker>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
 </defs>
 <g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
-<text x="320" y="42" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">Dialograph：让证据回到原话</text>
-<rect x="80" y="110" width="480" height="100" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
-<text x="320.0" y="152.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">本地输入处理</text>
-<text x="320.0" y="184.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">格式校验 · 脱敏 · 清洗排序 · 统计</text>
-<path d="M320 210 V255" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
-<rect x="80" y="255" width="480" height="90" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
-<text x="320.0" y="308.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">连续分块 + 提示词预算检查</text>
-<path d="M320 345 V390" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
-<rect x="80" y="390" width="480" height="85" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
-<text x="320.0" y="440.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">LLM 提取结构化证据</text>
-<path d="M320 475 V520" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
-<rect x="80" y="520" width="480" height="85" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
-<text x="320.0" y="570.5" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">引文与原文逐字绑定</text>
-<path d="M320 605 V640 H165 V685" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
-<path d="M320 640 H475 V685" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
-<rect x="30" y="685" width="270" height="100" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
-<text x="165.0" y="727.0" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">matched</text>
-<text x="165.0" y="759.0" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">唯一连续匹配</text>
-<rect x="340" y="685" width="270" height="100" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
-<text x="475.0" y="727.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">ambiguous / unmatched</text>
-<text x="475.0" y="759.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">隔离清单 · 人工回查</text>
-<path d="M165 785 V820 H320 V850" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
-<rect x="100" y="850" width="440" height="75" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
-<text x="320.0" y="895.5" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">证据总表 + 阶段总结与摘要</text>
-<path d="M320 925 V950 H165 V975" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
-<path d="M320 950 H475 V975" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
-<rect x="30" y="975" width="270" height="70" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
-<text x="165.0" y="1018.0" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">关系动态报告</text>
-<rect x="340" y="975" width="270" height="70" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
-<text x="475.0" y="1018.0" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">人物印象与表达风格</text>
-<path d="M300 1010 H340" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#blue)" stroke-dasharray="5 5"/>
-<text x="320" y="1084" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">人物报告同时参考已生成的关系报告</text>
+<text x="320" y="43" font-size="28" fill="#243247" text-anchor="middle" font-weight="600">Dialograph 的证据与报告流程</text>
+<text x="320" y="82" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">从原文到可回查的判断</text>
+<rect x="80" y="110" width="480" height="80" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="142.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">本地输入与统计</text>
+<text x="320.0" y="174.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">适配 · 脱敏 · 清洗排序</text>
+<path d="M320 190 V225" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="80" y="225" width="480" height="80" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="257.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">连续分块与预算检查</text>
+<text x="320.0" y="289.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">LLM 抽取五类结构化证据</text>
+<path d="M320 305 V340" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="80" y="340" width="480" height="70" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="383.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">引文逐字绑定到来源消息</text>
+<path d="M320 410 V440 H165 V475" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<path d="M320 440 H475 V475" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gray)"/>
+<rect x="30" y="475" width="270" height="85" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="165.0" y="509.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">唯一匹配</text>
+<text x="165.0" y="541.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">证据总表与阶段总结</text>
+<rect x="340" y="475" width="270" height="85" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="475.0" y="509.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">歧义或未匹配</text>
+<text x="475.0" y="541.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">隔离清单</text>
+<path d="M165 560 V595 H320 V625" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="65" y="625" width="510" height="100" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="667.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">候选事件选材 · 连续原文</text>
+<text x="320.0" y="699.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">覆盖不足时检索完整会话</text>
+<path d="M320 725 V770" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="65" y="770" width="510" height="90" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="807.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">关系 / 人物结论 JSON</text>
+<text x="320.0" y="839.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">支持 · 反证 · 情境限制 · 判断范围</text>
+<path d="M320 860 V905" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="65" y="905" width="510" height="90" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="320.0" y="942.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">本机校验与编译</text>
+<text x="320.0" y="974.0" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">原话 · 时间 · 动作结构 · 引用</text>
+<path d="M320 995 V1035" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="65" y="1035" width="510" height="75" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="320.0" y="1064.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">确认方式</text>
+<text x="320.0" y="1096.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">默认人工确认 / 可选模型辅助复核</text>
+<path d="M320 1110 V1138 H165 V1165" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<path d="M320 1138 H475 V1165" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#teal)"/>
+<rect x="30" y="1165" width="270" height="85" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="165.0" y="1199.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">关系动态报告</text>
+<text x="165.0" y="1231.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">附关系结论账本</text>
+<rect x="340" y="1165" width="270" height="85" rx="10" fill="#e8f5f3" stroke="#0d9488" stroke-width="2"/>
+<text x="475.0" y="1199.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">人物侧写报告</text>
+<text x="475.0" y="1231.5" font-size="24" fill="#243247" text-anchor="middle" font-weight="500">附人物结论账本</text>
+<text x="320" y="1288" font-size="24" fill="#0d9488" text-anchor="middle" font-weight="500">默认状态 · 待人工确认</text>
+<text x="320" y="1326" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">点击引用回查脱敏原文</text>
+<text x="320" y="1375" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">检索路径中，两份报告独立生成</text>
+<text x="320" y="1407" font-size="24" fill="#64748b" text-anchor="middle" font-weight="500">普通路径的人物侧写另参考关系报告</text>
 </g>
 </svg>
