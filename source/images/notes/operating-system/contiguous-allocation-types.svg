@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 820" data-layout="compact" role="img" aria-labelledby="title desc">
+<title id="title">连续分配：先看分区，再选算法</title>
+<desc id="desc">仅画用户区。单一连续分配中，64MiB 用户区只有一个20MiB程序，余下44MiB无法给另一进程。固定分区分为16、32、64MiB，20MiB程序占用32MiB分区，内有12MiB碎片。动态分区中两个20MiB程序之间及尾部各有12MiB空闲区，总空闲24MiB但不能连续容纳20MiB申请。</desc>
+<g font-family="Georgia, Noto Serif SC, Songti SC, SimSun, serif">
+<text x="320" y="42" font-size="28" font-weight="600" fill="#243247" text-anchor="middle">连续分配：先看分区，再选算法</text>
+<text x="320" y="82" font-size="24" fill="#64748b" text-anchor="middle">只画用户区，各行独立比较</text>
+<text x="40" y="132" font-size="26" font-weight="600" fill="#243247">1. 单一连续：一次一个用户程序</text>
+<rect x="40" y="156" width="175" height="56" fill="#dbeafe" stroke="#2563eb"/>
+<rect x="215" y="156" width="385" height="56" fill="#fef3c7" stroke="#b45309"/>
+<text x="127" y="193" font-size="24" text-anchor="middle" fill="#243247">程序 20MiB</text>
+<text x="407" y="193" font-size="24" text-anchor="middle" fill="#92400e">余下 44MiB</text>
+<text x="40" y="252" font-size="24" fill="#64748b">余量不能再装入另一用户程序</text>
+<text x="40" y="314" font-size="26" font-weight="600" fill="#243247">2. 固定分区：边界预先划定</text>
+<rect x="40" y="340" width="80" height="56" fill="#e8f5f3" stroke="#0d9488"/>
+<rect x="120" y="340" width="100" height="56" fill="#dbeafe" stroke="#2563eb"/>
+<rect x="220" y="340" width="60" height="56" fill="#fef3c7" stroke="#b45309"/>
+<rect x="280" y="340" width="320" height="56" fill="#e8f5f3" stroke="#0d9488"/>
+<path d="M120 330V410M280 330V410" stroke="#243247" stroke-width="3"/>
+<text x="80" y="435" font-size="24" text-anchor="middle" fill="#64748b">16</text>
+<text x="200" y="435" font-size="24" text-anchor="middle" fill="#64748b">32</text>
+<text x="440" y="435" font-size="24" text-anchor="middle" fill="#64748b">64MiB</text>
+<text x="40" y="477" font-size="24" fill="#92400e">32MiB 分区 = 程序 20 + 内部碎片 12</text>
+<text x="40" y="539" font-size="26" font-weight="600" fill="#243247">3. 动态分区：按请求划分与回收</text>
+<rect x="40" y="565" width="175" height="56" fill="#dbeafe" stroke="#2563eb"/>
+<rect x="215" y="565" width="105" height="56" fill="#e8f5f3" stroke="#0d9488"/>
+<rect x="320" y="565" width="175" height="56" fill="#dbeafe" stroke="#2563eb"/>
+<rect x="495" y="565" width="105" height="56" fill="#e8f5f3" stroke="#0d9488"/>
+<text x="127" y="602" font-size="24" text-anchor="middle" fill="#243247">A：20</text>
+<text x="267" y="602" font-size="24" text-anchor="middle" fill="#0f766e">空 12</text>
+<text x="407" y="602" font-size="24" text-anchor="middle" fill="#243247">B：20</text>
+<text x="547" y="602" font-size="24" text-anchor="middle" fill="#0f766e">空 12</text>
+<text x="40" y="663" font-size="24" fill="#64748b">总空闲 24MiB，仍装不下连续 20MiB</text>
+<text x="40" y="703" font-size="24" fill="#0f766e">适应算法从这些空闲区中选择</text>
+<rect x="40" y="750" width="24" height="24" fill="#dbeafe" stroke="#2563eb"/>
+<text x="76" y="772" font-size="24" fill="#243247">程序</text>
+<rect x="220" y="750" width="24" height="24" fill="#fef3c7" stroke="#b45309"/>
+<text x="256" y="772" font-size="24" fill="#243247">内部余量</text>
+<rect x="440" y="750" width="24" height="24" fill="#e8f5f3" stroke="#0d9488"/>
+<text x="476" y="772" font-size="24" fill="#243247">空闲区</text>
+</g>
+</svg>

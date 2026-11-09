@@ -1,6 +1,7 @@
 ---
 title: "MCMer解析"
 date: "2026-05-16"
+updated: "2026-11-09"
 desc: "关于MCMer的技术解析。"
 tags: ["Agent","项目"]
 ---
@@ -48,6 +49,14 @@ MCMer/
 ---
 
 ![MCMer系统架构：Vue前端通过FastAPI提交任务，后端编排Agent并经LiteLLM与Jupyter处理，产物保存到独立工作区](/images/notes/mcmer/system-architecture.svg)
+
+## 先区分几个工程概念
+
+这里的 Agent 是带有角色提示、上下文、模型调用和工具入口的执行单元。工作流负责安排阶段、传递产物和判断下一步；多个 Agent 可以按顺序协作，也可以在彼此独立的阶段并行，不意味着每个角色都对应常驻进程。
+
+FastAPI 提供请求接口，WebSocket 传递持续的进度事件，Vue 将任务状态呈现为页面。WebSocket 连接断开与后台任务结束是两个事件，判断运行结果应查看任务状态与已保存产物。
+
+Jupyter Kernel 是执行代码的进程，Notebook 是保存代码、输出和执行记录的文档。Kernel 中的变量可跨单元保留，重启后要按依赖顺序重新执行。任务目录便于隔离文件命名和追踪产物；代码可访问哪些系统资源，则由运行进程与容器的权限配置决定。
 
 ## 多阶段 Agent 拆分的动机
 
