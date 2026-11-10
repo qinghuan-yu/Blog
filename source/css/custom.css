@@ -710,13 +710,14 @@ a:focus-visible {
 .doc-content th { background: #f1f2ef; font-weight: 600; }
 .doc-content mjx-container[jax="CHTML"] { max-width: 100%; }
 
+/* 为分式、上下标和多行公式保留字形空间，同时支持横向滚动。 */
 .doc-content mjx-container[jax="CHTML"][display="true"],
 .doc-content .MathJax_Display {
   max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   margin: 0.9em 0;
-  padding-bottom: 2px;
+  padding: 0.25em 0;
 }
 
 @media (max-width: 980px) {
