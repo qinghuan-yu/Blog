@@ -1,4 +1,4 @@
-# QingYu's Blog
+# Qing-UU's Blog
 
 一个基于 Hexo 的个人博客项目，当前风格为文档化阅读体验：
 
