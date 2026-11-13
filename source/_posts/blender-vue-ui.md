@@ -3,7 +3,7 @@ title: "Blender+Vue复刻明日方舟官网 3D 交互 UI"
 date: "2026-02-27"
 updated: "2026-11-09"
 desc: "视觉欺骗。"
-tags: ["设计" ]
+tags: ["项目"]
 --- 
 
 # Blender+Vue 复刻《明日方舟》官网 3D 交互 UI

@@ -3,7 +3,7 @@ title: "MCMer解析"
 date: "2026-05-16"
 updated: "2026-11-09"
 desc: "关于MCMer的技术解析。"
-tags: ["Agent","项目"]
+tags: ["项目"]
 ---
 
 # MCMer 技术架构与 Agent 工作流：面向数学建模论文生成的多智能体系统

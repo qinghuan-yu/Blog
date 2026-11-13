@@ -3,7 +3,7 @@ title: "Pianalysis V5 解析"
 date: "2026-06-10"
 updated: "2026-11-08"
 desc: "从和声配位、三通道节奏到密度条件与受约束生成"
-tags: ["深度学习","Transformer","项目"]
+tags: ["项目"]
 ---
 
 # Pianalysis V5 解析：密度条件下的钢琴伴奏生成
